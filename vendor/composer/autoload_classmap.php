@@ -7,12 +7,14 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Config\\ErrorLog' => $baseDir . '/src/Config/ErrorLog.php',
+    'App\\Config\\Message' => $baseDir . '/src/Config/Message.php',
     'App\\Config\\ResponseHttp' => $baseDir . '/src/Config/ResponseHttp.php',
     'App\\Config\\Security' => $baseDir . '/src/Config/Security.php',
-    'App\\Controllers\\ClienteAuthController' => $baseDir . '/src/Controllers/ClienteAuthController.php',
+    'App\\Controllers\\ClienteUsuarioController' => $baseDir . '/src/Controllers/ClienteUsuarioController.php',
     'App\\Controllers\\Controller' => $baseDir . '/src/Controllers/Controller.php',
     'App\\Database\\Connection' => $baseDir . '/src/Database/Connection.php',
     'App\\Database\\Sql' => $baseDir . '/src/Database/Sql.php',
+    'App\\Models\\ClienteUsuarioModel' => $baseDir . '/src/Models/ClienteUsuarioModel.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Dotenv\\Dotenv' => $vendorDir . '/vlucas/phpdotenv/src/Dotenv.php',

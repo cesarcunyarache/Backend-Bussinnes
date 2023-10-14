@@ -16,7 +16,7 @@ setcookie("token", "ieiejmsxix3$$%&/&%$#DDDQ233", time() + 120, "/");
 if (isset($_GET['route'])) {
 
     $params = explode('/', $_GET['route']);
-    $list = ['cliente', 'clienteAuth'];
+    $list = ['cliente', 'clienteAuth', 'reserva'];
     $file = './src/Routes/' . $params[0] . '.php';
 
     if (!in_array($params[0], $list)) {

@@ -86,12 +86,14 @@ class ComposerStaticInit71473d24cd43562d2e6cdccc596eb71b
 
     public static $classMap = array (
         'App\\Config\\ErrorLog' => __DIR__ . '/../..' . '/src/Config/ErrorLog.php',
+        'App\\Config\\Message' => __DIR__ . '/../..' . '/src/Config/Message.php',
         'App\\Config\\ResponseHttp' => __DIR__ . '/../..' . '/src/Config/ResponseHttp.php',
         'App\\Config\\Security' => __DIR__ . '/../..' . '/src/Config/Security.php',
-        'App\\Controllers\\ClienteAuthController' => __DIR__ . '/../..' . '/src/Controllers/ClienteAuthController.php',
+        'App\\Controllers\\ClienteUsuarioController' => __DIR__ . '/../..' . '/src/Controllers/ClienteUsuarioController.php',
         'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/src/Controllers/Controller.php',
         'App\\Database\\Connection' => __DIR__ . '/../..' . '/src/Database/Connection.php',
         'App\\Database\\Sql' => __DIR__ . '/../..' . '/src/Database/Sql.php',
+        'App\\Models\\ClienteUsuarioModel' => __DIR__ . '/../..' . '/src/Models/ClienteUsuarioModel.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Dotenv\\Dotenv' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Dotenv.php',
