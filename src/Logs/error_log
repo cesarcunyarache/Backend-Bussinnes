@@ -1,0 +1,692 @@
+[Tue Jul 26 23:10:13.201703 2022] [ssl:warn] [pid 65153] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jul 26 23:10:13.201937 2022] [ssl:warn] [pid 65153] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jul 26 23:10:13.437329 2022] [ssl:warn] [pid 65157] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jul 26 23:10:13.437424 2022] [ssl:warn] [pid 65157] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jul 26 23:10:13.438045 2022] [lbmethod_heartbeat:notice] [pid 65157] AH02282: No slotmem from mod_heartmonitor
+[Tue Jul 26 23:10:13.475532 2022] [mpm_prefork:notice] [pid 65157] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Tue Jul 26 23:10:13.475607 2022] [core:notice] [pid 65157] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Tue Jul 26 23:12:24.550753 2022] [mpm_prefork:notice] [pid 65157] AH00169: caught SIGTERM, shutting down
+[Tue Jul 26 23:12:55.693120 2022] [ssl:warn] [pid 66590] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jul 26 23:12:55.693430 2022] [ssl:warn] [pid 66590] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jul 26 23:12:55.786407 2022] [ssl:warn] [pid 66591] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jul 26 23:12:55.786445 2022] [ssl:warn] [pid 66591] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jul 26 23:12:55.786633 2022] [lbmethod_heartbeat:notice] [pid 66591] AH02282: No slotmem from mod_heartmonitor
+[Tue Jul 26 23:12:55.843566 2022] [mpm_prefork:notice] [pid 66591] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Tue Jul 26 23:12:55.843625 2022] [core:notice] [pid 66591] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Tue Jul 26 23:13:13.045410 2022] [mpm_prefork:notice] [pid 66591] AH00169: caught SIGTERM, shutting down
+[Tue Jul 26 23:14:01.669013 2022] [ssl:warn] [pid 67412] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jul 26 23:14:01.669303 2022] [ssl:warn] [pid 67412] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jul 26 23:14:01.761764 2022] [ssl:warn] [pid 67413] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Jul 26 23:14:01.761809 2022] [ssl:warn] [pid 67413] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Jul 26 23:14:01.762204 2022] [lbmethod_heartbeat:notice] [pid 67413] AH02282: No slotmem from mod_heartmonitor
+[Tue Jul 26 23:14:01.805154 2022] [mpm_prefork:notice] [pid 67413] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Tue Jul 26 23:14:01.805215 2022] [core:notice] [pid 67413] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Wed Jul 27 12:42:28.358213 2022] [mpm_prefork:notice] [pid 67413] AH00169: caught SIGTERM, shutting down
+[Wed Jul 27 22:29:29.141905 2022] [ssl:warn] [pid 86967] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Jul 27 22:29:29.142481 2022] [ssl:warn] [pid 86967] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jul 27 22:29:29.286853 2022] [ssl:warn] [pid 86968] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Jul 27 22:29:29.286919 2022] [ssl:warn] [pid 86968] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Jul 27 22:29:29.287189 2022] [lbmethod_heartbeat:notice] [pid 86968] AH02282: No slotmem from mod_heartmonitor
+[Wed Jul 27 22:29:29.353339 2022] [mpm_prefork:notice] [pid 86968] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Wed Jul 27 22:29:29.353417 2022] [core:notice] [pid 86968] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Wed Aug 03 17:34:15.905410 2022] [mpm_prefork:notice] [pid 86968] AH00169: caught SIGTERM, shutting down
+[Sat Aug 06 16:21:05.520443 2022] [ssl:warn] [pid 16766] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Aug 06 16:21:05.520771 2022] [ssl:warn] [pid 16766] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Aug 06 16:21:05.618613 2022] [ssl:warn] [pid 16767] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Aug 06 16:21:05.618651 2022] [ssl:warn] [pid 16767] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Aug 06 16:21:05.618849 2022] [lbmethod_heartbeat:notice] [pid 16767] AH02282: No slotmem from mod_heartmonitor
+[Sat Aug 06 16:21:05.666831 2022] [mpm_prefork:notice] [pid 16767] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Sat Aug 06 16:21:05.666897 2022] [core:notice] [pid 16767] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Mon Aug 08 12:54:34.953525 2022] [mpm_prefork:notice] [pid 16767] AH00169: caught SIGTERM, shutting down
+[Wed Sep 07 16:05:24.267461 2022] [ssl:warn] [pid 58644] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Sep 07 16:05:24.267773 2022] [ssl:warn] [pid 58644] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Sep 07 16:05:24.369976 2022] [ssl:warn] [pid 58645] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Sep 07 16:05:24.370018 2022] [ssl:warn] [pid 58645] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Sep 07 16:05:24.370247 2022] [lbmethod_heartbeat:notice] [pid 58645] AH02282: No slotmem from mod_heartmonitor
+[Wed Sep 07 16:05:24.408851 2022] [mpm_prefork:notice] [pid 58645] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Wed Sep 07 16:05:24.408913 2022] [core:notice] [pid 58645] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Wed Sep 07 16:09:20.737520 2022] [mpm_prefork:notice] [pid 58645] AH00169: caught SIGTERM, shutting down
+[Wed Sep 07 16:10:00.560586 2022] [ssl:warn] [pid 61579] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Sep 07 16:10:00.560898 2022] [ssl:warn] [pid 61579] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Sep 07 16:10:00.663969 2022] [ssl:warn] [pid 61580] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Sep 07 16:10:00.664010 2022] [ssl:warn] [pid 61580] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Sep 07 16:10:00.664218 2022] [lbmethod_heartbeat:notice] [pid 61580] AH02282: No slotmem from mod_heartmonitor
+[Wed Sep 07 16:10:00.725420 2022] [mpm_prefork:notice] [pid 61580] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Wed Sep 07 16:10:00.725475 2022] [core:notice] [pid 61580] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sat Sep 10 14:28:35.512497 2022] [mpm_prefork:notice] [pid 61580] AH00169: caught SIGTERM, shutting down
+[Tue Sep 20 17:55:44.111859 2022] [ssl:warn] [pid 67616] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Sep 20 17:55:44.112210 2022] [ssl:warn] [pid 67616] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Sep 20 17:55:44.230155 2022] [ssl:warn] [pid 67617] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Sep 20 17:55:44.230191 2022] [ssl:warn] [pid 67617] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Sep 20 17:55:44.230410 2022] [lbmethod_heartbeat:notice] [pid 67617] AH02282: No slotmem from mod_heartmonitor
+[Tue Sep 20 17:55:44.277628 2022] [mpm_prefork:notice] [pid 67617] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Tue Sep 20 17:55:44.277692 2022] [core:notice] [pid 67617] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Mon Sep 26 17:52:55.786557 2022] [mpm_prefork:notice] [pid 67617] AH00169: caught SIGTERM, shutting down
+[Thu Nov 24 14:59:52.769808 2022] [ssl:warn] [pid 9624] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Nov 24 14:59:52.770200 2022] [ssl:warn] [pid 9624] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Nov 24 14:59:52.919342 2022] [ssl:warn] [pid 9627] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Nov 24 14:59:52.919377 2022] [ssl:warn] [pid 9627] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Nov 24 14:59:52.919597 2022] [lbmethod_heartbeat:notice] [pid 9627] AH02282: No slotmem from mod_heartmonitor
+[Thu Nov 24 14:59:52.942947 2022] [mpm_prefork:notice] [pid 9627] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Thu Nov 24 14:59:52.943007 2022] [core:notice] [pid 9627] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Thu Nov 24 15:01:18.051370 2022] [mpm_prefork:notice] [pid 9627] AH00169: caught SIGTERM, shutting down
+[Fri Dec 02 16:39:23.056165 2022] [ssl:warn] [pid 50464] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Dec 02 16:39:23.056625 2022] [ssl:warn] [pid 50464] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Dec 02 16:39:23.212412 2022] [ssl:warn] [pid 50465] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Dec 02 16:39:23.212451 2022] [ssl:warn] [pid 50465] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Dec 02 16:39:23.212692 2022] [lbmethod_heartbeat:notice] [pid 50465] AH02282: No slotmem from mod_heartmonitor
+[Fri Dec 02 16:39:23.256165 2022] [mpm_prefork:notice] [pid 50465] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Fri Dec 02 16:39:23.256228 2022] [core:notice] [pid 50465] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Tue Dec 06 20:50:53.704089 2022] [mpm_prefork:notice] [pid 50465] AH00169: caught SIGTERM, shutting down
+[Wed Dec 21 11:40:58.569112 2022] [ssl:warn] [pid 29478] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Dec 21 11:40:58.569509 2022] [ssl:warn] [pid 29478] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Dec 21 11:40:58.719677 2022] [ssl:warn] [pid 29479] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Dec 21 11:40:58.719713 2022] [ssl:warn] [pid 29479] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Dec 21 11:40:58.719946 2022] [lbmethod_heartbeat:notice] [pid 29479] AH02282: No slotmem from mod_heartmonitor
+[Wed Dec 21 11:40:58.766853 2022] [mpm_prefork:notice] [pid 29479] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Wed Dec 21 11:40:58.766919 2022] [core:notice] [pid 29479] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sun Apr 30 16:22:50.396822 2023] [ssl:warn] [pid 46571] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Apr 30 16:22:50.397429 2023] [ssl:warn] [pid 46571] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 30 16:22:50.565149 2023] [ssl:warn] [pid 46572] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Apr 30 16:22:50.565188 2023] [ssl:warn] [pid 46572] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 30 16:22:50.565402 2023] [lbmethod_heartbeat:notice] [pid 46572] AH02282: No slotmem from mod_heartmonitor
+[Sun Apr 30 16:22:50.599872 2023] [mpm_prefork:notice] [pid 46572] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Sun Apr 30 16:22:50.599934 2023] [core:notice] [pid 46572] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Mon May 01 19:14:14.666355 2023] [mpm_prefork:notice] [pid 46572] AH00169: caught SIGTERM, shutting down
+[Mon May 01 19:15:38.765412 2023] [ssl:warn] [pid 1617] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon May 01 19:15:38.766199 2023] [ssl:warn] [pid 1617] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon May 01 19:15:38.986590 2023] [ssl:warn] [pid 1619] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon May 01 19:15:38.986631 2023] [ssl:warn] [pid 1619] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon May 01 19:15:38.986893 2023] [lbmethod_heartbeat:notice] [pid 1619] AH02282: No slotmem from mod_heartmonitor
+[Mon May 01 19:15:39.066081 2023] [mpm_prefork:notice] [pid 1619] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Mon May 01 19:15:39.066351 2023] [core:notice] [pid 1619] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Tue May 02 18:12:51.199381 2023] [php:error] [pid 1625] [client ::1:59047] script '/Applications/XAMPP/xamppfiles/htdocs/PHP/Condicionales.php.php' not found or unable to stat
+[Tue May 02 18:19:43.668392 2023] [php:error] [pid 1624] [client ::1:59130] script '/Applications/XAMPP/xamppfiles/htdocs/PHP/ejercicio1.php' not found or unable to stat
+[Tue May 02 18:22:00.731327 2023] [php:error] [pid 2171] [client ::1:59149] script '/Applications/XAMPP/xamppfiles/htdocs/PHP/ejercicio1.php' not found or unable to stat
+[Wed May 03 13:17:55.480608 2023] [mpm_prefork:notice] [pid 1619] AH00169: caught SIGTERM, shutting down
+[Wed May 03 13:28:08.967873 2023] [ssl:warn] [pid 78314] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 03 13:28:08.968269 2023] [ssl:warn] [pid 78314] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 03 13:28:09.108603 2023] [ssl:warn] [pid 78315] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed May 03 13:28:09.108739 2023] [ssl:warn] [pid 78315] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 03 13:28:09.109160 2023] [lbmethod_heartbeat:notice] [pid 78315] AH02282: No slotmem from mod_heartmonitor
+[Wed May 03 13:28:09.174916 2023] [mpm_prefork:notice] [pid 78315] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Wed May 03 13:28:09.174988 2023] [core:notice] [pid 78315] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Tue May 09 18:37:04.367892 2023] [mpm_prefork:notice] [pid 78315] AH00169: caught SIGTERM, shutting down
+[Tue May 09 18:38:49.920244 2023] [ssl:warn] [pid 2277] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue May 09 18:38:49.920795 2023] [ssl:warn] [pid 2277] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue May 09 18:38:50.109795 2023] [ssl:warn] [pid 2278] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue May 09 18:38:50.109956 2023] [ssl:warn] [pid 2278] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Tue May 09 18:38:50.110222 2023] [lbmethod_heartbeat:notice] [pid 2278] AH02282: No slotmem from mod_heartmonitor
+[Tue May 09 18:38:50.190926 2023] [mpm_prefork:notice] [pid 2278] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Tue May 09 18:38:50.191090 2023] [core:notice] [pid 2278] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sat May 13 11:56:36.098346 2023] [php:error] [pid 2904] [client ::1:53574] script '/Applications/XAMPP/xamppfiles/htdocs/php/usuario_guardar.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_new
+[Fri May 19 17:58:48.146298 2023] [mpm_prefork:notice] [pid 2278] AH00169: caught SIGTERM, shutting down
+[Fri May 19 18:01:22.813023 2023] [ssl:warn] [pid 2135] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri May 19 18:01:22.813745 2023] [ssl:warn] [pid 2135] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri May 19 18:01:23.060060 2023] [ssl:warn] [pid 2137] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri May 19 18:01:23.060248 2023] [ssl:warn] [pid 2137] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri May 19 18:01:23.061151 2023] [lbmethod_heartbeat:notice] [pid 2137] AH02282: No slotmem from mod_heartmonitor
+[Fri May 19 18:01:23.144734 2023] [mpm_prefork:notice] [pid 2137] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Fri May 19 18:01:23.144850 2023] [core:notice] [pid 2137] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Wed May 24 13:38:24.701770 2023] [php:error] [pid 2144] [client ::1:62986] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:38:27.998664 2023] [php:error] [pid 2144] [client ::1:62986] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:38:29.951385 2023] [php:error] [pid 2144] [client ::1:62986] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:38:31.349302 2023] [php:error] [pid 2144] [client ::1:62986] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:39:52.284709 2023] [php:error] [pid 55327] [client ::1:63000] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:41:33.163351 2023] [php:error] [pid 2315] [client ::1:63038] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:41:35.626782 2023] [php:error] [pid 2315] [client ::1:63038] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:41:39.377371 2023] [php:error] [pid 2315] [client ::1:63038] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:48:44.440466 2023] [php:error] [pid 55326] [client ::1:63071] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:48:55.245235 2023] [php:error] [pid 55326] [client ::1:63071] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:48:58.820944 2023] [php:error] [pid 55326] [client ::1:63071] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:49:02.989392 2023] [php:error] [pid 55326] [client ::1:63071] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 13:50:54.171455 2023] [php:error] [pid 97450] [client ::1:63102] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 14:11:38.847244 2023] [php:error] [pid 2330] [client ::1:63389] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 14:11:53.076768 2023] [php:error] [pid 2145] [client ::1:63390] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 14:11:59.307321 2023] [php:error] [pid 2145] [client ::1:63390] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 14:15:23.875485 2023] [php:error] [pid 2331] [client ::1:63411] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 14:15:54.607766 2023] [php:error] [pid 2144] [client ::1:63417] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 14:17:09.277692 2023] [php:error] [pid 2146] [client ::1:63427] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 14:30:57.716442 2023] [php:error] [pid 2330] [client ::1:63535] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 14:30:59.515862 2023] [php:error] [pid 2330] [client ::1:63535] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 14:31:10.097809 2023] [php:error] [pid 2330] [client ::1:63535] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 14:59:02.355139 2023] [php:error] [pid 55327] [client ::1:63780] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 15:50:00.749242 2023] [php:error] [pid 2144] [client ::1:64149] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list&=1
+[Wed May 24 15:50:03.863804 2023] [php:error] [pid 2144] [client ::1:64149] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list&=1
+[Wed May 24 15:54:12.699076 2023] [php:error] [pid 2145] [client ::1:64193] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 15:54:55.213708 2023] [php:error] [pid 2330] [client ::1:64203] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 15:57:04.371471 2023] [php:error] [pid 2330] [client ::1:64219] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 15:57:08.192552 2023] [php:error] [pid 2330] [client ::1:64219] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 15:57:12.011330 2023] [php:error] [pid 2330] [client ::1:64219] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 15:57:15.781637 2023] [php:error] [pid 2330] [client ::1:64219] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Wed May 24 15:57:19.379433 2023] [php:error] [pid 2330] [client ::1:64219] script '/Applications/XAMPP/xamppfiles/htdocs/inventario/inde.php' not found or unable to stat, referer: http://localhost/inventario/index.php?vista=user_list
+[Sat May 27 17:14:06.486120 2023] [mpm_prefork:notice] [pid 2137] AH00169: caught SIGTERM, shutting down
+[Sat May 27 17:36:11.191190 2023] [ssl:warn] [pid 4195] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat May 27 17:36:11.191860 2023] [ssl:warn] [pid 4195] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sat May 27 17:36:11.366305 2023] [ssl:warn] [pid 4196] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat May 27 17:36:11.366346 2023] [ssl:warn] [pid 4196] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sat May 27 17:36:11.366616 2023] [lbmethod_heartbeat:notice] [pid 4196] AH02282: No slotmem from mod_heartmonitor
+[Sat May 27 17:36:11.436488 2023] [mpm_prefork:notice] [pid 4196] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Sat May 27 17:36:11.436558 2023] [core:notice] [pid 4196] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sun May 28 19:53:00.648603 2023] [mpm_prefork:notice] [pid 4196] AH00169: caught SIGTERM, shutting down
+[Sun May 28 19:54:29.758301 2023] [ssl:warn] [pid 2286] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun May 28 19:54:29.759276 2023] [ssl:warn] [pid 2286] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun May 28 19:54:29.968327 2023] [ssl:warn] [pid 2288] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun May 28 19:54:29.968371 2023] [ssl:warn] [pid 2288] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun May 28 19:54:29.970559 2023] [lbmethod_heartbeat:notice] [pid 2288] AH02282: No slotmem from mod_heartmonitor
+[Sun May 28 19:54:30.039753 2023] [mpm_prefork:notice] [pid 2288] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Sun May 28 19:54:30.039986 2023] [core:notice] [pid 2288] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Thu Jun 08 15:11:43.509142 2023] [mpm_prefork:notice] [pid 2288] AH00169: caught SIGTERM, shutting down
+[Thu Jun 08 18:31:43.351257 2023] [ssl:warn] [pid 30177] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Jun 08 18:31:43.351674 2023] [ssl:warn] [pid 30177] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Jun 08 18:31:43.520521 2023] [ssl:warn] [pid 30178] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Jun 08 18:31:43.520575 2023] [ssl:warn] [pid 30178] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Jun 08 18:31:43.520915 2023] [lbmethod_heartbeat:notice] [pid 30178] AH02282: No slotmem from mod_heartmonitor
+[Thu Jun 08 18:31:43.584175 2023] [mpm_prefork:notice] [pid 30178] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Thu Jun 08 18:31:43.584247 2023] [core:notice] [pid 30178] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Wed Jun 14 09:09:49.348791 2023] [mpm_prefork:notice] [pid 30178] AH00169: caught SIGTERM, shutting down
+[Sat Jun 24 10:11:58.950980 2023] [ssl:warn] [pid 99158] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 24 10:11:58.951572 2023] [ssl:warn] [pid 99158] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 24 10:11:59.203222 2023] [ssl:warn] [pid 99162] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sat Jun 24 10:11:59.203405 2023] [ssl:warn] [pid 99162] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sat Jun 24 10:11:59.203779 2023] [lbmethod_heartbeat:notice] [pid 99162] AH02282: No slotmem from mod_heartmonitor
+[Sat Jun 24 10:11:59.253353 2023] [mpm_prefork:notice] [pid 99162] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Sat Jun 24 10:11:59.253477 2023] [core:notice] [pid 99162] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sat Jun 24 15:31:59.110528 2023] [mpm_prefork:notice] [pid 99162] AH00169: caught SIGTERM, shutting down
+[Mon Jul 17 14:27:10.445011 2023] [ssl:warn] [pid 17833] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Jul 17 14:27:10.445353 2023] [ssl:warn] [pid 17833] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Jul 17 14:27:10.607543 2023] [ssl:warn] [pid 17901] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Jul 17 14:27:10.607582 2023] [ssl:warn] [pid 17901] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Jul 17 14:27:10.607800 2023] [lbmethod_heartbeat:notice] [pid 17901] AH02282: No slotmem from mod_heartmonitor
+[Mon Jul 17 14:27:10.637957 2023] [mpm_prefork:notice] [pid 17901] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Mon Jul 17 14:27:10.638033 2023] [core:notice] [pid 17901] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Thu Aug 03 12:45:08.561156 2023] [ssl:warn] [pid 1622] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Aug 03 12:45:08.561479 2023] [ssl:warn] [pid 1622] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Aug 03 12:45:08.728860 2023] [ssl:warn] [pid 1623] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Aug 03 12:45:08.728895 2023] [ssl:warn] [pid 1623] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Aug 03 12:45:08.729111 2023] [lbmethod_heartbeat:notice] [pid 1623] AH02282: No slotmem from mod_heartmonitor
+[Thu Aug 03 12:45:08.789327 2023] [mpm_prefork:notice] [pid 1623] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Thu Aug 03 12:45:08.789386 2023] [core:notice] [pid 1623] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Mon Aug 07 18:41:50.336363 2023] [ssl:warn] [pid 30035] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Aug 07 18:41:50.336764 2023] [ssl:warn] [pid 30035] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Aug 07 18:41:50.503076 2023] [ssl:warn] [pid 30036] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Aug 07 18:41:50.503113 2023] [ssl:warn] [pid 30036] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Aug 07 18:41:50.503338 2023] [lbmethod_heartbeat:notice] [pid 30036] AH02282: No slotmem from mod_heartmonitor
+[Mon Aug 07 18:41:50.550283 2023] [mpm_prefork:notice] [pid 30036] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Mon Aug 07 18:41:50.550356 2023] [core:notice] [pid 30036] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Fri Aug 25 12:22:01.289067 2023] [ssl:warn] [pid 68412] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Aug 25 12:22:01.289425 2023] [ssl:warn] [pid 68412] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Aug 25 12:22:01.445420 2023] [ssl:warn] [pid 68413] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Aug 25 12:22:01.445463 2023] [ssl:warn] [pid 68413] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Aug 25 12:22:01.445695 2023] [lbmethod_heartbeat:notice] [pid 68413] AH02282: No slotmem from mod_heartmonitor
+[Fri Aug 25 12:22:01.492885 2023] [mpm_prefork:notice] [pid 68413] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Fri Aug 25 12:22:01.492947 2023] [core:notice] [pid 68413] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Thu Sep 07 11:13:49.906624 2023] [ssl:warn] [pid 2646] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Sep 07 11:13:49.907033 2023] [ssl:warn] [pid 2646] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Sep 07 11:13:50.062457 2023] [ssl:warn] [pid 2647] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Sep 07 11:13:50.062615 2023] [ssl:warn] [pid 2647] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Sep 07 11:13:50.062858 2023] [lbmethod_heartbeat:notice] [pid 2647] AH02282: No slotmem from mod_heartmonitor
+[Thu Sep 07 11:13:50.113063 2023] [mpm_prefork:notice] [pid 2647] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Thu Sep 07 11:13:50.113124 2023] [core:notice] [pid 2647] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Fri Sep 15 11:51:41.697798 2023] [mpm_prefork:notice] [pid 2647] AH00169: caught SIGTERM, shutting down
+[Fri Sep 15 11:53:55.086060 2023] [ssl:warn] [pid 65800] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Sep 15 11:53:55.086618 2023] [ssl:warn] [pid 65800] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Sep 15 11:53:55.248383 2023] [ssl:warn] [pid 65801] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Sep 15 11:53:55.248428 2023] [ssl:warn] [pid 65801] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Sep 15 11:53:55.249015 2023] [lbmethod_heartbeat:notice] [pid 65801] AH02282: No slotmem from mod_heartmonitor
+[Fri Sep 15 11:53:55.306338 2023] [mpm_prefork:notice] [pid 65801] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Fri Sep 15 11:53:55.306399 2023] [core:notice] [pid 65801] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Wed Sep 20 11:55:56.598683 2023] [autoindex:error] [pid 65809] [client ::1:51407] AH01276: Cannot serve directory /Applications/XAMPP/xamppfiles/htdocs/ventas/config/: No matching DirectoryIndex (index.html,index.html.var,index.php,index.php3,index.php4) found, and server-generated directory index forbidden by Options directive
+[Wed Sep 20 13:03:49.444230 2023] [mpm_prefork:notice] [pid 65801] AH00169: caught SIGTERM, shutting down
+[Wed Sep 20 13:03:54.196826 2023] [ssl:warn] [pid 81057] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Sep 20 13:03:54.197058 2023] [ssl:warn] [pid 81057] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Sep 20 13:03:54.349632 2023] [ssl:warn] [pid 81058] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Sep 20 13:03:54.349674 2023] [ssl:warn] [pid 81058] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Sep 20 13:03:54.350179 2023] [lbmethod_heartbeat:notice] [pid 81058] AH02282: No slotmem from mod_heartmonitor
+[Wed Sep 20 13:03:54.411739 2023] [mpm_prefork:notice] [pid 81058] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Wed Sep 20 13:03:54.411952 2023] [core:notice] [pid 81058] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Wed Sep 20 13:05:24.641301 2023] [mpm_prefork:notice] [pid 81058] AH00169: caught SIGTERM, shutting down
+[Wed Sep 20 13:05:47.181718 2023] [ssl:warn] [pid 81564] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Sep 20 13:05:47.182171 2023] [ssl:warn] [pid 81564] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Sep 20 13:05:47.317351 2023] [ssl:warn] [pid 81565] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Sep 20 13:05:47.317394 2023] [ssl:warn] [pid 81565] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Sep 20 13:05:47.317597 2023] [lbmethod_heartbeat:notice] [pid 81565] AH02282: No slotmem from mod_heartmonitor
+[Wed Sep 20 13:05:47.378287 2023] [mpm_prefork:notice] [pid 81565] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Wed Sep 20 13:05:47.378357 2023] [core:notice] [pid 81565] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sun Oct 01 13:37:51.255424 2023] [ssl:warn] [pid 3344] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 01 13:37:51.255817 2023] [ssl:warn] [pid 3344] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 01 13:37:51.425168 2023] [ssl:warn] [pid 3346] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 01 13:37:51.425211 2023] [ssl:warn] [pid 3346] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 01 13:37:51.425422 2023] [lbmethod_heartbeat:notice] [pid 3346] AH02282: No slotmem from mod_heartmonitor
+[Sun Oct 01 13:37:51.479377 2023] [mpm_prefork:notice] [pid 3346] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Sun Oct 01 13:37:51.479443 2023] [core:notice] [pid 3346] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sun Oct 01 13:42:07.852714 2023] [mpm_prefork:notice] [pid 3346] AH00169: caught SIGTERM, shutting down
+[Sun Oct 01 13:42:49.738658 2023] [ssl:warn] [pid 5927] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 01 13:42:49.739085 2023] [ssl:warn] [pid 5927] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 01 13:42:49.885590 2023] [ssl:warn] [pid 5929] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 01 13:42:49.885632 2023] [ssl:warn] [pid 5929] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 01 13:42:49.885836 2023] [lbmethod_heartbeat:notice] [pid 5929] AH02282: No slotmem from mod_heartmonitor
+[Sun Oct 01 13:42:49.935350 2023] [mpm_prefork:notice] [pid 5929] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Sun Oct 01 13:42:49.935415 2023] [core:notice] [pid 5929] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sun Oct 01 13:54:33.582672 2023] [mpm_prefork:notice] [pid 5929] AH00169: caught SIGTERM, shutting down
+[Sun Oct 01 13:55:04.817902 2023] [ssl:warn] [pid 8587] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 01 13:55:04.818383 2023] [ssl:warn] [pid 8587] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 01 13:55:04.962982 2023] [ssl:warn] [pid 8588] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 01 13:55:04.963026 2023] [ssl:warn] [pid 8588] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 01 13:55:04.963222 2023] [lbmethod_heartbeat:notice] [pid 8588] AH02282: No slotmem from mod_heartmonitor
+[Sun Oct 01 13:55:05.014675 2023] [mpm_prefork:notice] [pid 8588] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Sun Oct 01 13:55:05.014922 2023] [core:notice] [pid 8588] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sun Oct 01 13:56:12.159997 2023] [mpm_prefork:notice] [pid 8588] AH00169: caught SIGTERM, shutting down
+[Sun Oct 01 13:57:39.661076 2023] [ssl:warn] [pid 1681] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 01 13:57:39.661622 2023] [ssl:warn] [pid 1681] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 01 13:57:39.880760 2023] [ssl:warn] [pid 1682] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 01 13:57:39.880803 2023] [ssl:warn] [pid 1682] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 01 13:57:39.881049 2023] [lbmethod_heartbeat:notice] [pid 1682] AH02282: No slotmem from mod_heartmonitor
+[Sun Oct 01 13:57:39.956256 2023] [mpm_prefork:notice] [pid 1682] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Sun Oct 01 13:57:39.956348 2023] [core:notice] [pid 1682] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sun Oct 01 18:18:50.679057 2023] [php:notice] [pid 1689] [client 127.0.0.1:53428] esto es una prueba de error
+[Sun Oct 01 18:19:10.990725 2023] [php:notice] [pid 1687] [client 127.0.0.1:53431] esto es una prueba de error
+[Sun Oct 01 18:19:19.962371 2023] [php:notice] [pid 1686] [client 127.0.0.1:53432] esto es una prueba de error
+[Sun Oct 01 18:19:45.426222 2023] [php:notice] [pid 2098] [client 127.0.0.1:53435] esto es una prueba de error
+[Sun Oct 01 18:19:53.110380 2023] [php:notice] [pid 2103] [client 127.0.0.1:53437] esto es una prueba de error
+[Sun Oct 01 18:20:12.240852 2023] [php:notice] [pid 2104] [client 127.0.0.1:53439] esto es una prueba de error
+[Sun Oct 01 18:20:39.730360 2023] [php:notice] [pid 1690] [client 127.0.0.1:53442] esto es una prueba de error
+[Sun Oct 01 18:20:49.884281 2023] [php:notice] [pid 1688] [client 127.0.0.1:53443] esto es una prueba de error
+[Sun Oct 01 18:20:53.712016 2023] [php:notice] [pid 1689] [client 127.0.0.1:53445] esto es una prueba de error
+[Sun Oct 01 18:20:54.022390 2023] [php:notice] [pid 1687] [client 127.0.0.1:53446] esto es una prueba de error
+[Sun Oct 01 18:20:54.236794 2023] [php:notice] [pid 1686] [client 127.0.0.1:53447] esto es una prueba de error
+[Sun Oct 01 18:21:16.840087 2023] [php:notice] [pid 2098] [client 127.0.0.1:53449] esto es una prueba de error
+[Sun Oct 01 18:21:38.830973 2023] [php:notice] [pid 2103] [client 127.0.0.1:53451] esto es una prueba de error
+[Sun Oct 01 18:21:49.093482 2023] [php:notice] [pid 1690] [client 127.0.0.1:53452] esto es una prueba de error
+[Sun Oct 01 18:22:13.147156 2023] [php:notice] [pid 2104] [client 127.0.0.1:53455] esto es una prueba de error
+[Sun Oct 01 18:22:17.888557 2023] [php:notice] [pid 1688] [client 127.0.0.1:53456] esto es una prueba de error
+[Sun Oct 01 18:22:21.141132 2023] [php:notice] [pid 1687] [client 127.0.0.1:53457] esto es una prueba de error
+[Sun Oct 01 18:22:21.756426 2023] [php:notice] [pid 1686] [client 127.0.0.1:53458] esto es una prueba de error
+[Sun Oct 01 18:22:22.034166 2023] [php:notice] [pid 1689] [client 127.0.0.1:53459] esto es una prueba de error
+[Sun Oct 01 18:22:22.222209 2023] [php:notice] [pid 2098] [client 127.0.0.1:53460] esto es una prueba de error
+[Sun Oct 01 18:22:22.368623 2023] [php:notice] [pid 2103] [client 127.0.0.1:53461] esto es una prueba de error
+[Sun Oct 01 18:23:40.956537 2023] [php:notice] [pid 1690] [client 127.0.0.1:53465] esto es una prueba de error
+[Sun Oct 01 18:24:56.641173 2023] [php:notice] [pid 2104] [client 127.0.0.1:53472] esto es una prueba de error
+[Sun Oct 01 18:25:14.214038 2023] [php:notice] [pid 1688] [client 127.0.0.1:53476] esto es una prueba de error
+[Sun Oct 01 18:25:16.860270 2023] [php:notice] [pid 1686] [client 127.0.0.1:53477] esto es una prueba de error
+[Sun Oct 01 18:25:17.149142 2023] [php:notice] [pid 1689] [client 127.0.0.1:53478] esto es una prueba de error
+[Sun Oct 01 18:25:17.345001 2023] [php:notice] [pid 2104] [client 127.0.0.1:53479] esto es una prueba de error
+[Sun Oct 01 18:25:17.513398 2023] [php:notice] [pid 1690] [client 127.0.0.1:53480] esto es una prueba de error
+[Sun Oct 01 18:25:17.680426 2023] [php:notice] [pid 1687] [client 127.0.0.1:53481] esto es una prueba de error
+[Sun Oct 01 18:25:17.828650 2023] [php:notice] [pid 2103] [client 127.0.0.1:53482] esto es una prueba de error
+[Sun Oct 01 18:25:18.394215 2023] [php:notice] [pid 1689] [client 127.0.0.1:53483] esto es una prueba de error
+[Sun Oct 01 18:25:18.559899 2023] [php:notice] [pid 2104] [client 127.0.0.1:53484] esto es una prueba de error
+[Sun Oct 01 18:25:18.706758 2023] [php:notice] [pid 1690] [client 127.0.0.1:53485] esto es una prueba de error
+[Sun Oct 01 18:25:18.838834 2023] [php:notice] [pid 1688] [client 127.0.0.1:53486] esto es una prueba de error
+[Sun Oct 01 18:25:18.976305 2023] [php:notice] [pid 2098] [client 127.0.0.1:53487] esto es una prueba de error
+[Sun Oct 01 18:25:19.109114 2023] [php:notice] [pid 1686] [client 127.0.0.1:53488] esto es una prueba de error
+[Sun Oct 01 18:25:19.255500 2023] [php:notice] [pid 1687] [client 127.0.0.1:53489] esto es una prueba de error
+[Sun Oct 01 18:25:19.390334 2023] [php:notice] [pid 2103] [client 127.0.0.1:53490] esto es una prueba de error
+[Sun Oct 01 18:25:19.524794 2023] [php:notice] [pid 1689] [client 127.0.0.1:53491] esto es una prueba de error
+[Sun Oct 01 18:25:19.640525 2023] [php:notice] [pid 2104] [client 127.0.0.1:53492] esto es una prueba de error
+[Sun Oct 01 18:25:19.772632 2023] [php:notice] [pid 1690] [client 127.0.0.1:53493] esto es una prueba de error
+[Sun Oct 01 18:25:19.892719 2023] [php:notice] [pid 1688] [client 127.0.0.1:53494] esto es una prueba de error
+[Sun Oct 01 18:25:20.006006 2023] [php:notice] [pid 2098] [client 127.0.0.1:53495] esto es una prueba de error
+[Sun Oct 01 18:25:20.125345 2023] [php:notice] [pid 1687] [client 127.0.0.1:53496] esto es una prueba de error
+[Sun Oct 01 18:25:20.243195 2023] [php:notice] [pid 2103] [client 127.0.0.1:53497] esto es una prueba de error
+[Sun Oct 01 18:25:20.360842 2023] [php:notice] [pid 1689] [client 127.0.0.1:53498] esto es una prueba de error
+[Sun Oct 01 18:25:20.472426 2023] [php:notice] [pid 2104] [client 127.0.0.1:53499] esto es una prueba de error
+[Sun Oct 01 18:25:20.590933 2023] [php:notice] [pid 1690] [client 127.0.0.1:53500] esto es una prueba de error
+[Sun Oct 01 18:25:20.727920 2023] [php:notice] [pid 1688] [client 127.0.0.1:53501] esto es una prueba de error
+[Sun Oct 01 18:25:20.843142 2023] [php:notice] [pid 1686] [client 127.0.0.1:53502] esto es una prueba de error
+[Sun Oct 01 18:25:20.973036 2023] [php:notice] [pid 2098] [client 127.0.0.1:53503] esto es una prueba de error
+[Sun Oct 01 18:25:21.089808 2023] [php:notice] [pid 1687] [client 127.0.0.1:53504] esto es una prueba de error
+[Sun Oct 01 18:25:21.210837 2023] [php:notice] [pid 2103] [client 127.0.0.1:53505] esto es una prueba de error
+[Sun Oct 01 18:25:21.328772 2023] [php:notice] [pid 1689] [client 127.0.0.1:53506] esto es una prueba de error
+[Sun Oct 01 18:25:21.456833 2023] [php:notice] [pid 1690] [client 127.0.0.1:53507] esto es una prueba de error
+[Sun Oct 01 18:25:21.590930 2023] [php:notice] [pid 2104] [client 127.0.0.1:53508] esto es una prueba de error
+[Sun Oct 01 18:25:21.723773 2023] [php:notice] [pid 1688] [client 127.0.0.1:53509] esto es una prueba de error
+[Sun Oct 01 18:25:37.920991 2023] [php:notice] [pid 1686] [client 127.0.0.1:53511] esto es una prueba de error
+[Sun Oct 01 18:27:54.514344 2023] [php:notice] [pid 2098] [client 127.0.0.1:53519] esto es una prueba de error
+[Sun Oct 01 18:34:32.417048 2023] [php:notice] [pid 1687] [client 127.0.0.1:53595] esto es una prueba de error
+[Sun Oct 01 18:34:37.828384 2023] [php:notice] [pid 2103] [client 127.0.0.1:53597] esto es una prueba de error
+[Sun Oct 01 18:34:38.401972 2023] [php:notice] [pid 1689] [client 127.0.0.1:53598] esto es una prueba de error
+[Sun Oct 01 18:34:38.718424 2023] [php:notice] [pid 1690] [client 127.0.0.1:53599] esto es una prueba de error
+[Sun Oct 01 18:35:21.224285 2023] [php:notice] [pid 1687] [client 127.0.0.1:53611] esto es una prueba de error
+[Sun Oct 01 18:38:13.953248 2023] [mpm_prefork:notice] [pid 1682] AH00169: caught SIGTERM, shutting down
+[Sun Oct 01 18:38:38.029999 2023] [ssl:warn] [pid 28316] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 01 18:38:38.030358 2023] [ssl:warn] [pid 28316] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 01 18:38:38.169418 2023] [ssl:warn] [pid 28317] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 01 18:38:38.169461 2023] [ssl:warn] [pid 28317] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 01 18:38:38.169662 2023] [lbmethod_heartbeat:notice] [pid 28317] AH02282: No slotmem from mod_heartmonitor
+[Sun Oct 01 18:38:38.236456 2023] [mpm_prefork:notice] [pid 28317] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Sun Oct 01 18:38:38.236532 2023] [core:notice] [pid 28317] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sun Oct 01 18:39:46.782975 2023] [php:notice] [pid 28324] [client 127.0.0.1:53685] esto es una prueba de error
+[Sun Oct 01 18:40:00.763272 2023] [php:notice] [pid 28325] [client ::1:53688] esto es una prueba de error
+[Sun Oct 01 18:40:20.756644 2023] [php:notice] [pid 28323] [client ::1:53694] esto es una prueba de error
+[Sun Oct 01 18:40:57.869390 2023] [php:notice] [pid 28325] [client 127.0.0.1:53698] esto es una prueba de error
+[Sun Oct 01 18:40:59.536975 2023] [php:notice] [pid 28422] [client 127.0.0.1:53699] esto es una prueba de error
+[Sun Oct 01 18:41:00.000227 2023] [php:notice] [pid 28423] [client 127.0.0.1:53700] esto es una prueba de error
+[Sun Oct 01 18:41:00.321780 2023] [php:notice] [pid 28424] [client 127.0.0.1:53701] esto es una prueba de error
+[Sun Oct 01 18:41:00.515469 2023] [php:notice] [pid 28321] [client 127.0.0.1:53702] esto es una prueba de error
+[Sun Oct 01 18:41:00.770021 2023] [php:notice] [pid 28322] [client 127.0.0.1:53703] esto es una prueba de error
+[Sun Oct 01 18:41:58.126266 2023] [php:notice] [pid 28325] [client 127.0.0.1:53714] esto es una prueba de error
+[Sun Oct 01 18:42:19.947500 2023] [php:notice] [pid 28422] [client ::1:53721] esto es una prueba de error
+[Sun Oct 01 18:43:01.895105 2023] [php:notice] [pid 28424] [client 127.0.0.1:53725] esto es una prueba de error
+[Sun Oct 01 18:43:02.650933 2023] [php:notice] [pid 28321] [client 127.0.0.1:53726] esto es una prueba de error
+[Sun Oct 01 18:43:43.125490 2023] [php:notice] [pid 28322] [client ::1:53739] esto es una prueba de error
+[Sun Oct 01 18:43:43.245691 2023] [php:notice] [pid 28325] [client ::1:53740] esto es una prueba de error
+[Sun Oct 01 18:43:43.405522 2023] [php:notice] [pid 28422] [client ::1:53741] esto es una prueba de error
+[Sun Oct 01 18:43:43.544579 2023] [php:notice] [pid 28423] [client ::1:53742] esto es una prueba de error
+[Sun Oct 01 18:43:43.664975 2023] [php:notice] [pid 28424] [client ::1:53743] esto es una prueba de error
+[Sun Oct 01 18:45:14.161711 2023] [php:notice] [pid 28323] [client 127.0.0.1:53755] esto es una prueba de error
+[Sun Oct 01 18:46:56.117601 2023] [php:notice] [pid 28325] [client 127.0.0.1:53787] esto es una prueba de error
+[Sun Oct 01 18:47:51.885974 2023] [php:notice] [pid 28324] [client 127.0.0.1:53837] esto es una prueba de error
+[Sun Oct 01 18:47:52.499831 2023] [php:notice] [pid 28322] [client 127.0.0.1:53840] esto es una prueba de error
+[Sun Oct 01 18:47:52.681223 2023] [php:notice] [pid 28422] [client 127.0.0.1:53841] esto es una prueba de error
+[Sun Oct 01 18:47:52.864882 2023] [php:notice] [pid 28423] [client 127.0.0.1:53842] esto es una prueba de error
+[Sun Oct 01 18:47:53.034120 2023] [php:notice] [pid 28424] [client 127.0.0.1:53843] esto es una prueba de error
+[Sun Oct 01 18:47:53.196384 2023] [php:notice] [pid 28321] [client 127.0.0.1:53844] esto es una prueba de error
+[Sun Oct 01 18:47:53.332325 2023] [php:notice] [pid 28323] [client 127.0.0.1:53845] esto es una prueba de error
+[Sun Oct 01 18:47:53.515429 2023] [php:notice] [pid 28325] [client 127.0.0.1:53846] esto es una prueba de error
+[Sun Oct 01 18:47:53.659331 2023] [php:notice] [pid 28324] [client 127.0.0.1:53847] esto es una prueba de error
+[Sun Oct 01 18:47:53.846636 2023] [php:notice] [pid 28422] [client 127.0.0.1:53848] esto es una prueba de error
+[Sun Oct 01 18:47:54.025917 2023] [php:notice] [pid 28322] [client 127.0.0.1:53849] esto es una prueba de error
+[Sun Oct 01 18:57:06.857597 2023] [php:notice] [pid 28423] [client 127.0.0.1:53931] esto es una prueba de error
+[Sun Oct 01 18:57:44.469762 2023] [php:notice] [pid 28424] [client 127.0.0.1:53936] esto es una prueba de error
+[Sun Oct 01 18:57:45.143904 2023] [php:notice] [pid 28321] [client 127.0.0.1:53937] esto es una prueba de error
+[Sun Oct 01 18:57:45.406850 2023] [php:notice] [pid 28323] [client 127.0.0.1:53938] esto es una prueba de error
+[Sun Oct 01 18:57:45.571072 2023] [php:notice] [pid 28325] [client 127.0.0.1:53939] esto es una prueba de error
+[Sun Oct 01 18:58:51.793068 2023] [php:notice] [pid 28424] [client 127.0.0.1:53951] esto es una prueba de error
+[Sun Oct 01 18:58:52.875986 2023] [php:notice] [pid 28321] [client 127.0.0.1:53952] esto es una prueba de error
+[Sun Oct 01 18:58:53.071618 2023] [php:notice] [pid 28323] [client 127.0.0.1:53953] esto es una prueba de error
+[Sun Oct 01 18:58:53.254851 2023] [php:notice] [pid 28325] [client 127.0.0.1:53954] esto es una prueba de error
+[Sun Oct 01 18:58:53.407421 2023] [php:notice] [pid 28324] [client 127.0.0.1:53955] esto es una prueba de error
+[Sun Oct 01 18:58:53.541748 2023] [php:notice] [pid 28322] [client 127.0.0.1:53956] esto es una prueba de error
+[Sun Oct 01 18:58:53.722564 2023] [php:notice] [pid 28422] [client 127.0.0.1:53957] esto es una prueba de error
+[Sun Oct 01 18:58:53.871542 2023] [php:notice] [pid 28423] [client 127.0.0.1:53958] esto es una prueba de error
+[Sun Oct 01 18:58:54.031347 2023] [php:notice] [pid 28424] [client 127.0.0.1:53959] esto es una prueba de error
+[Sun Oct 01 18:59:02.994414 2023] [php:notice] [pid 28321] [client 127.0.0.1:53960] 
+[Sun Oct 01 18:59:03.639396 2023] [php:notice] [pid 28325] [client 127.0.0.1:53961] 
+[Sun Oct 01 18:59:03.822528 2023] [php:notice] [pid 28324] [client 127.0.0.1:53962] 
+[Sun Oct 01 18:59:07.820411 2023] [php:notice] [pid 28323] [client ::1:53964] 
+[Sun Oct 01 18:59:24.392435 2023] [php:notice] [pid 28422] [client 127.0.0.1:53967] 
+[Sun Oct 01 18:59:43.966431 2023] [php:notice] [pid 28423] [client 127.0.0.1:53969] 
+[Sun Oct 01 19:01:26.736992 2023] [php:warn] [pid 28424] [client 127.0.0.1:53977] PHP Warning:  error_log(./Logs/php-error-log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:31.003727 2023] [php:warn] [pid 28321] [client 127.0.0.1:53978] PHP Warning:  error_log(./Logs/php-error-log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:31.424520 2023] [php:warn] [pid 28325] [client 127.0.0.1:53979] PHP Warning:  error_log(./Logs/php-error-log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:31.606015 2023] [php:warn] [pid 28324] [client 127.0.0.1:53980] PHP Warning:  error_log(./Logs/php-error-log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:31.739328 2023] [php:warn] [pid 28323] [client 127.0.0.1:53981] PHP Warning:  error_log(./Logs/php-error-log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:31.867127 2023] [php:warn] [pid 28322] [client 127.0.0.1:53982] PHP Warning:  error_log(./Logs/php-error-log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:44.643770 2023] [php:warn] [pid 28422] [client 127.0.0.1:53984] PHP Warning:  error_log(./Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:45.271906 2023] [php:warn] [pid 28423] [client 127.0.0.1:53985] PHP Warning:  error_log(./Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:45.423184 2023] [php:warn] [pid 28424] [client 127.0.0.1:53986] PHP Warning:  error_log(./Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:54.195207 2023] [php:warn] [pid 28325] [client 127.0.0.1:53988] PHP Warning:  error_log(./Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:54.350251 2023] [php:warn] [pid 28321] [client 127.0.0.1:53989] PHP Warning:  error_log(./Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:54.510661 2023] [php:warn] [pid 28324] [client 127.0.0.1:53990] PHP Warning:  error_log(./Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:54.637217 2023] [php:warn] [pid 28323] [client 127.0.0.1:53991] PHP Warning:  error_log(./Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:54.748856 2023] [php:warn] [pid 28322] [client 127.0.0.1:53992] PHP Warning:  error_log(./Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:01:54.882698 2023] [php:warn] [pid 28423] [client 127.0.0.1:53993] PHP Warning:  error_log(./Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Sun Oct 01 19:02:56.965318 2023] [php:warn] [pid 28422] [client 127.0.0.1:54056] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Mon Oct 02 10:09:40.098796 2023] [php:warn] [pid 28423] [client ::1:57090] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:09:41.246270 2023] [php:warn] [pid 28424] [client ::1:57092] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:09:41.452584 2023] [php:warn] [pid 28325] [client ::1:57093] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:09:41.737685 2023] [php:warn] [pid 28324] [client ::1:57095] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:09:41.941378 2023] [php:warn] [pid 28321] [client ::1:57096] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:09:42.222986 2023] [php:warn] [pid 28322] [client ::1:57097] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:09:42.456556 2023] [php:warn] [pid 28422] [client ::1:57098] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:09:42.617414 2023] [php:warn] [pid 28323] [client ::1:57099] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:09:42.902746 2023] [php:warn] [pid 28423] [client ::1:57100] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:12:57.077075 2023] [php:warn] [pid 28422] [client ::1:57143] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:14:51.501857 2023] [php:warn] [pid 28321] [client ::1:57162] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:14:53.872842 2023] [php:warn] [pid 28424] [client ::1:57163] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:09.509477 2023] [php:warn] [pid 28323] [client ::1:57165] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:10.515898 2023] [php:warn] [pid 28423] [client ::1:57166] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:10.814505 2023] [php:warn] [pid 28422] [client ::1:57168] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:11.062207 2023] [php:warn] [pid 28324] [client ::1:57169] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:11.296597 2023] [php:warn] [pid 28321] [client ::1:57170] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:11.517510 2023] [php:warn] [pid 28424] [client ::1:57171] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:11.733169 2023] [php:warn] [pid 28322] [client ::1:57172] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:11.900400 2023] [php:warn] [pid 28323] [client ::1:57173] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:12.101562 2023] [php:warn] [pid 28423] [client ::1:57174] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:12.300586 2023] [php:warn] [pid 28325] [client ::1:57175] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:12.601126 2023] [php:warn] [pid 28422] [client ::1:57176] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:12.881031 2023] [php:warn] [pid 28324] [client ::1:57177] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:13.183207 2023] [php:warn] [pid 28321] [client ::1:57178] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:13.513310 2023] [php:warn] [pid 28424] [client ::1:57179] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:13.834178 2023] [php:warn] [pid 28322] [client ::1:57180] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:14.112699 2023] [php:warn] [pid 28323] [client ::1:57181] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:14.383260 2023] [php:warn] [pid 28423] [client ::1:57182] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:14.716323 2023] [php:warn] [pid 28325] [client ::1:57183] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:15.048240 2023] [php:warn] [pid 28422] [client ::1:57184] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:15.309941 2023] [php:warn] [pid 28324] [client ::1:57185] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:15.568103 2023] [php:warn] [pid 28321] [client ::1:57186] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:15.841495 2023] [php:warn] [pid 28322] [client ::1:57188] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:16.179492 2023] [php:warn] [pid 28323] [client ::1:57189] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:16.507501 2023] [php:warn] [pid 28423] [client ::1:57190] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:16.780488 2023] [php:warn] [pid 28325] [client ::1:57191] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:17.039886 2023] [php:warn] [pid 28422] [client ::1:57192] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:17.172271 2023] [php:warn] [pid 28324] [client ::1:57193] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:17.414900 2023] [php:warn] [pid 28321] [client ::1:57194] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:17.633833 2023] [php:warn] [pid 28424] [client ::1:57195] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:17.788595 2023] [php:warn] [pid 28322] [client ::1:57196] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:18.036629 2023] [php:warn] [pid 28323] [client ::1:57197] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:22.626419 2023] [php:warn] [pid 28325] [client ::1:57199] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:22.826909 2023] [php:warn] [pid 28422] [client ::1:57200] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:22.993935 2023] [php:warn] [pid 28324] [client ::1:57201] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:23.210526 2023] [php:warn] [pid 28321] [client ::1:57202] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:23.361745 2023] [php:warn] [pid 28424] [client ::1:57203] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:23.528038 2023] [php:warn] [pid 28322] [client ::1:57204] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:23.661790 2023] [php:warn] [pid 28323] [client ::1:57205] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:23.811230 2023] [php:warn] [pid 28423] [client ::1:57206] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:23.976252 2023] [php:warn] [pid 28325] [client ::1:57207] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:24.110828 2023] [php:warn] [pid 28422] [client ::1:57208] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:24.278285 2023] [php:warn] [pid 28324] [client ::1:57209] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:28.769395 2023] [php:warn] [pid 28424] [client ::1:57211] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:28.976269 2023] [php:warn] [pid 28322] [client ::1:57212] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:15:29.270009 2023] [php:warn] [pid 28323] [client ::1:57213] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:21:14.879990 2023] [php:warn] [pid 28322] [client 127.0.0.1:57348] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:21:18.618537 2023] [php:warn] [pid 28423] [client 127.0.0.1:57349] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:21:19.002226 2023] [php:warn] [pid 28325] [client 127.0.0.1:57350] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:21:19.236188 2023] [php:warn] [pid 28422] [client 127.0.0.1:57351] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:21:19.398689 2023] [php:warn] [pid 28323] [client 127.0.0.1:57352] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:21:19.531206 2023] [php:warn] [pid 28321] [client 127.0.0.1:57353] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:21:19.681828 2023] [php:warn] [pid 28424] [client 127.0.0.1:57354] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:22:40.041620 2023] [php:warn] [pid 28324] [client 127.0.0.1:57360] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:22:41.182126 2023] [php:warn] [pid 28423] [client 127.0.0.1:57361] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Mon Oct 02 10:22:41.365821 2023] [php:warn] [pid 28325] [client 127.0.0.1:57362] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Tue Oct 03 21:14:04.064923 2023] [php:warn] [pid 28422] [client ::1:49959] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 21
+[Fri Oct 06 13:18:23.135941 2023] [ssl:warn] [pid 1754] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Oct 06 13:18:23.139696 2023] [ssl:warn] [pid 1754] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Oct 06 13:18:23.828177 2023] [ssl:warn] [pid 1778] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Fri Oct 06 13:18:23.828394 2023] [ssl:warn] [pid 1778] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Fri Oct 06 13:18:23.828768 2023] [lbmethod_heartbeat:notice] [pid 1778] AH02282: No slotmem from mod_heartmonitor
+[Fri Oct 06 13:18:23.948701 2023] [mpm_prefork:notice] [pid 1778] AH00163: Apache/2.4.46 (Unix) OpenSSL/1.1.1i PHP/8.0.0 mod_perl/2.0.11 Perl/v5.32.0 configured -- resuming normal operations
+[Fri Oct 06 13:18:23.949169 2023] [core:notice] [pid 1778] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Sat Oct 07 13:18:26.786455 2023] [php:warn] [pid 1783] [client 127.0.0.1:51979] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:19:00.724475 2023] [php:warn] [pid 1784] [client 127.0.0.1:52122] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:19:20.104682 2023] [php:warn] [pid 1785] [client 127.0.0.1:52219] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:19:21.737513 2023] [php:warn] [pid 1781] [client 127.0.0.1:52224] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:19:22.234239 2023] [php:warn] [pid 1783] [client 127.0.0.1:52229] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:19:22.405281 2023] [php:warn] [pid 1784] [client 127.0.0.1:52230] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:19:30.634498 2023] [php:warn] [pid 1785] [client 127.0.0.1:52263] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:59:07.357551 2023] [php:warn] [pid 1782] [client 127.0.0.1:52621] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:59:14.251724 2023] [php:warn] [pid 1781] [client 127.0.0.1:52623] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:59:15.525856 2023] [php:warn] [pid 1783] [client 127.0.0.1:52625] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:59:25.277092 2023] [php:warn] [pid 1784] [client 127.0.0.1:52628] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:59:25.969232 2023] [php:warn] [pid 1785] [client 127.0.0.1:52629] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:59:26.293227 2023] [php:warn] [pid 1782] [client 127.0.0.1:52630] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:59:26.473973 2023] [php:warn] [pid 1781] [client 127.0.0.1:52631] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:59:39.520469 2023] [php:warn] [pid 1783] [client 127.0.0.1:52632] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:59:41.241889 2023] [php:warn] [pid 1784] [client 127.0.0.1:52634] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 13:59:41.445523 2023] [php:warn] [pid 1785] [client 127.0.0.1:52635] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:01:02.635607 2023] [php:warn] [pid 1784] [client 127.0.0.1:52643] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:01:08.793696 2023] [php:warn] [pid 1785] [client 127.0.0.1:52644] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:01:09.361497 2023] [php:warn] [pid 1782] [client 127.0.0.1:52645] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:01:09.611094 2023] [php:warn] [pid 1781] [client 127.0.0.1:52646] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:01:09.827934 2023] [php:warn] [pid 1783] [client 127.0.0.1:52647] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:01:10.091954 2023] [php:warn] [pid 1784] [client 127.0.0.1:52648] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:01:15.891247 2023] [php:warn] [pid 1785] [client 127.0.0.1:52651] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:01:16.356799 2023] [php:warn] [pid 1782] [client 127.0.0.1:52652] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:17.214263 2023] [php:warn] [pid 1781] [client 127.0.0.1:52655] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:17.794431 2023] [php:warn] [pid 1783] [client 127.0.0.1:52656] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:17.973340 2023] [php:warn] [pid 1784] [client 127.0.0.1:52657] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:18.159422 2023] [php:warn] [pid 1785] [client 127.0.0.1:52658] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:18.327112 2023] [php:warn] [pid 1782] [client 127.0.0.1:52659] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:18.739821 2023] [php:warn] [pid 1781] [client 127.0.0.1:52660] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:18.907263 2023] [php:warn] [pid 1783] [client 127.0.0.1:52661] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:19.075301 2023] [php:warn] [pid 1784] [client 127.0.0.1:52662] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:19.408139 2023] [php:warn] [pid 1785] [client 127.0.0.1:52663] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:25.758366 2023] [php:warn] [pid 1782] [client 127.0.0.1:52664] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:02:43.481107 2023] [php:warn] [pid 1781] [client 127.0.0.1:52667] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 14:03:50.159327 2023] [php:warn] [pid 1783] [client 127.0.0.1:52683] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sat Oct 07 16:36:12.579543 2023] [php:warn] [pid 1783] [client ::1:54492] PHP Warning:  error_log(/Logs/php-error.log): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/api/index.php on line 23
+[Sun Oct 08 12:19:31.108480 2023] [php:warn] [pid 1783] [client 127.0.0.1:56988] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60
+[Sun Oct 08 12:19:31.112019 2023] [php:error] [pid 1783] [client 127.0.0.1:56988] PHP Fatal error:  Uncaught TypeError: Firebase\\JWT\\JWT::decode(): Argument #1 ($jwt) must be of type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60 and defined in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php:96\nStack trace:\n#0 /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php(60): Firebase\\JWT\\JWT::decode(NULL, Object(Firebase\\JWT\\Key))\n#1 /Applications/XAMPP/xamppfiles/htdocs/API/src/Routes/auth.php(5): App\\Config\\Security::validateTokenJwt('83837849399292/...')\n#2 /Applications/XAMPP/xamppfiles/htdocs/api/index.php(28): require('/Applications/X...')\n#3 {main}\n  thrown in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php on line 96
+[Sun Oct 08 12:19:40.457747 2023] [php:warn] [pid 1785] [client 127.0.0.1:56989] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60
+[Sun Oct 08 12:19:40.459908 2023] [php:error] [pid 1785] [client 127.0.0.1:56989] PHP Fatal error:  Uncaught TypeError: Firebase\\JWT\\JWT::decode(): Argument #1 ($jwt) must be of type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60 and defined in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php:96\nStack trace:\n#0 /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php(60): Firebase\\JWT\\JWT::decode(NULL, Object(Firebase\\JWT\\Key))\n#1 /Applications/XAMPP/xamppfiles/htdocs/API/src/Routes/auth.php(5): App\\Config\\Security::validateTokenJwt('83837849399292/...')\n#2 /Applications/XAMPP/xamppfiles/htdocs/api/index.php(28): require('/Applications/X...')\n#3 {main}\n  thrown in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php on line 96
+[Sun Oct 08 12:19:41.247038 2023] [php:warn] [pid 1784] [client 127.0.0.1:56990] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60
+[Sun Oct 08 12:19:41.249492 2023] [php:error] [pid 1784] [client 127.0.0.1:56990] PHP Fatal error:  Uncaught TypeError: Firebase\\JWT\\JWT::decode(): Argument #1 ($jwt) must be of type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60 and defined in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php:96\nStack trace:\n#0 /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php(60): Firebase\\JWT\\JWT::decode(NULL, Object(Firebase\\JWT\\Key))\n#1 /Applications/XAMPP/xamppfiles/htdocs/API/src/Routes/auth.php(5): App\\Config\\Security::validateTokenJwt('83837849399292/...')\n#2 /Applications/XAMPP/xamppfiles/htdocs/api/index.php(28): require('/Applications/X...')\n#3 {main}\n  thrown in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php on line 96
+[Sun Oct 08 12:19:41.960920 2023] [php:warn] [pid 36081] [client 127.0.0.1:56991] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60
+[Sun Oct 08 12:19:41.963555 2023] [php:error] [pid 36081] [client 127.0.0.1:56991] PHP Fatal error:  Uncaught TypeError: Firebase\\JWT\\JWT::decode(): Argument #1 ($jwt) must be of type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60 and defined in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php:96\nStack trace:\n#0 /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php(60): Firebase\\JWT\\JWT::decode(NULL, Object(Firebase\\JWT\\Key))\n#1 /Applications/XAMPP/xamppfiles/htdocs/API/src/Routes/auth.php(5): App\\Config\\Security::validateTokenJwt('83837849399292/...')\n#2 /Applications/XAMPP/xamppfiles/htdocs/api/index.php(28): require('/Applications/X...')\n#3 {main}\n  thrown in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php on line 96
+[Sun Oct 08 12:20:24.468517 2023] [php:warn] [pid 41986] [client 127.0.0.1:56994] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60
+[Sun Oct 08 12:20:24.470480 2023] [php:error] [pid 41986] [client 127.0.0.1:56994] PHP Fatal error:  Uncaught TypeError: Firebase\\JWT\\JWT::decode(): Argument #1 ($jwt) must be of type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60 and defined in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php:96\nStack trace:\n#0 /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php(60): Firebase\\JWT\\JWT::decode(NULL, Object(Firebase\\JWT\\Key))\n#1 /Applications/XAMPP/xamppfiles/htdocs/API/src/Routes/auth.php(5): App\\Config\\Security::validateTokenJwt('83837849399292/...')\n#2 /Applications/XAMPP/xamppfiles/htdocs/api/index.php(28): require('/Applications/X...')\n#3 {main}\n  thrown in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php on line 96
+[Sun Oct 08 12:20:25.287149 2023] [php:warn] [pid 1781] [client 127.0.0.1:56995] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60
+[Sun Oct 08 12:20:25.291380 2023] [php:error] [pid 1781] [client 127.0.0.1:56995] PHP Fatal error:  Uncaught TypeError: Firebase\\JWT\\JWT::decode(): Argument #1 ($jwt) must be of type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60 and defined in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php:96\nStack trace:\n#0 /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php(60): Firebase\\JWT\\JWT::decode(NULL, Object(Firebase\\JWT\\Key))\n#1 /Applications/XAMPP/xamppfiles/htdocs/API/src/Routes/auth.php(5): App\\Config\\Security::validateTokenJwt('83837849399292/...')\n#2 /Applications/XAMPP/xamppfiles/htdocs/api/index.php(28): require('/Applications/X...')\n#3 {main}\n  thrown in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php on line 96
+[Sun Oct 08 12:20:40.552739 2023] [php:warn] [pid 1782] [client 127.0.0.1:56998] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60
+[Sun Oct 08 12:20:40.555668 2023] [php:error] [pid 1782] [client 127.0.0.1:56998] PHP Fatal error:  Uncaught TypeError: Firebase\\JWT\\JWT::decode(): Argument #1 ($jwt) must be of type string, null given, called in /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php on line 60 and defined in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php:96\nStack trace:\n#0 /Applications/XAMPP/xamppfiles/htdocs/API/src/Config/Security.php(60): Firebase\\JWT\\JWT::decode(NULL, Object(Firebase\\JWT\\Key))\n#1 /Applications/XAMPP/xamppfiles/htdocs/API/src/Routes/auth.php(5): App\\Config\\Security::validateTokenJwt('83837849399292/...')\n#2 /Applications/XAMPP/xamppfiles/htdocs/api/index.php(28): require('/Applications/X...')\n#3 {main}\n  thrown in /Applications/XAMPP/xamppfiles/htdocs/API/vendor/firebase/php-jwt/src/JWT.php on line 96
+[Sun Oct 08 13:08:05.322774 2023] [php:warn] [pid 36081] [client 127.0.0.1:57632] PHP Warning:  Undefined array key "SERVER_DB" in /Applications/XAMPP/xamppfiles/htdocs/API/src/Database/dataDB.php on line 14
+[Sun Oct 08 13:08:05.324122 2023] [php:warn] [pid 36081] [client 127.0.0.1:57632] PHP Warning:  Undefined array key "PORT" in /Applications/XAMPP/xamppfiles/htdocs/API/src/Database/dataDB.php on line 19
+[Sun Oct 08 13:08:05.324156 2023] [php:notice] [pid 36081] [client 127.0.0.1:57632] Campos de la DB vacios
+[Sun Oct 08 13:11:23.730958 2023] [php:notice] [pid 41986] [client 127.0.0.1:57646] Campos de la DB vacios
+[Sun Oct 08 13:11:25.341752 2023] [php:notice] [pid 1781] [client 127.0.0.1:57647] Campos de la DB vacios
+[Sun Oct 08 13:11:47.509886 2023] [php:notice] [pid 1782] [client 127.0.0.1:57649] Campos de la DB vacios
+[Sun Oct 08 13:11:48.100800 2023] [php:notice] [pid 1783] [client 127.0.0.1:57650] Campos de la DB vacios
+[Sun Oct 08 13:11:48.279890 2023] [php:notice] [pid 1784] [client 127.0.0.1:57651] Campos de la DB vacios
+[Sun Oct 08 13:11:48.433207 2023] [php:notice] [pid 36081] [client 127.0.0.1:57652] Campos de la DB vacios
+[Sun Oct 08 13:11:48.573299 2023] [php:notice] [pid 41986] [client 127.0.0.1:57653] Campos de la DB vacios
+[Sun Oct 08 13:11:48.720425 2023] [php:notice] [pid 1781] [client 127.0.0.1:57654] Campos de la DB vacios
+[Sun Oct 08 13:11:48.869592 2023] [php:notice] [pid 1782] [client 127.0.0.1:57655] Campos de la DB vacios
+[Sun Oct 08 13:11:49.040410 2023] [php:notice] [pid 1785] [client 127.0.0.1:57656] Campos de la DB vacios
+[Sun Oct 08 13:11:49.172019 2023] [php:notice] [pid 1783] [client 127.0.0.1:57657] Campos de la DB vacios
+[Sun Oct 08 13:11:49.325801 2023] [php:notice] [pid 1784] [client 127.0.0.1:57658] Campos de la DB vacios
+[Sun Oct 08 13:11:49.448660 2023] [php:notice] [pid 36081] [client 127.0.0.1:57659] Campos de la DB vacios
+[Sun Oct 08 13:11:49.605911 2023] [php:notice] [pid 41986] [client 127.0.0.1:57660] Campos de la DB vacios
+[Sun Oct 08 13:11:49.737429 2023] [php:notice] [pid 1781] [client 127.0.0.1:57661] Campos de la DB vacios
+[Sun Oct 08 13:11:49.907137 2023] [php:notice] [pid 1782] [client 127.0.0.1:57662] Campos de la DB vacios
+[Sun Oct 08 13:11:50.056735 2023] [php:notice] [pid 1785] [client 127.0.0.1:57663] Campos de la DB vacios
+[Sun Oct 08 13:11:50.206116 2023] [php:notice] [pid 1783] [client 127.0.0.1:57664] Campos de la DB vacios
+[Sun Oct 08 13:11:50.356685 2023] [php:notice] [pid 41986] [client 127.0.0.1:57665] Campos de la DB vacios
+[Sun Oct 08 13:11:50.504488 2023] [php:notice] [pid 36081] [client 127.0.0.1:57666] Campos de la DB vacios
+[Sun Oct 08 13:12:17.599876 2023] [php:notice] [pid 1781] [client 127.0.0.1:57670] Campos de la DB vacios
+[Sun Oct 08 13:13:18.010164 2023] [php:notice] [pid 1785] [client 127.0.0.1:57676] conexion exitosa
+[Sun Oct 08 13:13:20.094443 2023] [php:notice] [pid 1782] [client 127.0.0.1:57678] conexion exitosa
+[Sun Oct 08 13:13:20.444105 2023] [php:notice] [pid 1784] [client 127.0.0.1:57680] conexion exitosa
+[Sun Oct 08 13:13:20.687230 2023] [php:notice] [pid 1783] [client 127.0.0.1:57682] conexion exitosa
+[Sun Oct 08 13:13:20.874161 2023] [php:notice] [pid 41986] [client 127.0.0.1:57684] conexion exitosa
+[Sun Oct 08 13:13:21.050958 2023] [php:notice] [pid 36081] [client 127.0.0.1:57686] conexion exitosa
+[Sun Oct 08 13:13:21.234654 2023] [php:notice] [pid 1781] [client 127.0.0.1:57688] conexion exitosa
+[Sun Oct 08 13:13:21.428615 2023] [php:notice] [pid 1785] [client 127.0.0.1:57690] conexion exitosa
+[Sun Oct 08 13:13:21.709511 2023] [php:notice] [pid 1784] [client 127.0.0.1:57692] conexion exitosa
+[Sun Oct 08 13:13:22.039967 2023] [php:notice] [pid 1782] [client 127.0.0.1:57694] conexion exitosa
+[Sun Oct 08 13:13:22.240864 2023] [php:notice] [pid 1783] [client 127.0.0.1:57696] conexion exitosa
+[Sun Oct 08 13:13:24.548043 2023] [php:notice] [pid 41986] [client 127.0.0.1:57698] conexion exitosa
+[Sun Oct 08 13:13:25.109979 2023] [php:notice] [pid 1781] [client 127.0.0.1:57700] conexion exitosa
+[Sun Oct 08 13:13:25.340287 2023] [php:notice] [pid 1785] [client 127.0.0.1:57702] conexion exitosa
+[Sun Oct 08 13:13:25.491229 2023] [php:notice] [pid 1784] [client 127.0.0.1:57704] conexion exitosa
+[Sun Oct 08 13:13:25.827515 2023] [php:notice] [pid 1782] [client 127.0.0.1:57706] conexion exitosa
+[Sun Oct 08 13:16:56.648282 2023] [php:notice] [pid 1783] [client 127.0.0.1:57738] conexion exitosa
+[Sun Oct 08 13:17:57.231323 2023] [php:notice] [pid 36081] [client 127.0.0.1:57747] conexion exitosa
+[Sun Oct 08 13:28:52.137833 2023] [php:notice] [pid 41986] [client 127.0.0.1:57838] conexion exitosa
+[Sun Oct 08 13:38:48.924538 2023] [php:notice] [pid 1783] [client 127.0.0.1:57995] conexion exitosa
+[Sun Oct 08 13:38:52.513219 2023] [php:notice] [pid 1782] [client 127.0.0.1:57997] conexion exitosa
+[Sun Oct 08 13:38:53.055615 2023] [php:notice] [pid 36081] [client 127.0.0.1:57999] conexion exitosa
+[Sun Oct 08 13:38:53.442749 2023] [php:notice] [pid 1781] [client 127.0.0.1:58002] conexion exitosa
+[Sun Oct 08 13:38:53.613002 2023] [php:notice] [pid 1784] [client 127.0.0.1:58004] conexion exitosa
+[Sun Oct 08 13:38:53.780352 2023] [php:notice] [pid 1785] [client 127.0.0.1:58006] conexion exitosa
+[Sun Oct 08 13:38:53.945120 2023] [php:notice] [pid 1783] [client 127.0.0.1:58008] conexion exitosa
+[Sun Oct 08 13:38:54.097482 2023] [php:notice] [pid 1782] [client 127.0.0.1:58010] conexion exitosa
+[Sun Oct 08 13:38:54.260094 2023] [php:notice] [pid 36081] [client 127.0.0.1:58012] conexion exitosa
+[Sun Oct 08 13:38:54.407646 2023] [php:notice] [pid 1781] [client 127.0.0.1:58014] conexion exitosa
+[Sun Oct 08 13:38:54.559236 2023] [php:notice] [pid 1785] [client 127.0.0.1:58016] conexion exitosa
+[Sun Oct 08 13:38:54.708296 2023] [php:notice] [pid 1784] [client 127.0.0.1:58018] conexion exitosa
+[Sun Oct 08 13:38:54.863350 2023] [php:notice] [pid 41986] [client 127.0.0.1:58020] conexion exitosa
+[Sun Oct 08 13:38:55.025774 2023] [php:notice] [pid 1783] [client 127.0.0.1:58022] conexion exitosa
+[Sun Oct 08 13:38:55.175433 2023] [php:notice] [pid 36081] [client 127.0.0.1:58024] conexion exitosa
+[Sun Oct 08 13:38:55.326397 2023] [php:notice] [pid 1782] [client 127.0.0.1:58026] conexion exitosa
+[Sun Oct 08 13:38:55.477949 2023] [php:notice] [pid 1781] [client 127.0.0.1:58028] conexion exitosa
+[Sun Oct 08 13:38:55.625723 2023] [php:notice] [pid 1785] [client 127.0.0.1:58030] conexion exitosa
+[Sun Oct 08 13:38:55.778055 2023] [php:notice] [pid 41986] [client 127.0.0.1:58032] conexion exitosa
+[Sun Oct 08 13:38:55.937086 2023] [php:notice] [pid 1784] [client 127.0.0.1:58034] conexion exitosa
+[Sun Oct 08 13:38:56.093833 2023] [php:notice] [pid 36081] [client 127.0.0.1:58036] conexion exitosa
+[Sun Oct 08 13:38:56.246236 2023] [php:notice] [pid 1782] [client 127.0.0.1:58038] conexion exitosa
+[Sun Oct 08 13:38:56.382159 2023] [php:notice] [pid 1781] [client 127.0.0.1:58040] conexion exitosa
+[Sun Oct 08 13:38:56.524003 2023] [php:notice] [pid 1785] [client 127.0.0.1:58042] conexion exitosa
+[Sun Oct 08 13:38:56.656617 2023] [php:notice] [pid 1783] [client 127.0.0.1:58044] conexion exitosa
+[Sun Oct 08 13:38:56.811476 2023] [php:notice] [pid 41986] [client 127.0.0.1:58046] conexion exitosa
+[Sun Oct 08 13:38:56.960327 2023] [php:notice] [pid 1784] [client 127.0.0.1:58048] conexion exitosa
+[Sun Oct 08 13:38:57.113350 2023] [php:notice] [pid 1782] [client 127.0.0.1:58050] conexion exitosa
+[Sun Oct 08 13:38:57.278319 2023] [php:notice] [pid 36081] [client 127.0.0.1:58052] conexion exitosa
+[Sun Oct 08 13:38:57.479190 2023] [php:notice] [pid 1781] [client 127.0.0.1:58054] conexion exitosa
+[Sun Oct 08 13:38:57.662722 2023] [php:notice] [pid 1783] [client 127.0.0.1:58056] conexion exitosa
+[Sun Oct 08 13:38:57.828812 2023] [php:notice] [pid 1785] [client 127.0.0.1:58058] conexion exitosa
+[Sun Oct 08 13:38:58.008996 2023] [php:notice] [pid 1784] [client 127.0.0.1:58060] conexion exitosa
+[Sun Oct 08 13:38:58.179734 2023] [php:notice] [pid 41986] [client 127.0.0.1:58062] conexion exitosa
+[Sun Oct 08 13:38:58.344317 2023] [php:notice] [pid 1782] [client 127.0.0.1:58064] conexion exitosa
+[Sun Oct 08 13:38:58.493568 2023] [php:notice] [pid 36081] [client 127.0.0.1:58066] conexion exitosa
+[Sun Oct 08 13:38:58.646024 2023] [php:notice] [pid 1781] [client 127.0.0.1:58068] conexion exitosa
+[Sun Oct 08 13:38:58.825560 2023] [php:notice] [pid 1783] [client 127.0.0.1:58070] conexion exitosa
+[Sun Oct 08 13:38:59.661930 2023] [php:notice] [pid 1785] [client 127.0.0.1:58072] conexion exitosa
+[Sun Oct 08 13:39:00.380223 2023] [php:notice] [pid 1784] [client 127.0.0.1:58074] conexion exitosa
+[Sun Oct 08 13:39:01.095149 2023] [php:notice] [pid 41986] [client 127.0.0.1:58076] conexion exitosa
+[Sun Oct 08 13:39:01.649387 2023] [php:notice] [pid 1782] [client 127.0.0.1:58078] conexion exitosa
+[Sun Oct 08 13:40:16.786941 2023] [php:notice] [pid 36081] [client 127.0.0.1:58084] conexion exitosa
+[Sun Oct 08 13:40:51.566940 2023] [php:notice] [pid 1781] [client 127.0.0.1:58087] conexion exitosa
+[Sun Oct 08 13:40:52.905849 2023] [php:notice] [pid 1783] [client 127.0.0.1:58089] conexion exitosa
+[Sun Oct 08 13:40:53.382885 2023] [php:notice] [pid 1785] [client 127.0.0.1:58091] conexion exitosa
+[Sun Oct 08 13:40:53.850331 2023] [php:notice] [pid 1784] [client 127.0.0.1:58093] conexion exitosa
+[Sun Oct 08 13:40:54.206191 2023] [php:notice] [pid 41986] [client 127.0.0.1:58095] conexion exitosa
+[Sun Oct 08 13:40:54.520089 2023] [php:notice] [pid 1782] [client 127.0.0.1:58097] conexion exitosa
+[Sun Oct 08 13:40:54.810311 2023] [php:notice] [pid 36081] [client 127.0.0.1:58099] conexion exitosa
+[Sun Oct 08 13:40:55.066124 2023] [php:notice] [pid 1781] [client 127.0.0.1:58101] conexion exitosa
+[Sun Oct 08 13:40:55.265437 2023] [php:notice] [pid 1783] [client 127.0.0.1:58103] conexion exitosa
+[Sun Oct 08 13:40:55.516243 2023] [php:notice] [pid 1785] [client 127.0.0.1:58105] conexion exitosa
+[Sun Oct 08 13:40:55.729840 2023] [php:notice] [pid 1784] [client 127.0.0.1:58107] conexion exitosa
+[Sun Oct 08 13:40:55.981749 2023] [php:notice] [pid 41986] [client 127.0.0.1:58109] conexion exitosa
+[Sun Oct 08 13:40:56.197332 2023] [php:notice] [pid 1782] [client 127.0.0.1:58111] conexion exitosa
+[Sun Oct 08 13:41:04.286799 2023] [php:notice] [pid 36081] [client 127.0.0.1:58113] conexion exitosa
+[Sun Oct 08 13:41:04.808003 2023] [php:notice] [pid 1785] [client 127.0.0.1:58115] conexion exitosa
+[Sun Oct 08 13:41:05.008152 2023] [php:notice] [pid 1783] [client 127.0.0.1:58117] conexion exitosa
+[Sun Oct 08 13:41:05.195976 2023] [php:notice] [pid 1781] [client 127.0.0.1:58119] conexion exitosa
+[Sun Oct 08 13:41:05.513186 2023] [php:notice] [pid 1784] [client 127.0.0.1:58121] conexion exitosa
+[Sun Oct 08 13:41:06.095175 2023] [php:notice] [pid 1782] [client 127.0.0.1:58123] conexion exitosa
+[Sun Oct 08 13:41:33.484782 2023] [php:notice] [pid 41986] [client 127.0.0.1:58131] conexion exitosa
+[Sun Oct 08 13:41:34.185033 2023] [php:notice] [pid 36081] [client 127.0.0.1:58133] conexion exitosa
+[Sun Oct 08 13:41:34.534384 2023] [php:notice] [pid 1785] [client 127.0.0.1:58135] conexion exitosa
+[Sun Oct 08 13:41:34.715885 2023] [php:notice] [pid 1783] [client 127.0.0.1:58137] conexion exitosa
+[Sun Oct 08 13:41:34.884420 2023] [php:notice] [pid 1781] [client 127.0.0.1:58139] conexion exitosa
+[Sun Oct 08 13:41:35.048867 2023] [php:notice] [pid 1784] [client 127.0.0.1:58141] conexion exitosa
+[Sun Oct 08 13:41:35.182185 2023] [php:notice] [pid 1782] [client 127.0.0.1:58143] conexion exitosa
+[Sun Oct 08 13:41:35.329027 2023] [php:notice] [pid 41986] [client 127.0.0.1:58145] conexion exitosa
+[Sun Oct 08 13:41:35.478279 2023] [php:notice] [pid 36081] [client 127.0.0.1:58147] conexion exitosa
+[Sun Oct 08 13:41:35.636358 2023] [php:notice] [pid 1785] [client 127.0.0.1:58149] conexion exitosa
+[Sun Oct 08 13:41:35.793922 2023] [php:notice] [pid 1783] [client 127.0.0.1:58151] conexion exitosa
+[Sun Oct 08 13:41:35.960049 2023] [php:notice] [pid 1781] [client 127.0.0.1:58153] conexion exitosa
+[Sun Oct 08 13:41:36.136355 2023] [php:notice] [pid 1784] [client 127.0.0.1:58155] conexion exitosa
+[Sun Oct 08 13:41:36.309960 2023] [php:notice] [pid 1782] [client 127.0.0.1:58157] conexion exitosa
+[Sun Oct 08 13:41:36.499438 2023] [php:notice] [pid 36081] [client 127.0.0.1:58159] conexion exitosa
+[Sun Oct 08 13:41:36.650642 2023] [php:notice] [pid 1785] [client 127.0.0.1:58161] conexion exitosa
+[Sun Oct 08 13:42:37.724071 2023] [php:notice] [pid 1783] [client 127.0.0.1:58167] conexion exitosa
+[Sun Oct 08 13:42:38.506187 2023] [php:notice] [pid 1781] [client 127.0.0.1:58169] conexion exitosa
+[Sun Oct 08 13:42:38.701405 2023] [php:notice] [pid 36081] [client 127.0.0.1:58171] conexion exitosa
+[Sun Oct 08 13:42:38.865434 2023] [php:notice] [pid 1782] [client 127.0.0.1:58173] conexion exitosa
+[Sun Oct 08 13:42:39.033380 2023] [php:notice] [pid 1785] [client 127.0.0.1:58175] conexion exitosa
+[Sun Oct 08 13:42:39.178566 2023] [php:notice] [pid 1781] [client 127.0.0.1:58177] conexion exitosa
+[Sun Oct 08 13:42:39.327786 2023] [php:notice] [pid 1783] [client 127.0.0.1:58179] conexion exitosa
+[Sun Oct 08 13:42:39.465029 2023] [php:notice] [pid 1784] [client 127.0.0.1:58181] conexion exitosa
+[Sun Oct 08 13:44:19.902382 2023] [php:notice] [pid 36081] [client 127.0.0.1:58196] conexion exitosa
+[Sun Oct 08 13:44:33.650192 2023] [php:notice] [pid 41986] [client 127.0.0.1:58198] conexion exitosa
+[Sun Oct 08 13:47:54.697450 2023] [php:notice] [pid 1782] [client 127.0.0.1:58214] conexion exitosa
+[Sun Oct 08 13:48:47.307375 2023] [php:notice] [pid 1785] [client 127.0.0.1:58244] conexion exitosa
+[Sun Oct 08 13:48:58.333444 2023] [php:notice] [pid 1781] [client 127.0.0.1:58255] conexion exitosa
+[Sun Oct 08 14:01:00.586931 2023] [php:error] [pid 1781] [client 127.0.0.1:58350] PHP Fatal error:  Uncaught Dotenv\\Exception\\InvalidPathException: Unable to read any of the environment file(s) at [/Applications/XAMPP/xamppfiles/htdocs/API-Profesional/.env]. in /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/vendor/vlucas/phpdotenv/src/Store/FileStore.php:68\nStack trace:\n#0 /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/vendor/vlucas/phpdotenv/src/Dotenv.php(222): Dotenv\\Store\\FileStore->read()\n#1 /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/src/Config/Security.php(17): Dotenv\\Dotenv->load()\n#2 /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/src/Controllers/UserController.php(36): App\\Config\\Security::secretKey()\n#3 /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/src/Routes/user.php(13): App\\Controllers\\UserController->getAll('user/')\n#4 /Applications/XAMPP/xamppfiles/htdocs/api-profesional/index.php(25): require('/Applications/X...')\n#5 {main}\n  thrown in /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/vendor/vlucas/phpdotenv/src/Store/FileStore.php on line 68
+[Sun Oct 08 14:03:16.955528 2023] [php:error] [pid 1784] [client 127.0.0.1:58359] PHP Fatal error:  Uncaught Dotenv\\Exception\\InvalidPathException: Unable to read any of the environment file(s) at [/Applications/XAMPP/xamppfiles/htdocs/API-Profesional/.env]. in /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/vendor/vlucas/phpdotenv/src/Store/FileStore.php:68\nStack trace:\n#0 /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/vendor/vlucas/phpdotenv/src/Dotenv.php(222): Dotenv\\Store\\FileStore->read()\n#1 /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/src/Config/Security.php(17): Dotenv\\Dotenv->load()\n#2 /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/src/Controllers/UserController.php(36): App\\Config\\Security::secretKey()\n#3 /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/src/Routes/user.php(13): App\\Controllers\\UserController->getAll('user/')\n#4 /Applications/XAMPP/xamppfiles/htdocs/api-profesional/index.php(25): require('/Applications/X...')\n#5 {main}\n  thrown in /Applications/XAMPP/xamppfiles/htdocs/API-Profesional/vendor/vlucas/phpdotenv/src/Store/FileStore.php on line 68
+[Sun Oct 08 14:17:16.850339 2023] [php:notice] [pid 41986] [client 127.0.0.1:58984] conexion exitosa
+[Sun Oct 08 14:20:02.130532 2023] [php:notice] [pid 1782] [client 127.0.0.1:59016] conexion exitosa
+[Sun Oct 08 14:22:20.977180 2023] [php:notice] [pid 1783] [client 127.0.0.1:59054] conexion exitosa
+[Sun Oct 08 14:23:21.883402 2023] [php:notice] [pid 1784] [client 127.0.0.1:59061] conexion exitosa
