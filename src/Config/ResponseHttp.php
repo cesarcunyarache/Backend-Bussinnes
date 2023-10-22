@@ -15,7 +15,7 @@ class ResponseHttp {
             die(json_encode(ResponseHttp::status401('No tiene autorizacion para consumir esta API')));
         }
 
-        $list = ['http://nibiru.test', 'https://www.thunderclient.com/'];        
+        $list = ['https://www.thunderclient.com/', 'http://localhost:3000'];        
 
       
         if (in_array($origin,$list)){
@@ -24,6 +24,7 @@ class ResponseHttp {
                 header("Access-Control-Allow-Origin: $origin");
                 header('Access-Control-Allow-Methods: GET,PUT,POST,PATCH,DELETE');
                 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Authorization"); 
+                header('Access-Control-Allow-Credentials: true');
                 exit(0);
             } else {
                 header("Access-Control-Allow-Origin: $origin");
@@ -31,6 +32,8 @@ class ResponseHttp {
                 header("Allow: GET, POST, OPTIONS, PUT, PATCH , DELETE");
                 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Authorization"); 
                 header('Content-Type: application/json'); 
+                header('Access-Control-Allow-Credentials: true');
+             
             }
         } else {
             die(json_encode(ResponseHttp::status401('No tiene autorizacion para consumir esta API')));
@@ -55,7 +58,7 @@ class ResponseHttp {
         http_response_code(200);
         self::$message['status'] = 'ok';
         self::$message['message'] = $res;
-        return self::$message;
+        return json_encode(self::$message);
     }
 
     public static function status201(string $res = 'Recurso creado')
@@ -71,7 +74,7 @@ class ResponseHttp {
         http_response_code(400);
         self::$message['status'] = 'error';
         self::$message['message'] = $res;
-        return self::$message;
+        return json_encode(self::$message);
     }
 
     public static function status401(string $res = 'No tiene privilegios para acceder al recurso solicitado')

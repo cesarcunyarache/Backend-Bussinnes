@@ -8,6 +8,7 @@ use Rakit\Validation\Validator;;
 
 use App\Config\Message;
 use App\Models\ClienteUsuarioModel;
+use App\Models\ClienteModel;
 
 class ClienteUsuarioController extends Controller
 {
@@ -17,62 +18,117 @@ class ClienteUsuarioController extends Controller
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
 
             $validator = new Validator;
-
             $validator->setMessages(Message::getMessages());
             $validation = $validator->validate($this->getParam(), [
                 'correo'               => 'required|email',
-                'contrasena'           => 'required|numeric',
+                'contrasena'           => 'required',
             ]);
 
             if ($validation->fails()) {
                 $errors = $validation->errors();
-                echo json_encode(ResponseHttp::status400($errors->all()[0]));
+                echo ResponseHttp::status400($errors->all()[0]);
             } else {
-                $obj = new ClienteUsuarioModel($this->getParam());
-                $res = $obj::loginTest();
+                $user = new ClienteUsuarioModel($this->getParam());
+                $data = $user::login();
 
-                $payload = ['id' => $res['id']];
-                $token = Security::createTokenJwt(Security::secretKey(), $payload);
-                setcookie("token", $token, time() + 60, "/");
-                echo json_encode(($res));
+                if (count($data) > 0) {
+                    $res = ClienteModel::getClientByIdUser($data['id']);
+
+                    if (count($res) > 0) {
+                        $payload = ['idCliente' => $res['id']];
+                        $token = Security::createTokenJwt(Security::secretKey(), $payload);
+
+                        setcookie("token", $token, time() + (60 * 60 * 6), "/");
+                        echo json_encode($res);
+                    }
+                }
             }
             exit();
         }
-        
     }
+
+    final public function postRegister(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+            $validator = new Validator;
+
+            $validator->setMessages(Message::getMessages());
+            $validation = $validator->validate($this->getParam(), [
+                'nombres'              => 'required|alpha_spaces',
+                'apellidos'            => 'required|alpha_spaces',
+                'correo'               => 'required|email',
+                'contrasena'           => 'required|min:6',
+                'confirmContrasena'    => 'required',
+            ]);
+            if ($validation->fails()) {
+                $errors = $validation->errors();
+                echo ResponseHttp::status400($errors->all()[0]);
+            } else {
+                if ($this->getParam()['contrasena'] === $this->getParam()['confirmContrasena']) {
+                    $arrUser = [
+                        'correo'      => $this->getParam()['correo'],
+                        'contrasena'  => $this->getParam()['contrasena']
+                    ];
+                    $user = new ClienteUsuarioModel($arrUser);
+                    $idUsuario  = $user::createUser();
+
+                    if ($idUsuario != 0) {
+                        $arrClient = [
+                            'nombres'    => $this->getParam($this)['nombres'],
+                            'apellidos'  => $this->getParam($this)['apellidos'],
+                            'idUsuario'  => $idUsuario
+                        ];
+
+                        $cliente  = new ClienteModel($arrClient);
+                        $idCliente = $cliente::create();
+
+                        if ($idCliente != 0) {
+                            $payload = [
+                                'idCliente'  => $idCliente,
+                            ];
+                            $token = Security::createTokenJwt(Security::secretKey(), $payload);
+                            setcookie('token', $token, time() + (60 * 60 * 6), '/');
+                            echo ResponseHttp::status200("Cuenta creada satisfactoriamente");
+                        } else {
+                            echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                        }
+                    } else {
+                        echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                    }
+                } else {
+                    echo ResponseHttp::status400("Las contraseñas no coincien");
+                }
+            }
+            exit();
+        }
+    }
+
+    final public function postForgetPassword(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+        }
+        exit();
+    }
+
 
     final public function getProfile(string $endPoint)
     {
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
-            $cookie = $_COOKIE["token"];
+            /* $resend = Resend::client('re_jQDcy41o_DaKJyvRyjhG2C8CwvZNP3LFx');
 
-            if (isset($cookie)) {
-                echo json_encode($cookie);
-            }else {
-                echo json_encode(ResponseHttp::status401());
-            }
-            exit();
+            $resend->emails->send([
+                'from' => 'Acme <onboarding@resend.dev>',
+                'to' => ['delivered@resend.dev'],
+                'subject' => 'hello world',
+                'html' => '<strong>it works!</strong>',
+            ]); */
         }
+        exit();
     }
 
-    /* final public function getLogin(string $endPoint)
-    { 
-        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
-            $email = strtolower($this->getAttribute()[1]);
-            $password = $this->getAttribute()[2];
 
-            if(empty($email) || empty($password)){  
-                echo json_encode(ResponseHttp::status400('Todos los campos son necesarios'));
-            }else if(!self::validateEmail($email)){
-                echo json_encode(ResponseHttp::status400('Formato de correo invalido'));
-            }else{
-                UserModel::setEmail($email);
-                UserModel::setPassword($password);
-                echo json_encode(UserModel::login());           
-            }  
-        exit;
-        }
-    }
+
+
 
     /**********************Consultar todos los usuarios*********************/
     /* final public function getAll(string $endPoint)
@@ -172,7 +228,4 @@ class ClienteUsuarioController extends Controller
         exit;
         }
     } */
-
-
-   
 }

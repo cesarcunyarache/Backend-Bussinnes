@@ -25,7 +25,6 @@ class Connection {
             $opt = [\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC];
             $dsn = new \PDO(self::$host,self::$user,self::$password,$opt);
             $dsn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            echo "Conexion exitosa";
             error_log('conexion exitosa');
             return $dsn;
         } catch (\PDOException $p) {
