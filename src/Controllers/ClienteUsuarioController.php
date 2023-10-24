@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers; 
 
 use App\Config\ResponseHttp;
 use App\Config\Security;
@@ -9,6 +9,9 @@ use Rakit\Validation\Validator;;
 use App\Config\Message;
 use App\Models\ClienteUsuarioModel;
 use App\Models\ClienteModel;
+use \Resend;
+
+
 
 class ClienteUsuarioController extends Controller
 {
@@ -106,31 +109,63 @@ class ClienteUsuarioController extends Controller
     final public function postForgetPassword(string $endPoint)
     {
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+
+            try {
+          
+                $resend = Resend::client('re_F5feTq5Q_LycTnkXJjTDndCuYYuaQJT4s');
+                $result = $resend->emails->send([
+                    'from' => 'Acme <onboarding@resend.dev>',
+                    'to' => ['cesarcunyarache@gmail.com'],
+                    'subject' => 'recuperar contraseña',
+                    'html' => '<strong>It works!</strong>',
+                ]); 
+                echo ResponseHttp::status200($resend);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500('Error: ' . $e->getMessage());
+            }
+
+
+            /* echo ResponseHttp::status200($result->toJson()); */
+            /*  try {
+
+                $resend = Resend::client('re_F5feTq5Q_LycTnkXJjTDndCuYYuaQJT4s');
+                
+                $result = $resend->emails->send([
+                    'from' => 'Acme <onboarding@resend.dev>',
+                    'to' => ['cesarcunyarache@gmail.com'],
+                    'subject' => 'Hello world',
+                    'html' => '<strong>It works!</strong>',
+                ]);
+                echo ResponseHttp::status200($result->toJson());
+            } catch (\Exception $e) {
+                exit('Error: ' . $e->getMessage());
+                echo ResponseHttp::status400($e->getMessage());
+            } */
+            exit();
         }
-        exit();
+       
     }
 
 
     final public function getProfile(string $endPoint)
     {
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
-            /* $resend = Resend::client('re_jQDcy41o_DaKJyvRyjhG2C8CwvZNP3LFx');
 
-            $resend->emails->send([
-                'from' => 'Acme <onboarding@resend.dev>',
-                'to' => ['delivered@resend.dev'],
-                'subject' => 'hello world',
-                'html' => '<strong>it works!</strong>',
-            ]); */
+            echo $this->getCookie('token');
+            exit();
         }
-        exit();
+        
+
+    }
+
+    final public function getLogout (string $endPoint){
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+            exit();
+        }
     }
 
 
 
-
-
-    /**********************Consultar todos los usuarios*********************/
     /* final public function getAll(string $endPoint)
     {
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
@@ -159,34 +194,7 @@ class ClienteUsuarioController extends Controller
         }    
     } */
 
-    /***************************************Registrar usuario*************************************************/
-    /*  final public function postSave(string $endPoint)
-    {
-       if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
-       // Security::validateTokenJwt(Security::secretKey()); 
 
-        $validator = new Validator;
-        
-        $validation = $validator->validate($this->getParam(), [
-            'name'               => 'required|regex:/^[a-zA-Z ]+$/',
-            'dni'                => 'required|numeric',
-            'email'              => 'required|email',            
-            'rol'                => 'required|numeric|min:1|regex:/^[12]+$/',
-            'password'           => 'required|min:8',
-            'confirmPassword'    => 'required|same:password'   
-        ]);      
-
-        if ($validation->fails()) {            
-            $errors = $validation->errors();            	
-            echo json_encode(ResponseHttp::status400($errors->all()[0]));
-        } else {            
-            new UserModel($this->getParam());
-            echo json_encode(UserModel::postSave());
-        }              
-                          
-        exit;
-       }
-    }    */
 
     /***************************************************Actualizar contraseña de usuario*********************************************/
     /*    final public function patchPassword(string $endPoint)
@@ -212,20 +220,4 @@ class ClienteUsuarioController extends Controller
             exit;
         }        
     }  */
-
-    /****************************************Eliminar usuario******************************/
-    /* final public function deleteUser(string $endPoint)
-    {
-        if ($this->getMethod() == 'delete' && $this->getRoute() == $endPoint){
-            Security::validateTokenJwt(Security::secretKey());
-
-            if (empty($this->getParam()['IDToken'])) {
-                echo json_encode(ResponseHttp::status400('Todos los campos son requeridos'));
-            } else {
-                UserModel::setIDToken($this->getParam()['IDToken']);
-                echo json_encode(UserModel::deleteUser());
-            }
-        exit;
-        }
-    } */
 }
