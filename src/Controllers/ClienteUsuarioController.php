@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers; 
+namespace App\Controllers;
 
 use App\Config\ResponseHttp;
 use App\Config\Security;
@@ -111,15 +111,60 @@ class ClienteUsuarioController extends Controller
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
 
             try {
-          
+
                 $resend = Resend::client('re_F5feTq5Q_LycTnkXJjTDndCuYYuaQJT4s');
                 $result = $resend->emails->send([
                     'from' => 'Acme <onboarding@resend.dev>',
                     'to' => ['cesarcunyarache@gmail.com'],
                     'subject' => 'recuperar contraseña',
-                    'html' => '<strong>It works!</strong>',
-                ]); 
-                echo ResponseHttp::status200($resend);
+                    'html' => '<!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        
+                        <style>
+                            body {
+                                background-color: white;
+                            }
+                            
+                            * {
+                                color: black;
+                                font-family: Arial, Helvetica, sans-serif;
+                            }
+                    
+                            .title {
+                                text-align: center;
+                    
+                            }
+                            .card {
+                                background-color: #ffffff;
+                                border-radius: 10px;
+                                padding: 1rem;
+                                border: 1px solid #ccc;
+                            }
+                            .code {
+                                font-weight: bold;
+                                font-size: 2rem
+                            }
+                    
+                        </style>
+                    </head>
+                    <body>
+                        <div class="card">
+                            <h1 class="title">Verificacion de codigo</h1>
+                            <p>Tu codigo de verificacion es:</p>
+                            <h5 class="code">2309</h5>
+                    
+                            <p>Your account cant be accessed without this verification code, even if you didn’t submit this request.
+                    
+                                To keep your account secure, we recommend using a unique password for your Adobe account or using the Adobe Account Access app to sign in. Adobe Account Access’ two-factor authentication makes signing in to your account easier, without needing to remember or change passwords.
+                                
+                                Learn more and download the Adobe Account Access app.</p>
+                        </div>
+                        
+                    </body>
+                    </html>',
+                ]);
+                echo ResponseHttp::status200($result);
             } catch (\Exception $e) {
                 echo ResponseHttp::status500('Error: ' . $e->getMessage());
             }
@@ -143,7 +188,6 @@ class ClienteUsuarioController extends Controller
             } */
             exit();
         }
-       
     }
 
 
@@ -151,16 +195,45 @@ class ClienteUsuarioController extends Controller
     {
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
 
-            echo $this->getCookie('token');
+            try {
+                $data  = Security::validateTokenJwt(Security::secretKey());
+                $idClient = $data->data->idCliente;
+
+                if (isset($idClient) && !empty($idClient)) {
+                    $cliente = ClienteModel::getClientById($idClient);
+                    echo ResponseHttp::status200($cliente);
+                }
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
             exit();
         }
-        
-
     }
 
-    final public function getLogout (string $endPoint){
+    final public function getLogout(string $endPoint)
+    {
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
-            exit();
+            try {
+                Security::validateTokenJwt(Security::secretKey());
+                setcookie("token", "", time() - 3600, "/");
+                echo ResponseHttp::status200("Logout");
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit;
+        }
+    }
+
+    final public function getVerify(string $endPoint)
+    {
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+            try {
+                $data = Security::validateTokenJwt(Security::secretKey());
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit;
         }
     }
 
@@ -175,7 +248,7 @@ class ClienteUsuarioController extends Controller
         }    
     } */
 
-    /**********************Consultar un usuario por DNI*******************************/
+    
     /* final public function getUser(string $endPoint)
     {
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
@@ -194,9 +267,6 @@ class ClienteUsuarioController extends Controller
         }    
     } */
 
-
-
-    /***************************************************Actualizar contraseña de usuario*********************************************/
     /*    final public function patchPassword(string $endPoint)
     {        
         if ($this->getMethod() == 'patch' && $this->getRoute() == $endPoint){            

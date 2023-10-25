@@ -49,8 +49,25 @@ class Security
         return $jwt;
     }
 
-    
     final public static function validateTokenJwt(string $key)
+    {
+        if (!isset($_COOKIE['token'])) {
+            die(ResponseHttp::status400('El token de acceso en requerido'));
+            exit;
+        }
+        try {
+            $jwt =  $_COOKIE['token'];
+            $data = JWT::decode($jwt, new Key($key, 'HS256'));
+            self::$jwt_data = $data;
+            return $data;
+        } catch (\Exception $e) {
+            error_log('Token invalido o expiro' . $e);
+            echo ResponseHttp::status401('Token invalido o expirado');
+        }
+    }
+
+
+    /* final public static function validateTokenJwt(string $key)
     {
         if (!isset(getallheaders()['Authorization'])) {
             die(json_encode(ResponseHttp::status400('El token de acceso en requerido')));
@@ -66,7 +83,7 @@ class Security
             error_log('Token invalido o expiro' . $e);
             die(json_encode(ResponseHttp::status401('Token invalido o expirado')));
         }
-    }
+    } */
 
     final public static function getDataJwt()
     {
@@ -74,5 +91,4 @@ class Security
         return $jwt_decoded_array['data'];
         exit;
     }
-
 }

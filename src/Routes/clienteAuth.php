@@ -16,5 +16,9 @@ $app->postForgetPassword("clienteAuth/forgetPassword");
 
 $app->getProfile("clienteAuth/profile");
 
+$app->getLogout("clienteAuth/logout");
+
+$app->getVerify("clienteAuth/verify");
+
 
 echo json_encode(ResponseHttp::status404());

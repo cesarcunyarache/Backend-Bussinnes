@@ -78,6 +78,34 @@ class ClienteModel extends  Connection
         exit;
     }
 
+    final public static function getClientById($idClient)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT *
+            FROM Clientes c
+            INNER JOIN UsuariosClientes u ON c.idUsuario = u.id
+            WHERE c.id = :id");
+            $con->execute([
+                ':id' => (int) $idClient
+            ]);
+
+            if ($con->rowCount() === 0) {
+                echo ResponseHttp::status400('Cliente no encontrado');
+            } else {
+                $data = $con->fetch();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    echo ResponseHttp::status400('Cliente no encontrado');
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserModel::Login -> " . $e);
+            die(json_encode(ResponseHttp::status500()));
+        }
+        exit;
+    }
+
     final public static function getId()
     {
         return self::$id;
