@@ -22,7 +22,7 @@ class Mail
 
     public function __construct()
     {
-        // No es necesario inicializar las constantes
+       
     }
 
     final public static function sendEmail(string $toEmail, string $subject, string $body)
@@ -31,20 +31,20 @@ class Mail
 
         try {
 
-            $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = self::HOST;                     //Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = self::USERNAME;                     //SMTP username
-            $mail->Password   = self::PASSWORD;                               //SMTP password
-            $mail->SMTPSecure = self::ENCRYPTION;            //Enable implicit TLS encryption
-            $mail->Port       = self::PORT;                                    //TCP port to connect to
+            $mail->isSMTP();                                         
+            $mail->Host       = self::HOST;               
+            $mail->SMTPAuth   = true;                               
+            $mail->Username   = self::USERNAME;                    
+            $mail->Password   = self::PASSWORD;                            
+            $mail->SMTPSecure = self::ENCRYPTION;            
+            $mail->Port       = self::PORT;                       
 
             //Recipients
             $mail->setFrom(self::FROM_EMAIL, self::FROM_NAME);
             $mail->addAddress($toEmail);     //Add a recipient
 
             //Content
-            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->isHTML(true);                       
             $mail->Subject = $subject;
             $mail->Body    = $body;
             $mail->CharSet = 'UTF-8'; 
