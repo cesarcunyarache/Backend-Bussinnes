@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-11-2023 a las 20:59:34
+-- Tiempo de generación: 08-11-2023 a las 22:15:25
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -46,7 +46,8 @@ CREATE TABLE `Clientes` (
 INSERT INTO `Clientes` (`id`, `idTipoDoc`, `numeroDoc`, `nombres`, `apellidos`, `telefono`, `fechaNacimiento`, `genero`, `idUsuario`) VALUES
 (1, 2, '12345678111', 'Cesar Efrain', 'Cunyarache', '123456789', '2004-10-10', 'Masculino', 9),
 (17, 1, '12345678', 'juan', 'juan', '998989999', '2004-02-04', 'Masculino', 29),
-(18, NULL, NULL, 'Efrain', 'Castillo', NULL, NULL, NULL, 30);
+(18, NULL, NULL, 'Efrain', 'Castillo', NULL, NULL, NULL, 30),
+(19, NULL, NULL, 'cc', 'ccc', NULL, NULL, NULL, 31);
 
 -- --------------------------------------------------------
 
@@ -173,7 +174,8 @@ CREATE TABLE `UsuariosClientes` (
 INSERT INTO `UsuariosClientes` (`id`, `correo`, `contrasena`) VALUES
 (9, 'cesar@gmail.com', '$2y$10$ezyXaeyxsyPBErroowI66OVixXgkjiyabgMD/DizNpJLyjyVMSBZq'),
 (29, 'manuel12072705@gmail.com', '$2y$10$AyoeYxOz9PhrDTL2aqcG6OHo.wizIwVR0.7zez2Oo7fTv7I8tTDdW'),
-(30, 'jairomonterrey123@gmail.com', '$2y$10$6wfZ8WqqId2KVEUsSlE17eh1Q334Jrij3kIlDRzw9YKs6vxvAAL..');
+(30, 'jairomonterrey123@gmail.com', '$2y$10$VOCPKg6Fd9.QgpnyUHf3EOFEsfUUCe0Y8ZObNbJb2nIlQr1fWglXG'),
+(31, 'cesarcunyarache@gmail.com', '$2y$10$c12oMcLp0jY.3MPt/.gDwejVcivTte/0OCo3jUX2NdBp8Tq5XBziy');
 
 -- --------------------------------------------------------
 
@@ -269,7 +271,7 @@ ALTER TABLE `UsuariosColaboradores`
 -- AUTO_INCREMENT de la tabla `Clientes`
 --
 ALTER TABLE `Clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `Colaboradores`
@@ -317,7 +319,7 @@ ALTER TABLE `TipoDocumento`
 -- AUTO_INCREMENT de la tabla `UsuariosClientes`
 --
 ALTER TABLE `UsuariosClientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `UsuariosColaboradores`
