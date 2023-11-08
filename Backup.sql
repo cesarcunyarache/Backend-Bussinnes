@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 25-10-2023 a las 23:41:22
+-- Tiempo de generación: 05-11-2023 a las 20:59:34
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -44,11 +44,94 @@ CREATE TABLE `Clientes` (
 --
 
 INSERT INTO `Clientes` (`id`, `idTipoDoc`, `numeroDoc`, `nombres`, `apellidos`, `telefono`, `fechaNacimiento`, `genero`, `idUsuario`) VALUES
-(1, NULL, NULL, 'Cesar', 'Cunyarache', NULL, NULL, NULL, 9),
-(2, NULL, NULL, 'cc', 'cc', NULL, NULL, NULL, 10),
-(3, NULL, NULL, 'cc', 'cc', NULL, NULL, NULL, 11),
-(4, NULL, NULL, 'cc', 'cc', NULL, NULL, NULL, 12),
-(5, NULL, NULL, 'cc', 'ccc', NULL, NULL, NULL, 13);
+(1, 2, '12345678111', 'Cesar Efrain', 'Cunyarache', '123456789', '2004-10-10', 'Masculino', 9),
+(17, 1, '12345678', 'juan', 'juan', '998989999', '2004-02-04', 'Masculino', 29),
+(18, NULL, NULL, 'Efrain', 'Castillo', NULL, NULL, NULL, 30);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `Colaboradores`
+--
+
+CREATE TABLE `Colaboradores` (
+  `id` int(10) NOT NULL,
+  `idTipoDoc` int(10) NOT NULL,
+  `numeroDoc` varchar(25) NOT NULL,
+  `nombres` varchar(50) NOT NULL,
+  `apellidos` varchar(50) NOT NULL,
+  `fechaNacimiento` date NOT NULL,
+  `telefono` varchar(10) NOT NULL,
+  `genero` varchar(25) NOT NULL,
+  `direccion` varchar(255) NOT NULL,
+  `idUsuario` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `Mesas`
+--
+
+CREATE TABLE `Mesas` (
+  `idMesa` int(10) NOT NULL,
+  `codigo` varchar(25) NOT NULL,
+  `nivel` varchar(10) NOT NULL,
+  `capacidad` int(11) NOT NULL,
+  `estado` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `MesasReserva`
+--
+
+CREATE TABLE `MesasReserva` (
+  `idMesaReserva` int(10) UNSIGNED NOT NULL,
+  `idReserva` int(11) NOT NULL,
+  `idMesa` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `Meseros`
+--
+
+CREATE TABLE `Meseros` (
+  `idMesero` int(11) NOT NULL,
+  `idColaborador` int(11) NOT NULL,
+  `cantMesas` int(11) NOT NULL,
+  `estado` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `Reservas`
+--
+
+CREATE TABLE `Reservas` (
+  `idReserva` int(10) NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `cantComensales` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `hora` time NOT NULL,
+  `idMesero` int(11) DEFAULT NULL,
+  `estado` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `Roles`
+--
+
+CREATE TABLE `Roles` (
+  `id` int(10) NOT NULL,
+  `rol` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -60,6 +143,16 @@ CREATE TABLE `TipoDocumento` (
   `id` int(11) NOT NULL,
   `tipo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `TipoDocumento`
+--
+
+INSERT INTO `TipoDocumento` (`id`, `tipo`) VALUES
+(1, 'DNI'),
+(2, 'Carnet de Extranjería'),
+(3, 'Pasaporte'),
+(4, 'RUC');
 
 -- --------------------------------------------------------
 
@@ -79,10 +172,21 @@ CREATE TABLE `UsuariosClientes` (
 
 INSERT INTO `UsuariosClientes` (`id`, `correo`, `contrasena`) VALUES
 (9, 'cesar@gmail.com', '$2y$10$ezyXaeyxsyPBErroowI66OVixXgkjiyabgMD/DizNpJLyjyVMSBZq'),
-(10, 'cesar2@gmail.com', '$2y$10$MU66GirAylJfEKYz.ghT7.6P7uE7XFQerpmIsDUBCt7BI/ybMzZPm'),
-(11, 'ces@gmail.com', '$2y$10$jenJAp.uAxy3VnscBvgByeNVKcvVGwnllyuum8AScXqiPShyuNcBW'),
-(12, 'ces@33gmail.com', '$2y$10$0Bw3QL9Kal64DpRFDc9fjO94L20kXp5mZvCklndnFWVJzpV0SGaVe'),
-(13, 'cesar22@gmail.com', '$2y$10$vXatGQv61rjbPCF1PuyV7.QWoQKBbIcwNNnVgy2mZwrcZs/luSyNW');
+(29, 'manuel12072705@gmail.com', '$2y$10$AyoeYxOz9PhrDTL2aqcG6OHo.wizIwVR0.7zez2Oo7fTv7I8tTDdW'),
+(30, 'jairomonterrey123@gmail.com', '$2y$10$6wfZ8WqqId2KVEUsSlE17eh1Q334Jrij3kIlDRzw9YKs6vxvAAL..');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `UsuariosColaboradores`
+--
+
+CREATE TABLE `UsuariosColaboradores` (
+  `id` int(10) NOT NULL,
+  `correo` varchar(255) NOT NULL,
+  `contrasena` varchar(255) NOT NULL,
+  `idRol` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tablas volcadas
@@ -97,6 +201,48 @@ ALTER TABLE `Clientes`
   ADD KEY `idUsuario` (`idUsuario`);
 
 --
+-- Indices de la tabla `Colaboradores`
+--
+ALTER TABLE `Colaboradores`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idTipoDoc` (`idTipoDoc`);
+
+--
+-- Indices de la tabla `Mesas`
+--
+ALTER TABLE `Mesas`
+  ADD PRIMARY KEY (`idMesa`);
+
+--
+-- Indices de la tabla `MesasReserva`
+--
+ALTER TABLE `MesasReserva`
+  ADD PRIMARY KEY (`idMesaReserva`),
+  ADD KEY `idMesa` (`idMesa`),
+  ADD KEY `idReserva` (`idReserva`);
+
+--
+-- Indices de la tabla `Meseros`
+--
+ALTER TABLE `Meseros`
+  ADD PRIMARY KEY (`idMesero`),
+  ADD KEY `idColaborador` (`idColaborador`);
+
+--
+-- Indices de la tabla `Reservas`
+--
+ALTER TABLE `Reservas`
+  ADD PRIMARY KEY (`idReserva`),
+  ADD KEY `idCliente` (`idCliente`),
+  ADD KEY `idMesero` (`idMesero`);
+
+--
+-- Indices de la tabla `Roles`
+--
+ALTER TABLE `Roles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `TipoDocumento`
 --
 ALTER TABLE `TipoDocumento`
@@ -109,6 +255,13 @@ ALTER TABLE `UsuariosClientes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `UsuariosColaboradores`
+--
+ALTER TABLE `UsuariosColaboradores`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idRol` (`idRol`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -116,19 +269,61 @@ ALTER TABLE `UsuariosClientes`
 -- AUTO_INCREMENT de la tabla `Clientes`
 --
 ALTER TABLE `Clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de la tabla `Colaboradores`
+--
+ALTER TABLE `Colaboradores`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `Mesas`
+--
+ALTER TABLE `Mesas`
+  MODIFY `idMesa` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `MesasReserva`
+--
+ALTER TABLE `MesasReserva`
+  MODIFY `idMesaReserva` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `Meseros`
+--
+ALTER TABLE `Meseros`
+  MODIFY `idMesero` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `Reservas`
+--
+ALTER TABLE `Reservas`
+  MODIFY `idReserva` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `Roles`
+--
+ALTER TABLE `Roles`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `TipoDocumento`
 --
 ALTER TABLE `TipoDocumento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `UsuariosClientes`
 --
 ALTER TABLE `UsuariosClientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT de la tabla `UsuariosColaboradores`
+--
+ALTER TABLE `UsuariosColaboradores`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -140,6 +335,38 @@ ALTER TABLE `UsuariosClientes`
 ALTER TABLE `Clientes`
   ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`idTipoDoc`) REFERENCES `TipoDocumento` (`id`),
   ADD CONSTRAINT `clientes_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `UsuariosClientes` (`id`);
+
+--
+-- Filtros para la tabla `Colaboradores`
+--
+ALTER TABLE `Colaboradores`
+  ADD CONSTRAINT `colaboradores_ibfk_1` FOREIGN KEY (`idTipoDoc`) REFERENCES `tipoDocumento` (`id`);
+
+--
+-- Filtros para la tabla `MesasReserva`
+--
+ALTER TABLE `MesasReserva`
+  ADD CONSTRAINT `mesasreserva_ibfk_1` FOREIGN KEY (`idMesa`) REFERENCES `Mesas` (`idMesa`),
+  ADD CONSTRAINT `mesasreserva_ibfk_2` FOREIGN KEY (`idReserva`) REFERENCES `Reservas` (`idReserva`);
+
+--
+-- Filtros para la tabla `Meseros`
+--
+ALTER TABLE `Meseros`
+  ADD CONSTRAINT `meseros_ibfk_1` FOREIGN KEY (`idColaborador`) REFERENCES `Colaboradores` (`id`);
+
+--
+-- Filtros para la tabla `Reservas`
+--
+ALTER TABLE `Reservas`
+  ADD CONSTRAINT `reservas_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `Clientes` (`id`),
+  ADD CONSTRAINT `reservas_ibfk_2` FOREIGN KEY (`idMesero`) REFERENCES `Meseros` (`idMesero`);
+
+--
+-- Filtros para la tabla `UsuariosColaboradores`
+--
+ALTER TABLE `UsuariosColaboradores`
+  ADD CONSTRAINT `usuarioscolaboradores_ibfk_1` FOREIGN KEY (`idRol`) REFERENCES `Roles` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -7,6 +7,7 @@ use App\Config\Security;
 use Rakit\Validation\Validator;;
 
 use App\Config\Message;
+use App\Config\Mail;
 use App\Models\ClienteUsuarioModel;
 use App\Models\ClienteModel;
 use \Resend;
@@ -26,6 +27,7 @@ class ClienteUsuarioController extends Controller
                 'correo'               => 'required|email',
                 'contrasena'           => 'required',
             ]);
+
 
             if ($validation->fails()) {
                 $errors = $validation->errors();
@@ -62,41 +64,60 @@ class ClienteUsuarioController extends Controller
                 'correo'               => 'required|email',
                 'contrasena'           => 'required|min:6',
                 'confirmContrasena'    => 'required',
+                'otp'                  => 'required|min:4'
             ]);
             if ($validation->fails()) {
                 $errors = $validation->errors();
                 echo ResponseHttp::status400($errors->all()[0]);
             } else {
                 if ($this->getParam()['contrasena'] === $this->getParam()['confirmContrasena']) {
-                    $arrUser = [
-                        'correo'      => $this->getParam()['correo'],
-                        'contrasena'  => $this->getParam()['contrasena']
-                    ];
-                    $user = new ClienteUsuarioModel($arrUser);
-                    $idUsuario  = $user::createUser();
 
-                    if ($idUsuario != 0) {
-                        $arrClient = [
-                            'nombres'    => $this->getParam($this)['nombres'],
-                            'apellidos'  => $this->getParam($this)['apellidos'],
-                            'idUsuario'  => $idUsuario
+                    $otp = (int) $this->getParam()['otp'];
+                    $email = $this->getParam()['correo'];
+
+                    $isValidateOTP = Security::validateOTP($otp, $email);
+
+
+                    if ($isValidateOTP) {
+
+                        $arrUser = [
+                            'correo'      => $this->getParam()['correo'],
+                            'contrasena'  => $this->getParam()['contrasena']
                         ];
+                        $user = new ClienteUsuarioModel($arrUser);
+                        $idUsuario  = $user::createUser();
 
-                        $cliente  = new ClienteModel($arrClient);
-                        $idCliente = $cliente::create();
+                        if ($idUsuario != 0) {
 
-                        if ($idCliente != 0) {
-                            $payload = [
-                                'idCliente'  => $idCliente,
+
+                            $arrClient = [
+                                'nombres'    => $this->getParam($this)['nombres'],
+                                'apellidos'  => $this->getParam($this)['apellidos'],
+                                'idUsuario'  => $idUsuario
                             ];
-                            $token = Security::createTokenJwt(Security::secretKey(), $payload);
-                            setcookie('token', $token, time() + (60 * 60 * 6), '/');
-                            echo ResponseHttp::status200("Cuenta creada satisfactoriamente");
+
+                            ClienteModel::setNombres($this->getParam($this)['nombres']);
+                            ClienteModel::setApellidos($this->getParam($this)['apellidos']);
+                            ClienteModel::setApellidos($this->getParam($this)['apellidos']);
+                            ClienteModel::setIdUsuario($idUsuario);
+
+                            $idCliente = ClienteModel::create();
+
+                            if ($idCliente != 0) {
+                                $payload = [
+                                    'idCliente'  => $idCliente,
+                                ];
+                                $token = Security::createTokenJwt(Security::secretKey(), $payload);
+                                setcookie('token', $token, time() + (60 * 60 * 6), '/');
+                                echo ResponseHttp::status200("Cuenta creada satisfactoriamente");
+                            } else {
+                                echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                            }
                         } else {
                             echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
                         }
                     } else {
-                        echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                        echo ResponseHttp::status400("Codigo de verificación o correo erroneos");
                     }
                 } else {
                     echo ResponseHttp::status400("Las contraseñas no coincien");
@@ -111,81 +132,29 @@ class ClienteUsuarioController extends Controller
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
 
             try {
-
-                $resend = Resend::client('re_F5feTq5Q_LycTnkXJjTDndCuYYuaQJT4s');
-                $result = $resend->emails->send([
-                    'from' => 'Acme <onboarding@resend.dev>',
-                    'to' => ['cesarcunyarache@gmail.com'],
-                    'subject' => 'recuperar contraseña',
-                    'html' => '<!DOCTYPE html>
-                    <html lang="en">
-                    <head>
-                        
-                        <style>
-                            body {
-                                background-color: white;
-                            }
-                            
-                            * {
-                                color: black;
-                                font-family: Arial, Helvetica, sans-serif;
-                            }
-                    
-                            .title {
-                                text-align: center;
-                    
-                            }
-                            .card {
-                                background-color: #ffffff;
-                                border-radius: 10px;
-                                padding: 1rem;
-                                border: 1px solid #ccc;
-                            }
-                            .code {
-                                font-weight: bold;
-                                font-size: 2rem
-                            }
-                    
-                        </style>
-                    </head>
-                    <body>
-                        <div class="card">
-                            <h1 class="title">Verificacion de codigo</h1>
-                            <p>Tu codigo de verificacion es:</p>
-                            <h5 class="code">2309</h5>
-                    
-                            <p>Your account cant be accessed without this verification code, even if you didn’t submit this request.
-                    
-                                To keep your account secure, we recommend using a unique password for your Adobe account or using the Adobe Account Access app to sign in. Adobe Account Access’ two-factor authentication makes signing in to your account easier, without needing to remember or change passwords.
-                                
-                                Learn more and download the Adobe Account Access app.</p>
-                        </div>
-                        
-                    </body>
-                    </html>',
+                $validator = new Validator;
+                $validator->setMessages(Message::getMessages());
+                $validation = $validator->validate($this->getParam(), [
+                    'correo'               => 'required|email',
                 ]);
-                echo ResponseHttp::status200($result);
+                if ($validation->fails()) {
+                    $errors = $validation->errors();
+                    echo ResponseHttp::status400($errors->all()[0]);
+                } else {
+                    $correo = $this->getParam()['correo'];
+                    $data = ClienteUsuarioModel::getUserByCorreo($correo);
+
+                    if (count($data) > 0) {
+                        $payload = ['id' => $data['id'], 'correo' => $data['correo']];
+                        $token = Security::createTokenJwt(Security::secretKey(), $payload);
+
+                        Mail::sendEmail($correo, "Restablecer Contraseña", Mail::getBodyResetPassword($token));
+                        echo ResponseHttp::status200("Se ha enviado un mensaje para restablecer tu contraseña al correo: " . $correo);
+                    }
+                }
             } catch (\Exception $e) {
                 echo ResponseHttp::status500('Error: ' . $e->getMessage());
             }
-
-
-            /* echo ResponseHttp::status200($result->toJson()); */
-            /*  try {
-
-                $resend = Resend::client('re_F5feTq5Q_LycTnkXJjTDndCuYYuaQJT4s');
-                
-                $result = $resend->emails->send([
-                    'from' => 'Acme <onboarding@resend.dev>',
-                    'to' => ['cesarcunyarache@gmail.com'],
-                    'subject' => 'Hello world',
-                    'html' => '<strong>It works!</strong>',
-                ]);
-                echo ResponseHttp::status200($result->toJson());
-            } catch (\Exception $e) {
-                exit('Error: ' . $e->getMessage());
-                echo ResponseHttp::status400($e->getMessage());
-            } */
             exit();
         }
     }
@@ -197,9 +166,9 @@ class ClienteUsuarioController extends Controller
 
             try {
                 $data  = Security::validateTokenJwt(Security::secretKey());
-                $idClient = $data->data->idCliente;
 
-                if (isset($idClient) && !empty($idClient)) {
+                if (isset($data) && !empty($data)) {
+                    $idClient = $data->data->idCliente;
                     $cliente = ClienteModel::getClientById($idClient);
                     echo ResponseHttp::status200($cliente);
                 }
@@ -210,9 +179,9 @@ class ClienteUsuarioController extends Controller
         }
     }
 
-    final public function getLogout(string $endPoint)
+    final public function postLogout(string $endPoint)
     {
-        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
             try {
                 Security::validateTokenJwt(Security::secretKey());
                 setcookie("token", "", time() - 3600, "/");
@@ -237,6 +206,285 @@ class ClienteUsuarioController extends Controller
         }
     }
 
+    final public function postSendOTP(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+            try {
+                $validator = new Validator;
+
+                $validator->setMessages(Message::getMessages());
+                $validation = $validator->validate($this->getParam(), [
+                    'nombres'              => 'required|alpha_spaces',
+                    'apellidos'            => 'required|alpha_spaces',
+                    'correo'               => 'required|email',
+                    'contrasena'           => 'required|min:6',
+                    'confirmContrasena'    => 'required',
+                ]);
+                if ($validation->fails()) {
+                    $errors = $validation->errors();
+                    echo ResponseHttp::status400($errors->all()[0]);
+                } else {
+                    if ($this->getParam()['contrasena'] === $this->getParam()['confirmContrasena']) {
+
+                        $correo = $this->getParam()['correo'];
+                        $isExists = ClienteUsuarioModel::validateCorreo($correo);
+
+                        if ($isExists) {
+                            $otp =  Security::createOTP($correo);
+                            if (isset($otp)) {
+
+
+                                Mail::sendEmail($correo, "OTP", Mail::getBodyOTP($otp));
+
+                                echo ResponseHttp::status200('OTP Enviado Correctamente');
+                            }
+                        }
+                    } else {
+                        echo ResponseHttp::status400("Las contraseñas no coincien");
+                    }
+                }
+
+                exit;
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+        }
+    }
+
+
+    final public function postReSendOTP(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+            try {
+                $validator = new Validator;
+
+                $validator->setMessages(Message::getMessages());
+                $validation = $validator->validate($this->getParam(), [
+                    'correo'               => 'required|email',
+                ]);
+                if ($validation->fails()) {
+                    $errors = $validation->errors();
+                    echo ResponseHttp::status400($errors->all()[0]);
+                } else {
+                    $correo = $this->getParam()['correo'];
+                    $isExists = ClienteUsuarioModel::validateCorreo($correo);
+
+                    if ($isExists) {
+                        $otp =  Security::createOTP($correo);
+                        if (isset($otp)) {
+                            Mail::sendEmail($correo, "OTP", Mail::getBodyOTP($otp));
+                            echo ResponseHttp::status200('Codigo enviado correctamente');
+                        }
+                    }
+                }
+
+                exit;
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+        }
+    }
+
+    final public function putResetPassword(string $endPoint)
+    {
+        if ($this->getMethod() == 'put' && $endPoint == $this->getRoute()) {
+            try {
+                $validator = new Validator;
+
+                $validator->setMessages(Message::getMessages());
+                $validation = $validator->validate($this->getParam(), [
+                    'token'                => 'required',
+                    'contrasena'           => 'required|min:6',
+                    'confirmContrasena'    => 'required',
+                ]);
+                if ($validation->fails()) {
+                    $errors = $validation->errors();
+                    echo ResponseHttp::status400($errors->all()[0]);
+                } else {
+
+                    if ($this->getParam()['contrasena'] === $this->getParam()['confirmContrasena']) {
+
+                        $contrasena = $this->getParam()['contrasena'];
+                        $data = Security::validateToken($this->getParam()['token'], Security::secretKey());
+                        $idUser = $data->data->id;
+
+                        if (isset($idUser) && !empty($idUser)) {
+
+                            $res = ClienteUsuarioModel::UpdatePassword($idUser, $contrasena);
+
+                            if ($res) {
+                                echo ResponseHttp::status200("Actualizado correctamente");
+                            } else {
+                                echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                            }
+                        }
+                    } else {
+                        echo ResponseHttp::status400("Las contraseñas no coincien");
+                    }
+                }
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit;
+        }
+    }
+
+    final public function putUpdateEmail(string $endPoint)
+    {
+        if ($this->getMethod() == 'put' && $endPoint == $this->getRoute()) {
+            try {
+                $validator = new Validator;
+
+                $validator->setMessages(Message::getMessages());
+                $validation = $validator->validate($this->getParam(), [
+                    'correo'                => 'required',
+                    'contrasena'            => 'required',
+                    'otp'                   => 'required|min:4'
+                ]);
+                if ($validation->fails()) {
+                    $errors = $validation->errors();
+                    echo ResponseHttp::status400($errors->all()[0]);
+                } else {
+                    $correo = $this->getParam()['correo'];
+                    $contrasena = $this->getParam()['contrasena'];
+                    $otp = (int) $this->getParam()['otp'];
+
+                    $data  = Security::validateTokenJwt(Security::secretKey());
+
+                    if (isset($data) && !empty($data)) {
+                        $idClient = $data->data->idCliente;
+                        $cliente = ClienteModel::getClientById($idClient);
+
+                        if ($cliente['correo'] !== $correo) {
+                            ClienteUsuarioModel::validateCorreo($correo);
+
+                            if (Security::validatePassword($contrasena, $cliente['contrasena'])) {
+                                $isValidateOTP = Security::validateOTP($otp, $correo);
+                                if ($isValidateOTP) {
+                                    $res = ClienteUsuarioModel::UpdateEmail($cliente['idUsuario'], $correo);
+                                    if ($res) {
+                                        echo ResponseHttp::status200("Actualizado correctamente");
+                                    } else {
+                                        echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                                    }
+                                } else {
+                                    echo ResponseHttp::status400("Codigo de verificación o correo erroneos");
+                                }
+                            } else {
+                                echo ResponseHttp::status400("La contraseña es incorrecta");
+                            }
+                        } else {
+                            echo ResponseHttp::status400("El correo debe ser diferente al ya registrado");
+                        }
+                    }
+                }
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit;
+        }
+    }
+
+    final public function postSendOtpUpdateEmail(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+            try {
+                $validator = new Validator;
+
+                $validator->setMessages(Message::getMessages());
+                $validation = $validator->validate($this->getParam(), [
+                    'correo'               => 'required|email',
+                    'contrasena'           => 'required'
+                ]);
+                if ($validation->fails()) {
+                    $errors = $validation->errors();
+                    echo ResponseHttp::status400($errors->all()[0]);
+                } else {
+                    $correo = $this->getParam()['correo'];
+                    $contrasena = $this->getParam()['contrasena'];
+
+                    $data  = Security::validateTokenJwt(Security::secretKey());
+
+                    if (isset($data) && !empty($data)) {
+                        $idClient = $data->data->idCliente;
+                        $cliente = ClienteModel::getClientById($idClient);
+
+                        if ($cliente['correo'] !== $correo) {
+
+                            ClienteUsuarioModel::validateCorreo($correo);
+
+                            if (Security::validatePassword($contrasena, $cliente['contrasena'])) {
+                                $otp =  Security::createOTP($correo);
+                                if (isset($otp)) {
+                                    Mail::sendEmail($correo, "OTP", Mail::getBodyOTP($otp));
+                                    echo ResponseHttp::status200('Codigo enviado correctamente');
+                                }
+                            } else {
+                                echo ResponseHttp::status400("La contraseña es incorrecta");
+                            }
+                        } else {
+                            echo ResponseHttp::status400("El correo debe ser diferente al ya registrado");
+                        }
+                    }
+                }
+
+                exit;
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+        }
+    }
+
+    final public function putUpdatePassword(string $endPoint)
+    {
+        if ($this->getMethod() == 'put' && $endPoint == $this->getRoute()) {
+            try {
+                $validator = new Validator;
+
+                $validator->setMessages(Message::getMessages());
+                $validation = $validator->validate($this->getParam(), [
+                    'contrasena'            => 'required',
+                    'nuevaContrasena'       => 'required|min:6',
+                    'confirmContrasena'     => 'required'
+                ]);
+                if ($validation->fails()) {
+                    $errors = $validation->errors();
+                    echo ResponseHttp::status400($errors->all()[0]);
+                } else {
+                    $contrasena = $this->getParam()['contrasena'];
+                    $nuevaContrasena = $this->getParam()['nuevaContrasena'];
+                    $confirmContrasena = $this->getParam()['confirmContrasena'];
+
+                    if ($nuevaContrasena === $confirmContrasena) {
+                        $data  = Security::validateTokenJwt(Security::secretKey());
+                        if (isset($data) && !empty($data)) {
+                            $idClient = $data->data->idCliente;
+                            $cliente = ClienteModel::getClientById($idClient);
+                            if (Security::validatePassword($contrasena, $cliente['contrasena'])) {
+                                $res = ClienteUsuarioModel::UpdatePassword($cliente['idUsuario'], $nuevaContrasena);
+                                if ($res) {
+                                    echo ResponseHttp::status200("Actualizado correctamente");
+                                } else {
+                                    echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                                }
+                            } else {
+                                echo ResponseHttp::status400("La contraseña es incorrecta");
+                            }
+                        }
+                    } else {
+                        echo ResponseHttp::status400("Las contraseñas no coincien");
+                    }
+                }
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit;
+        }
+    }
+
+
+
+
 
 
     /* final public function getAll(string $endPoint)
@@ -248,7 +496,7 @@ class ClienteUsuarioController extends Controller
         }    
     } */
 
-    
+
     /* final public function getUser(string $endPoint)
     {
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {

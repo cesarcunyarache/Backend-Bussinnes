@@ -5,12 +5,6 @@ namespace App\Controllers;
 class Controller
 {
 
-    protected static $validate_number = '/^[0-9]+$/';
-    protected static $validate_text = '/^[a-zA-Z ]+$/';
-    protected static $validate_rol = '/^[1,2,3]{1,1}$/';
-    protected static $validate_stock = '/^[0-9]{1,}$/';
-    protected static $validate_description = '/^[a-zA-Z ]{1,30}$/';
-
 
     protected static function validateEmail(string $email)
     {
@@ -61,4 +55,10 @@ class Controller
     protected function getCookie(string $cookie){
         return $_COOKIE[$cookie];
     }
+
+    protected function getSession(string $session){
+        return $_SESSION[$session];
+    }
+
+
 }

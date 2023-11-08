@@ -16,9 +16,21 @@ $app->postForgetPassword("clienteAuth/forgetPassword");
 
 $app->getProfile("clienteAuth/profile");
 
-$app->getLogout("clienteAuth/logout");
+$app->postLogout("clienteAuth/logout");
 
 $app->getVerify("clienteAuth/verify");
+
+$app->postSendOTP("clienteAuth/sendOtp");
+
+$app->postReSendOTP("clienteAuth/resendOtp");
+
+$app->putResetPassword("clienteAuth/resetPassword");
+
+$app->putUpdateEmail("clienteAuth/updateEmail");
+
+$app->postSendOtpUpdateEmail("clienteAuth/sendOtpUpdateEmail");
+
+$app->putUpdatePassword("clienteAuth/updatePassword");
 
 
 echo json_encode(ResponseHttp::status404());

@@ -15,7 +15,7 @@ class ResponseHttp {
             die(json_encode(ResponseHttp::status401('No tiene autorizacion para consumir esta API')));
         }
 
-        $list = ['https://www.thunderclient.com/', 'http://localhost:3000'];        
+        $list = ['https://www.thunderclient.com/', 'http://localhost:3000', 'http://localhost:4000'];        
 
       
         if (in_array($origin,$list)){
@@ -36,7 +36,7 @@ class ResponseHttp {
              
             }
         } else {
-            die(json_encode(ResponseHttp::status401('No tiene autorizacion para consumir esta API')));
+            die(ResponseHttp::status401('No tiene autorizacion para consumir esta API'));
         }       
     }
 

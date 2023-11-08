@@ -46,7 +46,7 @@ class ClienteUsuarioModel extends  Connection
             }
         } catch (\PDOException $e) {
             error_log("UserModel::Login -> " . $e);
-            die(json_encode(ResponseHttp::status500()));
+            die(ResponseHttp::status500());
         }
         exit;
     }
@@ -76,10 +76,99 @@ class ClienteUsuarioModel extends  Connection
                 }
             } catch (\PDOException $e) {
                 error_log('UserModel::post -> ' . $e);
-                die(json_encode(ResponseHttp::status500()));
+                die(ResponseHttp::status500());
             }
         }
         exit();
+    }
+
+    final public static function validateCorreo($correo)
+    {
+
+        try {
+
+            if (Sql::exists("SELECT correo FROM UsuariosClientes WHERE correo = :correo", ":correo", $correo)) {
+                echo (ResponseHttp::status400("El Correo ya esta registrado"));
+                exit();
+            } else {
+                return true;
+            }
+        } catch (\PDOException $e) {
+            error_log('UserModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
+    }
+
+
+
+    final public static function getUserByCorreo($correo)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosClientes WHERE correo = :correo");
+            $con->execute([
+                ':correo' => $correo
+            ]);
+
+            if ($con->rowCount() === 0) {
+                echo ResponseHttp::status400('El correo no existe');
+            } else {
+                $data = $con->fetch();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+
+    final public static function UpdatePassword($id, $password)
+    {
+        try {
+            $con = self::getConnection();
+            $sql = "UPDATE UsuariosClientes SET contrasena=:contrasena WHERE id=:id";
+
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':contrasena' => Security::createPassword($password),
+                ':id' => (int) $id,
+            ]);
+            if ($query->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\PDOException $e) {
+            error_log('UserModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
+    }
+
+    final public static function UpdateEmail($id, $email)
+    {
+        try {
+            $con = self::getConnection();
+            $sql = "UPDATE UsuariosClientes SET correo=:correo WHERE id=:id";
+
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':correo' => $email,
+                ':id' => (int) $id,
+            ]);
+            if ($query->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\PDOException $e) {
+            error_log('UserModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
     }
 
 

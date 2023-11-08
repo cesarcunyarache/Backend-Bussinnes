@@ -33,6 +33,7 @@ class ComposerStaticInit71473d24cd43562d2e6cdccc596eb71b
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
             'PhpOption\\' => 10,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'G' => 
         array (
@@ -89,6 +90,10 @@ class ComposerStaticInit71473d24cd43562d2e6cdccc596eb71b
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -124,6 +129,7 @@ class ComposerStaticInit71473d24cd43562d2e6cdccc596eb71b
         'App\\Config\\Message' => __DIR__ . '/../..' . '/src/Config/Message.php',
         'App\\Config\\ResponseHttp' => __DIR__ . '/../..' . '/src/Config/ResponseHttp.php',
         'App\\Config\\Security' => __DIR__ . '/../..' . '/src/Config/Security.php',
+        'App\\Controllers\\ClienteController' => __DIR__ . '/../..' . '/src/Controllers/ClienteController.php',
         'App\\Controllers\\ClienteUsuarioController' => __DIR__ . '/../..' . '/src/Controllers/ClienteUsuarioController.php',
         'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/src/Controllers/Controller.php',
         'App\\Controllers\\ReservaController' => __DIR__ . '/../..' . '/src/Controllers/ReservaController.php',
@@ -272,6 +278,13 @@ class ComposerStaticInit71473d24cd43562d2e6cdccc596eb71b
         'GuzzleHttp\\RetryMiddleware' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/RetryMiddleware.php',
         'GuzzleHttp\\TransferStats' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/TransferStats.php',
         'GuzzleHttp\\Utils' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Utils.php',
+        'PHPMailer\\PHPMailer\\DSNConfigurator' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/DSNConfigurator.php',
+        'PHPMailer\\PHPMailer\\Exception' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/Exception.php',
+        'PHPMailer\\PHPMailer\\OAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuth.php',
+        'PHPMailer\\PHPMailer\\OAuthTokenProvider' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuthTokenProvider.php',
+        'PHPMailer\\PHPMailer\\PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/PHPMailer.php',
+        'PHPMailer\\PHPMailer\\POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/POP3.php',
+        'PHPMailer\\PHPMailer\\SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/SMTP.php',
         'PhpOption\\LazyOption' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/LazyOption.php',
         'PhpOption\\None' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/None.php',
         'PhpOption\\Option' => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption/Option.php',

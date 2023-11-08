@@ -13,7 +13,7 @@ class ClienteModel extends  Connection
 
     private static int    $id;
     private static int    $idTipoDoc;
-    private static string $numDoc;
+    private static string $numeroDoc;
     private static string $nombres;
     private static string $apellidos;
     private static string $telefono;
@@ -23,10 +23,13 @@ class ClienteModel extends  Connection
 
     public function __construct(array $data)
     {
-
-        self::$nombres   = $data['nombres'];
+        self::$idTipoDoc = $data['idTipoDoc'];
+        self::$numeroDoc = $data['numeroDoc'];
+        self::$nombres = $data['nombres'];
         self::$apellidos = $data['apellidos'];
-        self::$idUsuario = $data['idUsuario'];
+        self::$telefono = $data['telefono'];
+        self::$fechaNacimiento = $data['fechaNacimiento'];
+        self::$genero = $data['genero'];
     }
 
 
@@ -49,7 +52,7 @@ class ClienteModel extends  Connection
             }
         } catch (\PDOException $e) {
             error_log('UserModel::post -> ' . $e);
-            die(json_encode(ResponseHttp::status500()));
+            die(ResponseHttp::status500());
         }
     }
 
@@ -73,7 +76,7 @@ class ClienteModel extends  Connection
             }
         } catch (\PDOException $e) {
             error_log("UserModel::Login -> " . $e);
-            die(json_encode(ResponseHttp::status500()));
+            die(ResponseHttp::status500());
         }
         exit;
     }
@@ -101,9 +104,37 @@ class ClienteModel extends  Connection
             }
         } catch (\PDOException $e) {
             error_log("UserModel::Login -> " . $e);
-            die(json_encode(ResponseHttp::status500()));
+            die(ResponseHttp::status500());
         }
         exit;
+    }
+
+    final public static function Update()
+    {
+        try {
+            $con = self::getConnection();
+            $sql = "UPDATE Clientes SET idTipoDoc=:idTipoDoc, numeroDoc=:numeroDoc, nombres=:nombres,apellidos=:apellidos, telefono=:telefono, fechaNacimiento=:fechaNacimiento, genero=:genero WHERE id=:id";
+
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':idTipoDoc' => (int) self::getIdTipoDoc(),
+                ':numeroDoc' => self::getNumeroDoc(),
+                ':nombres'  => self::getNombres(),
+                ':apellidos' => self::getApellidos(),
+                ':telefono' => self::getTelefono(),
+                ':fechaNacimiento' => self::getFechaNacimiento(),
+                ':genero' => self::getGenero(),
+                ':id' => (int) self::getId(),
+            ]);
+            if ($query->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\PDOException $e) {
+            error_log('UserModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
     }
 
     final public static function getId()
@@ -126,14 +157,14 @@ class ClienteModel extends  Connection
         self::$idTipoDoc = $idTipoDoc;
     }
 
-    final public static function getNumDoc()
+    final public static function getNumeroDoc()
     {
-        return self::$numDoc;
+        return self::$numeroDoc;
     }
 
-    final public static function setNumDoc($numDoc)
+    final public static function setNumeroDoc($numeroDoc)
     {
-        self::$numDoc = $numDoc;
+        self::$numeroDoc = $numeroDoc;
     }
 
     final public static function getNombres()

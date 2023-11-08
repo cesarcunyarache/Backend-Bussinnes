@@ -1,15 +1,21 @@
 <?php
-/* 
+
 use App\Config\ResponseHttp;
-use App\Controllers\ClienteAuthController;
+use App\Controllers\ClienteController;
+
 
 $params  = explode('/', $_GET['route']);
 
-echo $_GET['route'];
-$app = new ClienteAuthController();
+$app = new ClienteController();
 
-$app->postLogin("clienteAuth/login");
+$app->putUpdate("cliente/");
 
-$app->getProfile("clienteAuth/profile");
 
-echo json_encode(ResponseHttp::status404()); */
+echo json_encode(ResponseHttp::status404());
+
+
+
+
+
+
+

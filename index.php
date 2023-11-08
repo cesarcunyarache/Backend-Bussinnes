@@ -20,18 +20,23 @@ if (isset($_GET['route'])) {
     $file = './src/Routes/' . $params[0] . '.php';
 
     if (!in_array($params[0], $list)) {
-        echo json_encode(ResponseHttp::status400());
+        echo ResponseHttp::status400();
         /* error_log("Holaaaaa", 3, '/Logs/php-error.log'); */
         exit;
     }
 
+  
+
     if (is_readable($file)) {
         require $file;
+        session_name('MiSesionUnica');
+/*         session_start();
+        session_set_cookie_params(0, '/'); */
         exit;
     } else {
-        echo json_encode(ResponseHttp::status500('El archivo de la ruta no esta creado'));
+        echo ResponseHttp::status500('El archivo de la ruta no esta creado');
     }
 } else {
-    echo json_encode(ResponseHttp::status500());
+    echo ResponseHttp::status500();
     exit;
 }
