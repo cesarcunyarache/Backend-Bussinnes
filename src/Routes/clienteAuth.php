@@ -32,5 +32,7 @@ $app->postSendOtpUpdateEmail("clienteAuth/sendOtpUpdateEmail");
 
 $app->putUpdatePassword("clienteAuth/updatePassword");
 
+$app->post("clienteAuth/");
 
-echo json_encode(ResponseHttp::status404());
+
+echo ResponseHttp::status404();

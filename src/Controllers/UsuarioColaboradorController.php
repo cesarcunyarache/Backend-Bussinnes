@@ -9,12 +9,12 @@ use Rakit\Validation\Validator;;
 use App\Config\Message;
 use App\Config\Mail;
 use App\Models\ClienteUsuarioModel;
+use App\Models\UsuarioColaboradorModel;
+use App\Models\ColaboradorModel;
 use App\Models\ClienteModel;
-use \Resend;
 
 
-
-class ClienteUsuarioController extends Controller
+class UsuarioColaboradorController extends Controller
 {
 
     final public function postLogin(string $endPoint)
@@ -28,21 +28,21 @@ class ClienteUsuarioController extends Controller
                 'contrasena'           => 'required',
             ]);
 
-
             if ($validation->fails()) {
                 $errors = $validation->errors();
                 echo ResponseHttp::status400($errors->all()[0]);
             } else {
-                $user = new ClienteUsuarioModel($this->getParam());
-                $data = $user::login();
+                $correo = $this->getParam()['correo'];
+                $contrasena = $this->getParam()['contrasena'];
+
+                $data = UsuarioColaboradorModel::login($correo, $contrasena);
 
                 if (count($data) > 0) {
-                    $res = ClienteModel::getClientByIdUser($data['id']);
+                     $res = ColaboradorModel::getClientByIdUser($data['id']); 
 
                     if (count($res) > 0) {
-                        $payload = ['idCliente' => $res['id']];
+                        $payload = ['idColaborador' => $res['id'], 'idRol' => $data['idRol']];
                         $token = Security::createTokenJwt(Security::secretKey(), $payload);
-
                         setcookie("token", $token, time() + (60 * 60 * 6), "/");
                         echo json_encode($res);
                     }
@@ -59,11 +59,11 @@ class ClienteUsuarioController extends Controller
 
             $validator->setMessages(Message::getMessages());
             $validation = $validator->validate($this->getParam(), [
-                'nombres'              => 'required|alpha_spaces',
-                'apellidos'            => 'required|alpha_spaces',
+                'idColaborador'        => 'required|numeric',
                 'correo'               => 'required|email',
                 'contrasena'           => 'required|min:6',
                 'confirmContrasena'    => 'required',
+                'idRol'                => 'required|numeric',
                 'otp'                  => 'required|min:4'
             ]);
             if ($validation->fails()) {
@@ -77,39 +77,16 @@ class ClienteUsuarioController extends Controller
 
                     $isValidateOTP = Security::validateOTP($otp, $email);
 
-
                     if ($isValidateOTP) {
-
-                        $arrUser = [
-                            'correo'      => $this->getParam()['correo'],
-                            'contrasena'  => $this->getParam()['contrasena']
-                        ];
-                        $user = new ClienteUsuarioModel($arrUser);
+                        $user = new UsuarioColaboradorModel($this->getParam());
                         $idUsuario  = $user::createUser();
 
                         if ($idUsuario != 0) {
+                            $idColaborador = $this->getParam()['idColaborador'];
+                            $res = ColaboradorModel::updateIdUser($idColaborador,$idUsuario);
 
-
-                            $arrClient = [
-                                'nombres'    => $this->getParam($this)['nombres'],
-                                'apellidos'  => $this->getParam($this)['apellidos'],
-                                'idUsuario'  => $idUsuario
-                            ];
-
-                            ClienteModel::setNombres($this->getParam($this)['nombres']);
-                            ClienteModel::setApellidos($this->getParam($this)['apellidos']);
-                            ClienteModel::setApellidos($this->getParam($this)['apellidos']);
-                            ClienteModel::setIdUsuario($idUsuario);
-
-                            $idCliente = ClienteModel::create();
-
-                            if ($idCliente != 0) {
-                                $payload = [
-                                    'idCliente'  => $idCliente,
-                                ];
-                                $token = Security::createTokenJwt(Security::secretKey(), $payload);
-                                setcookie('token', $token, time() + (60 * 60 * 6), '/');
-                                echo ResponseHttp::status200("Cuenta creada satisfactoriamente");
+                            if ($res) {
+                                echo ResponseHttp::status200("Creado satisfactoriamente");
                             } else {
                                 echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
                             }
@@ -127,6 +104,51 @@ class ClienteUsuarioController extends Controller
         }
     }
 
+
+    final public function postSendOTP(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+            try {
+                $validator = new Validator;
+
+                $validator->setMessages(Message::getMessages());
+                $validation = $validator->validate($this->getParam(), [
+                    'idColaborador'        => 'required|numeric',
+                    'correo'               => 'required|email',
+                    'contrasena'           => 'required|min:6',
+                    'confirmContrasena'    => 'required',
+                    'idRol'                => 'required|numeric',
+
+                ]);
+                if ($validation->fails()) {
+                    $errors = $validation->errors();
+                    echo ResponseHttp::status400($errors->all()[0]);
+                } else {
+                    if ($this->getParam()['contrasena'] === $this->getParam()['confirmContrasena']) {
+
+                        $correo = $this->getParam()['correo'];
+                        $isExists = UsuarioColaboradorModel::validateCorreo($correo);
+
+                        if ($isExists) {
+                            $otp =  Security::createOTP($correo);
+                            if (isset($otp)) {
+                                Mail::sendEmail($correo, "OTP", Mail::getBodyOTP($otp));
+                                echo ResponseHttp::status200('OTP Enviado Correctamente');
+                            }
+                        }
+                    } else {
+                        echo ResponseHttp::status400("Las contraseñas no coincien");
+                    }
+                }
+
+                exit;
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+        }
+    }
+
+
     final public function postForgetPassword(string $endPoint)
     {
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
@@ -142,13 +164,13 @@ class ClienteUsuarioController extends Controller
                     echo ResponseHttp::status400($errors->all()[0]);
                 } else {
                     $correo = $this->getParam()['correo'];
-                    $data = ClienteUsuarioModel::getUserByCorreo($correo);
+                    $data = UsuarioColaboradorModel::getUserByCorreo($correo);
 
                     if (count($data) > 0) {
                         $payload = ['id' => $data['id'], 'correo' => $data['correo']];
                         $token = Security::createTokenJwt(Security::secretKey(), $payload, 600);
 
-                        Mail::sendEmail($correo, "Restablecer Contraseña", Mail::getBodyResetPassword($token));
+                        Mail::sendEmail($correo, "Restablecer Contraseña", Mail::getBodyResetPasswordAdmin($token));
                         echo ResponseHttp::status200("Se ha enviado un mensaje para restablecer tu contraseña al correo: " . $correo);
                     }
                 }
@@ -158,6 +180,51 @@ class ClienteUsuarioController extends Controller
             exit();
         }
     }
+
+    final public function putResetPassword(string $endPoint)
+    {
+        if ($this->getMethod() == 'put' && $endPoint == $this->getRoute()) {
+            try {
+                $validator = new Validator;
+
+                $validator->setMessages(Message::getMessages());
+                $validation = $validator->validate($this->getParam(), [
+                    'token'                => 'required',
+                    'contrasena'           => 'required|min:6',
+                    'confirmContrasena'    => 'required',
+                ]);
+                if ($validation->fails()) {
+                    $errors = $validation->errors();
+                    echo ResponseHttp::status400($errors->all()[0]);
+                } else {
+
+                    if ($this->getParam()['contrasena'] === $this->getParam()['confirmContrasena']) {
+
+                        $contrasena = $this->getParam()['contrasena'];
+                        $data = Security::validateToken($this->getParam()['token'], Security::secretKey());
+                        $idUser = $data->data->id;
+
+                        if (isset($idUser) && !empty($idUser)) {
+
+                            $res = UsuarioColaboradorModel::UpdatePassword($idUser, $contrasena);
+
+                            if ($res) {
+                                echo ResponseHttp::status200("Actualizado correctamente");
+                            } else {
+                                echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                            }
+                        }
+                    } else {
+                        echo ResponseHttp::status400("Las contraseñas no coincien");
+                    }
+                }
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit;
+        }
+    }
+
 
 
     final public function getProfile(string $endPoint)
@@ -206,50 +273,7 @@ class ClienteUsuarioController extends Controller
         }
     }
 
-    final public function postSendOTP(string $endPoint)
-    {
-        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
-            try {
-                $validator = new Validator;
 
-                $validator->setMessages(Message::getMessages());
-                $validation = $validator->validate($this->getParam(), [
-                    'nombres'              => 'required|alpha_spaces',
-                    'apellidos'            => 'required|alpha_spaces',
-                    'correo'               => 'required|email',
-                    'contrasena'           => 'required|min:6',
-                    'confirmContrasena'    => 'required',
-                ]);
-                if ($validation->fails()) {
-                    $errors = $validation->errors();
-                    echo ResponseHttp::status400($errors->all()[0]);
-                } else {
-                    if ($this->getParam()['contrasena'] === $this->getParam()['confirmContrasena']) {
-
-                        $correo = $this->getParam()['correo'];
-                        $isExists = ClienteUsuarioModel::validateCorreo($correo);
-
-                        if ($isExists) {
-                            $otp =  Security::createOTP($correo);
-                            if (isset($otp)) {
-
-
-                                Mail::sendEmail($correo, "OTP", Mail::getBodyOTP($otp));
-
-                                echo ResponseHttp::status200('OTP Enviado Correctamente');
-                            }
-                        }
-                    } else {
-                        echo ResponseHttp::status400("Las contraseñas no coincien");
-                    }
-                }
-
-                exit;
-            } catch (\Exception $e) {
-                echo ResponseHttp::status500($e->getMessage());
-            }
-        }
-    }
 
 
     final public function postReSendOTP(string $endPoint)
@@ -285,49 +309,6 @@ class ClienteUsuarioController extends Controller
         }
     }
 
-    final public function putResetPassword(string $endPoint)
-    {
-        if ($this->getMethod() == 'put' && $endPoint == $this->getRoute()) {
-            try {
-                $validator = new Validator;
-
-                $validator->setMessages(Message::getMessages());
-                $validation = $validator->validate($this->getParam(), [
-                    'token'                => 'required',
-                    'contrasena'           => 'required|min:6',
-                    'confirmContrasena'    => 'required',
-                ]);
-                if ($validation->fails()) {
-                    $errors = $validation->errors();
-                    echo ResponseHttp::status400($errors->all()[0]);
-                } else {
-
-                    if ($this->getParam()['contrasena'] === $this->getParam()['confirmContrasena']) {
-
-                        $contrasena = $this->getParam()['contrasena'];
-                        $data = Security::validateToken($this->getParam()['token'], Security::secretKey());
-                        $idUser = $data->data->id;
-
-                        if (isset($idUser) && !empty($idUser)) {
-
-                            $res = ClienteUsuarioModel::UpdatePassword($idUser, $contrasena);
-
-                            if ($res) {
-                                echo ResponseHttp::status200("Actualizado correctamente");
-                            } else {
-                                echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
-                            }
-                        }
-                    } else {
-                        echo ResponseHttp::status400("Las contraseñas no coincien");
-                    }
-                }
-            } catch (\Exception $e) {
-                echo ResponseHttp::status500($e->getMessage());
-            }
-            exit;
-        }
-    }
 
     final public function putUpdateEmail(string $endPoint)
     {
@@ -492,65 +473,7 @@ class ClienteUsuarioController extends Controller
             $res = ClienteModel::search($fecha);
 
             echo ResponseHttp::status200($res);
-
             exit();
-            }
         }
-
-
-
-
-
-
-    /* final public function getAll(string $endPoint)
-    {
-        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
-            Security::validateTokenJwt(Security::secretKey());
-            echo json_encode(UserModel::getAll());
-            exit;
-        }    
-    } */
-
-
-    /* final public function getUser(string $endPoint)
-    {
-        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
-            Security::validateTokenJwt(Security::secretKey());
-            $dni = $this->getAttribute()[1];
-            if (!isset($dni)) {
-                echo json_encode(ResponseHttp::status400('El campo DNI es requerido'));
-            }else if (!preg_match(self::$validate_number, $dni)) {
-                echo json_encode(ResponseHttp::status400('El DNI soo admite números'));
-            } else {
-                UserModel::setDni($dni);
-                echo json_encode(UserModel::getUser());
-                exit;
-            }  
-            exit;
-        }    
-    } */
-
-    /*    final public function patchPassword(string $endPoint)
-    {        
-        if ($this->getMethod() == 'patch' && $this->getRoute() == $endPoint){            
-            Security::validateTokenJwt(Security::secretKey());
-
-            $jwtUserData = Security::getDataJwt();                  
-
-            if (empty($this->getParam()['oldPassword']) || empty($this->getParam()['newPassword']) || empty($this->getParam()['confirmNewPassword'])) {
-                echo json_encode(ResponseHttp::status400('Todos los campos son requeridos'));
-            } else if (!UserModel::validateUserPassword($jwtUserData['IDToken'],$this->getParam()['oldPassword'])) {
-                echo json_encode(ResponseHttp::status400('La contraseña antigua no coincide'));
-            } else if (strlen($this->getParam()['newPassword']) < 8 || strlen($this->getParam()['confirmNewPassword']) < 8 ) {
-                echo json_encode(ResponseHttp::status400('La contraseña debe tener un minimo de 8 caracteres'));
-            }else if ($this->getParam()['newPassword'] !== $this->getParam()['confirmNewPassword']){
-                echo json_encode(ResponseHttp::status400('Las contraseñas no coinciden'));
-            } else {
-                UserModel::setIDToken($jwtUserData['IDToken']);
-                UserModel::setPassword($this->getParam()['newPassword']); 
-                echo json_encode(UserModel::patchPassword());
-            } 
-            exit;
-        }        
-    }  */
+    }
 }

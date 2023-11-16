@@ -13,7 +13,7 @@ class Message
             'max' => 'El campo :attribute debe contener un máximo de :max caracteres',
             'alpha_spaces' => 'El campo :attribute solo se permite caracteres alfabéticos',
             'numeric' => 'El campo :attribute solo se permiten caracteres numéricos',
-            'date' => 'La Fecha de Nacimiento no es un formato de fecha válido',
+            'date' => 'La Fecha no tiene es un formato válido',
 
             'contrasena:required' => 'El campo constraseña es requerido',
             'contrasena:min' => 'El campo Contraseña debe contener al menos :min caracteres',

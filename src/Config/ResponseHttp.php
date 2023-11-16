@@ -12,10 +12,11 @@ class ResponseHttp {
     final public static function headerHttpPro($method,$origin)
     {
         if (!isset($origin)) {
-            die(json_encode(ResponseHttp::status401('No tiene autorizacion para consumir esta API')));
+            die((ResponseHttp::status401('No tiene autorizacion para consumir esta API')));
+            exit();
         }
 
-        $list = ['https://www.thunderclient.com/', 'http://localhost:3000', 'http://localhost:4000'];        
+        $list = ['https://www.thunderclient.com/', 'http://localhost:3000', 'http://localhost:3001', 'dev'];        
 
       
         if (in_array($origin,$list)){
@@ -90,7 +91,7 @@ class ResponseHttp {
         http_response_code(404);
         self::$message['status'] = 'error';
         self::$message['message'] = $res;
-        return self::$message;
+        return json_encode(self::$message);
     }
 
     public static function status500(string $res = 'Error interno del servidor')

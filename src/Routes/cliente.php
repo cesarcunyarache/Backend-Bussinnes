@@ -11,7 +11,7 @@ $app = new ClienteController();
 $app->putUpdate("cliente/");
 
 
-echo json_encode(ResponseHttp::status404());
+echo ResponseHttp::status404();
 
 
 

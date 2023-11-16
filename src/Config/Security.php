@@ -38,11 +38,12 @@ class Security
     }
 
 
-    final public static function createTokenJwt(string $key, array $data)
+    final public static function createTokenJwt(string $key, array $data, int $exp = 21600 )
     {
         $payload = array(
             "iat" => time(),
-            "exp" => time() + (60 * 60 * 6),
+            "exp" => time() + $exp,
+            /* "exp" => time() + (60 * 60 * 6), */
             "data" => $data
         );
         $jwt = JWT::encode($payload, $key, 'HS256');

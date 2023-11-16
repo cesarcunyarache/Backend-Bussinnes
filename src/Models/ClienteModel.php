@@ -137,6 +137,34 @@ class ClienteModel extends  Connection
         }
     }
 
+
+
+    final public static function search($fecha)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT idReserva
+            FROM Reservas WHERE fecha=:fecha");
+            $con->execute([
+                ':fecha' => $fecha
+            ]);
+
+            if ($con->rowCount() === 0) {
+                echo ResponseHttp::status400('No hay niguna reserva');
+            } else {
+                $data = $con->fetch();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    echo ResponseHttp::status400('No hay niguna reserva');
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
     final public static function getId()
     {
         return self::$id;

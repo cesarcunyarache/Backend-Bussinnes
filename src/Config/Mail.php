@@ -146,4 +146,45 @@ class Mail
                     </body>
                 </html>';
     }
+
+
+    final public static function getBodyResetPasswordAdmin(string $token): string
+    {
+        return '<style>
+                    body {
+                        background-color: white;
+                    }
+                    
+                    * {
+                        color: black;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+
+                    .title {
+                        text-align: center;
+
+                    }
+                    .card {
+                        background-color: #ffffff;
+                        border-radius: 10px;
+                        padding: 1rem;
+                        border: 1px solid #ccc;
+                    }
+                    .code {
+                        font-weight: bold;
+                        font-size: 5rem
+                    }
+                </style>
+                </head>
+                    <body>
+                        <div class="card">
+                            <h1 class="title">Recuperacion de cuenta</h1>
+                            <p>Clic para restablecer tu contraseña:</p>
+                            <a href="http://localhost:3001/resetPassword/?token='. $token .'">Restablecer</a>
+
+                        </div>
+                        
+                    </body>
+                </html>';
+    }
 }

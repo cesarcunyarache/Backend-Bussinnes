@@ -5,21 +5,25 @@ use App\Config\ResponseHttp;
 
 require './vendor/autoload.php';
 
-ResponseHttp::headerHttpPro($_SERVER['REQUEST_METHOD'],$_SERVER['HTTP_ORIGIN']);//CORS Producción
+
+if (!isset($_SERVER['HTTP_ORIGIN'])) {
+    echo ResponseHttp::status401('No tiene autorizacion para consumir esta API');
+    exit();
+}
+ResponseHttp::headerHttpPro($_SERVER['REQUEST_METHOD'],$_SERVER['HTTP_ORIGIN']); //CORS Producción
 // ResponseHttp::headerHttpDev($_SERVER['REQUEST_METHOD']); //CORS Desarrollo
 ErrorLog::activateErrorLog();
 
 if (isset($_GET['route'])) {
 
     $params = explode('/', $_GET['route']);
-    $list = ['cliente', 'clienteAuth', 'reserva'];
+    $list = ['cliente', 'clienteAuth', 'reserva', 'colaboradorAuth', 'colaborador'];
     $file = './src/Routes/' . $params[0] . '.php';
 
     if (!in_array($params[0], $list)) {
         echo ResponseHttp::status400();
         exit;
     }
-
 
     if (is_readable($file)) {
         require $file;

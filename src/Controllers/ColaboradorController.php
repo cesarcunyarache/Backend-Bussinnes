@@ -7,57 +7,12 @@ use App\Config\Security;
 use Rakit\Validation\Validator;;
 
 use App\Config\Message;
-use App\Models\ColaboradorModel;
 use App\Models\ClienteModel;
-use App\Models\ReservaModel;
-use App\Models\MesaModel;
+use App\Models\ColaboradorModel;
+use Resend\Collection;
 
-class ReservaController extends Controller
+class ColaboradorController extends Controller
 {
-
-    final public function postStatusMesas(string $endPoint)
-    {
-        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
-            $validator = new Validator;
-            $validator->setMessages(Message::getMessages());
-            $validation = $validator->validate($this->getParam(), [
-                'fecha'      => 'required|date:Y-m-d',
-                'hora'       => 'required'
-            ]);
-
-            if ($validation->fails()) {
-                $errors = $validation->errors();
-                echo ResponseHttp::status400($errors->all()[0]);
-            } else {
-
-                $fecha = $this->getParam()['fecha'];
-                $horaIngresada = $this->getParam()['hora'];
-
-                if (preg_match('/^(?:[01]\d|2[0-3]):[0-5]\d$/', $horaIngresada)) {
-                    $data = MesaModel::read();
-                    $reservas = ReservaModel::getIdReservabyFecha($fecha);
-                    
-                    if (!empty($reservas)) {
-                        foreach ($reservas as $reserva) {
-                            $horaReserva = $reserva['hora'];
-                            $horaInicio = date('H:i', strtotime("-3 hours", strtotime($horaReserva)));
-                            $horaFin = date('H:i', strtotime("+3 hours", strtotime($horaReserva)));
-                            if ($horaIngresada > $horaInicio && $horaIngresada < $horaFin) {
-                                $index = array_search($reserva['idMesa'], array_column($data, 'idMesa'));
-                                $data[$index]['estado'] = 2;
-                            }
-                        }
-                    }
-                    echo ResponseHttp::status200($data);
-
-                } else {
-                    echo ResponseHttp::status400('Formato de hora inválido');
-                }
-            }
-            exit;
-        }
-    }
-
     final public function postCreate(string $endPoint)
     {
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
@@ -145,6 +100,7 @@ class ReservaController extends Controller
 
                 $data = ColaboradorModel::read();
                 echo ResponseHttp::status200($data);
+                
             } catch (\Exception $e) {
                 echo ResponseHttp::status500($e->getMessage());
             }
