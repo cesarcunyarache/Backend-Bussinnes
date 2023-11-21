@@ -9,6 +9,10 @@ $app = new ColaboradorController();
 
 $app->postCreate("colaborador/");
 
+$app->putUpdate("colaborador/");
+
 $app->getRead("colaborador/");
+
+$app->getReadById("colaborador/{$params[1]}");
 
 echo ResponseHttp::status404();

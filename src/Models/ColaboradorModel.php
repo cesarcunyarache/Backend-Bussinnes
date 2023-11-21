@@ -31,7 +31,7 @@ class ColaboradorModel extends  Connection
         self::$fechaNacimiento = $data['fechaNacimiento'];
         self::$telefono = $data['telefono'];
         self::$genero = $data['genero'];
-        self::$direccion= $data['direccion'];
+        self::$direccion = $data['direccion'];
     }
 
 
@@ -54,6 +54,34 @@ class ColaboradorModel extends  Connection
             ]);
             if ($query->rowCount() > 0) {
                 return $con->lastInsertId();
+            } else {
+                return 0;
+            }
+        } catch (\PDOException $e) {
+            error_log('ColaboradorModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
+    }
+
+    final public static function update()
+    {
+        try {
+            $con = self::getConnection();
+            $sql = "UPDATE Colaboradores SET idTipoDoc=:idTipoDoc, numeroDoc=:numeroDoc, nombres=:nombres, apellidos=:apellidos, fechaNacimiento=:fechaNacimiento,telefono=:telefono, genero=:genero,direccion=:direccion WHERE id=:id";
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':idTipoDoc' => (int) self::getIdTipoDoc(),
+                ':numeroDoc' => self::getNumeroDoc(),
+                ':nombres'  => self::getNombres(),
+                ':apellidos' => self::getApellidos(),
+                ':fechaNacimiento' => self::getFechaNacimiento(),
+                ':telefono' => self::getTelefono(),
+                ':genero' => self::getGenero(),
+                ':direccion' =>  self::getDireccion(),
+                ':id' => self::getId(),
+            ]);
+            if ($query->rowCount() > 0) {
+                return true;
             } else {
                 return 0;
             }
@@ -117,9 +145,32 @@ class ColaboradorModel extends  Connection
             $con->execute();
 
             if ($con->rowCount() === 0) {
-               return [];
+                return [];
             } else {
                 $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+    final public static function getColaborador($id)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM Colaboradores WHERE id=:id");
+            $con->execute([':id' => $id]);
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetch();
                 if (count($data) > 0) {
                     return $data;
                 } else {

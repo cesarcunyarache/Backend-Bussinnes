@@ -55,6 +55,30 @@ class UsuarioColaboradorModel extends Connection
     }
 
 
+    final public static function read()
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosColaboradores");
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+
 
     final public static function createUser()
     {
@@ -115,6 +139,32 @@ class UsuarioColaboradorModel extends Connection
 
             if ($con->rowCount() === 0) {
                 echo ResponseHttp::status400('El correo no existe');
+                exit;
+            } else {
+                $data = $con->fetch();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+    final public static function getUserById($id)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosColaboradores WHERE id = :id");
+            $con->execute([
+                ':id' => $id
+            ]);
+
+            if ($con->rowCount() === 0) {
+                return [];
             } else {
                 $data = $con->fetch();
                 if (count($data) > 0) {
@@ -153,13 +203,36 @@ class UsuarioColaboradorModel extends Connection
         }
     }
 
-    /*
+    final public static function getUserColaborador($id)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosColaboradores WHERE id=:id");
+            $con->execute([':id' => $id]);
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetch();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+    
 
     final public static function UpdateEmail($id, $email)
     {
         try {
             $con = self::getConnection();
-            $sql = "UPDATE UsuariosClientes SET correo=:correo WHERE id=:id";
+            $sql = "UPDATE UsuariosColaboradores SET correo=:correo WHERE id=:id";
 
             $query = $con->prepare($sql);
             $query->execute([
@@ -175,7 +248,7 @@ class UsuarioColaboradorModel extends Connection
             error_log('UserModel::post -> ' . $e);
             die(ResponseHttp::status500());
         }
-    } */
+    } 
 
 
 

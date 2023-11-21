@@ -33,7 +33,8 @@ class ReservaController extends Controller
                 $fecha = $this->getParam()['fecha'];
                 $horaIngresada = $this->getParam()['hora'];
 
-                if (preg_match('/^(?:[01]\d|2[0-3]):[0-5]\d$/', $horaIngresada)) {
+                if (preg_match(/* '/^(?:[01]\d|2[0-3]):[0-5]\d$/' */ 
+                    '/^(0?[1-9]|1[0-2]):[0-5][0-9]$/', $horaIngresada)) {
                     $data = MesaModel::read();
                     $reservas = ReservaModel::getIdReservabyFecha($fecha);
                     

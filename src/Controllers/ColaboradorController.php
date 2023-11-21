@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Config\ResponseHttp;
 use App\Config\Security;
-use Rakit\Validation\Validator;;
+use Rakit\Validation\Validator;
 
 use App\Config\Message;
 use App\Models\ClienteModel;
@@ -19,12 +19,11 @@ class ColaboradorController extends Controller
             $validator = new Validator;
             $validator->setMessages(Message::getMessages());
             $validation = $validator->validate($this->getParam(), [
-                'idTipoDoc'            => 'required|numeric',
-                'numeroDoc'            => 'required',
+                'idTipoDoc'            => 'required|numeric|in:1,2,3,4',
+                'numeroDoc'            => 'required|',
                 'nombres'              => 'required|alpha_spaces',
                 'apellidos'            => 'required|alpha_spaces',
-                'fechaNacimiento'      => 'required|date',
-                'telefono'             => 'required|numeric',
+                'telefono'             => 'required|digits:9',
                 'fechaNacimiento'      => 'required|date:Y-m-d',
                 'genero'               => 'required',
                 'direccion'            => 'required',
@@ -34,21 +33,26 @@ class ColaboradorController extends Controller
                 $errors = $validation->errors();
                 echo ResponseHttp::status400($errors->all()[0]);
             } else {
+                Security::validateTokenJwt(Security::secretKey());
+                /* $idClient = $data->data->idCliente; */
 
-                /*   $data  = Security::validateTokenJwt(Security::secretKey());
-                $idClient = $data->data->idCliente;
+                $idTipoDoc = $this->getParam()['idTipoDoc'];
+                $numeroDoc = $this->getParam()['numeroDoc'];
+                $data = Security::SchemaValidation( (int) $idTipoDoc, $numeroDoc);
 
-                if (isset($idClient) && !empty($idClient)) { */
-                $cliente = new ColaboradorModel($this->getParam());
-                /*   $cliente::setId($idClient); */
-                $res = $cliente::create();
-                if ($res) {
-                    echo ResponseHttp::status200('Creado satisfactoriamente');
+                if ($data['isValidate']) {
+                    $colaborador = new ColaboradorModel($this->getParam());
+                    $res = $colaborador::create();
+                    if ($res > 0) {
+                        echo ResponseHttp::status200('Creado satisfactoriamente');
+                    } else {
+                        echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                    }
                 } else {
-                    echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                    echo ResponseHttp::status400($data['message']);
                 }
-                /*  } */
             }
+
             exit;
         }
     }
@@ -59,13 +63,15 @@ class ColaboradorController extends Controller
             $validator = new Validator;
             $validator->setMessages(Message::getMessages());
             $validation = $validator->validate($this->getParam(), [
-                'idTipoDoc'            => 'required|numeric',
+                'idTipoDoc'            => 'required|numeric|in:1,2,3,4',
                 'numeroDoc'            => 'required',
                 'nombres'              => 'required|alpha_spaces',
                 'apellidos'            => 'required|alpha_spaces',
-                'telefono'             => 'required',
+                'telefono'             => 'required|digits:9',
                 'fechaNacimiento'      => 'required|date:Y-m-d',
                 'genero'               => 'required',
+                'direccion'            => 'required',
+                'id'                   => 'required'
             ]);
 
             if ($validation->fails()) {
@@ -73,19 +79,27 @@ class ColaboradorController extends Controller
                 echo ResponseHttp::status400($errors->all()[0]);
             } else {
 
-                $data  = Security::validateTokenJwt(Security::secretKey());
-                $idClient = $data->data->idCliente;
+                /* Security::validateTokenJwt(Security::secretKey()); */
+                /*$idClient = $data->data->idCliente; */
 
-                if (isset($idClient) && !empty($idClient)) {
-                    $cliente = new ClienteModel($this->getParam());
-                    $cliente::setId($idClient);
-                    $res = $cliente::Update();
+                $id = $this->getParam()['id'];
+                $idTipoDoc = $this->getParam()['idTipoDoc'];
+                $numeroDoc = $this->getParam()['numeroDoc'];
+                $data = Security::SchemaValidation( (int) $idTipoDoc, $numeroDoc);
+
+                if ($data['isValidate']) {
+                    $colaborador = new ColaboradorModel($this->getParam());
+                    $colaborador::setId((int) $id);
+                    $res = $colaborador::update();
                     if ($res) {
-                        echo ResponseHttp::status200('Datos actualizados correctamente');
+                        echo ResponseHttp::status200('Actualizado satisfactoriamente');
                     } else {
                         echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
                     }
+                } else {
+                    echo ResponseHttp::status400($data['message']);
                 }
+ 
             }
             exit;
         }
@@ -96,11 +110,27 @@ class ColaboradorController extends Controller
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
 
             try {
-                Security::validateTokenJwt(Security::secretKey());
+
+                /*   Security::validateTokenJwt(Security::secretKey()); */
 
                 $data = ColaboradorModel::read();
                 echo ResponseHttp::status200($data);
-                
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+
+    final public function getReadById(string $endPoint)
+    {
+        if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
+
+            try {
+                Security::validateTokenJwt(Security::secretKey());
+                $id = $this->getAttribute()[1];
+                $data = ColaboradorModel::getColaborador($id);
+                echo ResponseHttp::status200($data);
             } catch (\Exception $e) {
                 echo ResponseHttp::status500($e->getMessage());
             }

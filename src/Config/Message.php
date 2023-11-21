@@ -19,8 +19,9 @@ class Message
             'contrasena:min' => 'El campo Contraseña debe contener al menos :min caracteres',
             'confirmContrasena:required' => 'El campo Confirmar Constraseña es requerido',
             'idTipoDoc:required' => 'El campo Tipo de Documento es requerido',
-            'nuevaContrasena:min' => 'El campo Nueva Contraseña debe contener al menos :min caracteres'
-
+            'nuevaContrasena:min' => 'El campo Nueva Contraseña debe contener al menos :min caracteres',
+            'telefono:digits' => 'El Telefono debe ser numérico y debe tener una longitud exacta de 9',
+            'idTipoDoc:in' => 'El Tipo de Documento sólo permite DNI, Carnet de Extranjeria, Pasaporte o RUC'
         ];
     }
 }

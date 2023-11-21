@@ -9,6 +9,10 @@ $app = new UsuarioColaboradorController();
 
 $app->postLogin("colaboradorAuth/login");
 
+$app->getRead("colaboradorAuth/");
+
+$app->getReadById("colaboradorAuth/{$params[1]}");
+
 $app->postRegister("colaboradorAuth/register");
 
 $app->postSendOTP("colaboradorAuth/sendOtp");
@@ -17,22 +21,19 @@ $app->postForgetPassword("colaboradorAuth/forgetPassword");
 
 $app->putResetPassword("colaboradorAuth/resetPassword");
 
+$app->postSendOtpUpdateEmail("colaboradorAuth/sendOtpUpdateEmail");
+
+$app->putUpdateEmail("colaboradorAuth/updateEmail");
+
+$app->putUpdatePassword("colaboradorAuth/updatePassword"); 
 
 /*
 $app->getProfile("clienteAuth/profile");
-
 $app->postLogout("clienteAuth/logout");
-
 $app->getVerify("clienteAuth/verify");
-
 $app->postReSendOTP("clienteAuth/resendOtp");
 
-$app->putUpdateEmail("clienteAuth/updateEmail");
-
-$app->postSendOtpUpdateEmail("clienteAuth/sendOtpUpdateEmail");
-
-$app->putUpdatePassword("clienteAuth/updatePassword"); */
-
+*/
 
 
 echo ResponseHttp::status404();

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e589955a134bfcbede92436702020308",
+    "content-hash": "79101b7304357a038a706f800bee19db",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -917,6 +917,56 @@
                 "source": "https://github.com/resendlabs/resend-php/tree/v0.9.0"
             },
             "time": "2023-10-04T17:42:53+00:00"
+        },
+        {
+            "name": "samayo/bulletproof",
+            "version": "v5.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/samayo/bulletproof.git",
+                "reference": "510d83eb1f71105d3911a9dc02fcd3b7bf84c047"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/samayo/bulletproof/zipball/510d83eb1f71105d3911a9dc02fcd3b7bf84c047",
+                "reference": "510d83eb1f71105d3911a9dc02fcd3b7bf84c047",
+                "shasum": ""
+            },
+            "require": {
+                "ext-exif": "*",
+                "php": ">=8.1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "samayo"
+                }
+            ],
+            "description": "A simple and secure PHP image uploader",
+            "homepage": "http://github.com/samayo/bulletproof",
+            "keywords": [
+                "Simple",
+                "image",
+                "security",
+                "upload"
+            ],
+            "support": {
+                "issues": "https://github.com/samayo/bulletproof/issues",
+                "source": "https://github.com/samayo/bulletproof/tree/v5.0.1"
+            },
+            "time": "2023-10-14T20:37:29+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
