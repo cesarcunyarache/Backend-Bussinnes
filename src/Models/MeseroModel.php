@@ -22,7 +22,6 @@ class MeseroModel extends  Connection
 
     public function __construct(array $data, $file)
     {
-        echo 1;
         self::$idColaborador = $data['idColaborador'];
         self::$estado = $data['estado'];
         self::$file = $file;
@@ -36,16 +35,17 @@ class MeseroModel extends  Connection
         if ( false/* Sql::exists("SELECT name FROM productos WHERE name = :name",":name",self::getName()) */) {  
             return ResponseHttp::status400('El Producto ya esta registrado');
         } else {
-            try {
-           
+            try { 
+    
+                
                 $resImg = Security::uploadImage(self::getFile(),'product'); 
-              
-              
+                
+                echo $resImg['name'];
                 self::setUrl($resImg['path']);
                 self::setImagen($resImg['name']);
                 self::setIDtoken(hash('md5', 'upload' . self::getUrl()));
                 
-                
+              
              /*    $con = self::getConnection();
                 $query = $con->prepare('INSERT INTO productos(name,description,stock,url,imageName,IDtoken) VALUES (:name,:description,:stock,:url,:imageName,:IDtoken)');
                 $query->execute([

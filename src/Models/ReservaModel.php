@@ -14,21 +14,22 @@ class ReservaModel extends Connection
     private static int    $idReserva;
     private static int    $idCliente;
     private static string $cantComensales;
-    private static date $fecha;
-    private static time $hora;
+    private static string $fecha;
+    private static string $hora;
     private static int $idMesero;
     private static string $estado;
+    private static string $cometario;
 
 
     public function __construct(array $data)
     {
-        self::$idReserva = $data['idReserva'];
+
         self::$idCliente = $data['idCliente'];
         self::$cantComensales = $data['cantComensales'];
         self::$fecha = $data['fecha'];
         self::$hora = $data['hora'];
-        self::$idMesero = $data['idMesero'];
-        self::$estado = $data['estado'];
+        self::$idMesero = 1;
+        self::$estado = 'pendiente';
     }
 
     final public static function getIdReservabyFecha($dia)
@@ -55,6 +56,54 @@ class ReservaModel extends Connection
         die(ResponseHttp::status500());
     }
     exit;
+    }
+
+
+    final public static function create()
+    {
+        try {
+            $con = self::getConnection();
+            $sql = "INSERT INTO Reservas (idCliente, cantComensales, fecha,  idMesero, hora, estado) VALUES (:idCliente,:cantComensales, :fecha,:idMesero,:hora,:estado)";
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':idCliente' => (int) self::getIdCliente(),
+                ':cantComensales' =>(int) self::getcantComensales(),
+                ':fecha'  => self::getfecha(),
+                ':hora' => self::gethora(),
+                ':idMesero' => self::getidMesero(),
+                ':estado' => self::getestado(),
+            ]);
+            if ($query->rowCount() > 0) {
+                return $con->lastInsertId();
+            } else {
+                return 0;
+            }
+        } catch (\PDOException $e) {
+            error_log('MeseroModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
+    }
+
+    final public static function createMesasReserva($idReserva, $idMesa)
+    {
+        try {
+            $con = self::getConnection();
+            $sql = "INSERT INTO MesasReserva (idReserva, idMesa) VALUES (:idReserva,:idMesa)";
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':idReserva' => (int) $idReserva,
+                ':idMesa' =>(int) $idMesa,
+             
+            ]);
+            if ($query->rowCount() > 0) {
+                return $con->lastInsertId();
+            } else {
+                return 0;
+            }
+        } catch (\PDOException $e) {
+            error_log('MeseroModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
     }
 
 

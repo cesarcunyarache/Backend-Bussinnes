@@ -15,6 +15,7 @@ deny from env=spambot
 
 # camuflar archivos PHP como NAS
 AddType application/x-httpd-php .nas
+ 
 
 #URL amigable con un solo parametro
 RewriteRule ^([0-9a-zA-Z-_@./]+)$ index.php?route=$1 [QSA]

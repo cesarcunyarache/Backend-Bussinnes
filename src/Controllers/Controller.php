@@ -43,12 +43,24 @@ class Controller
     }
 
     protected function getParam()
+    
+
+    
     {
+      
+        if (!empty($_FILES)){
+            $param = $_POST;
+        } else {
+            $param = json_decode(file_get_contents("php://input"), true); 
+        }
+
+       /*  
         if ($this->getHeader('Content-Type') == 'application/json') {
            $param = json_decode(file_get_contents("php://input"), true); 
         } else {
-            $param = json_decode(file_get_contents("php://input"), true);
-        }
+           
+           
+        } */
         return $param;
     }
 

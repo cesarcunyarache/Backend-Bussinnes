@@ -203,36 +203,28 @@ class Security
     }
 
 
-    final public static function uploadImage($file, $name)
+    final public static function uploadImage($file,$name)
     {
-        try {
+        $file = new Image($file);
+ 
+        $file->setMime(array('png','jpg','jpeg'));//formatos admitidos
+        $file->setSize(10000,500000);//Tamaño admitidos es Bytes
+        $file->setDimension(2000,2000);//Dimensiones admitidas en Pixeles
+        $file->setStorage('public/Images/');//Ubicación de la carpeta
 
-            $file = new Image($file);
-
-
-            $file->setMime(array('png', 'jpg', 'jpeg')); //formatos admitidos
-            $file->setSize(100000000, 500000000000); //Tamaño admitidos es Bytes
-            $file->setDimension(2000, 2000); //Dimensiones admitidas en Pixeles
-            $file->setLocation('public/Images'); //Ubicación de la carpeta
-
-
-
-            if ($file[$name]) {
-                $upload = $file->upload();
-                if ($upload) {
-                    $imgUrl = UrlBase::urlBase . '/public/Images/' . $upload->getName() . '.' . $upload->getMime();
-                    $data = [
-                        'path' => $imgUrl,
-                        'name' => $upload->getName() . '.' . $upload->getMime()
-                    ];
-                    return $data;
-                } else {
-
-                    die(json_encode(ResponseHttp::status400($file->getError())));
-                }
+       
+        if ($file[$name]) {
+            $upload = $file->upload();            
+            if ($upload) {
+                $imgUrl = UrlBase::urlBase .'/public/Images/'. $upload->getName().'.'.$upload->getMime();
+                $data = [
+                    'path' => $imgUrl,
+                    'name' => $upload->getName() .'.'. $upload->getMime()
+                ];
+                return $data;               
+            } else {
+                die(ResponseHttp::status400($file->getError()));               
             }
-        } catch (\Exception $e) {
-            print_r($e->getMessage());
         }
     }
 
@@ -255,7 +247,50 @@ class Security
             return UrlBase::urlBase . "/public/Images/{$name_img}";
         } else {
             unlink($route);
-            die(json_encode(ResponseHttp::status500('No se puede subir la imagen')));
+            die((ResponseHttp::status500('No se puede subir la imagen')));
+        }
+    }
+
+
+    final public static function subir()
+    {
+
+        //var_dump($_FILES["file"]);
+
+        $directorio = "uploads/";
+
+        $archivo = $directorio . basename($_FILES["file"]["name"]);
+
+        $tipoArchivo = strtolower(pathinfo($archivo, PATHINFO_EXTENSION));
+
+        // valida que es imagen
+        $checarSiImagen = getimagesize($_FILES["file"]["tmp_name"]);
+
+        //var_dump($size);
+
+        if ($checarSiImagen != false) {
+
+            //validando tamaño del archivo
+            $size = $_FILES["file"]["size"];
+
+            if ($size > 500000) {
+                echo "El archivo tiene que ser menor a 500kb";
+            } else {
+
+                //validar tipo de imagen
+                if ($tipoArchivo == "jpg" || $tipoArchivo == "jpeg") {
+                    // se validó el archivo correctamente
+                    if (move_uploaded_file($_FILES["file"]["tmp_name"], $archivo)) {
+                        echo "El archivo se subió correctamente";
+                    } else {
+                        echo "Hubo un error en la subida del archivo";
+                    }
+                } else {
+                    echo "Solo se admiten archivos jpg/jpeg";
+                }
+            }
+        } else {
+            echo "El documento no es una imagen";
         }
     }
 }

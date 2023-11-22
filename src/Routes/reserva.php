@@ -9,4 +9,6 @@ $app = new ReservaController();
 
 $app->postStatusMesas("reserva/mesas");
 
+$app->postCreate("reserva/");
+
 echo ResponseHttp::status404();

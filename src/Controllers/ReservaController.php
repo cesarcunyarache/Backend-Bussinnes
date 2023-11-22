@@ -33,11 +33,13 @@ class ReservaController extends Controller
                 $fecha = $this->getParam()['fecha'];
                 $horaIngresada = $this->getParam()['hora'];
 
-                if (preg_match(/* '/^(?:[01]\d|2[0-3]):[0-5]\d$/' */ 
-                    '/^(0?[1-9]|1[0-2]):[0-5][0-9]$/', $horaIngresada)) {
+                if (preg_match(/* '/^(?:[01]\d|2[0-3]):[0-5]\d$/' */
+                    '/^(0?[1-9]|1[0-2]):[0-5][0-9]$/',
+                    $horaIngresada
+                )) {
                     $data = MesaModel::read();
                     $reservas = ReservaModel::getIdReservabyFecha($fecha);
-                    
+
                     if (!empty($reservas)) {
                         foreach ($reservas as $reserva) {
                             $horaReserva = $reserva['hora'];
@@ -50,7 +52,6 @@ class ReservaController extends Controller
                         }
                     }
                     echo ResponseHttp::status200($data);
-
                 } else {
                     echo ResponseHttp::status400('Formato de hora inválido');
                 }
@@ -65,15 +66,14 @@ class ReservaController extends Controller
             $validator = new Validator;
             $validator->setMessages(Message::getMessages());
             $validation = $validator->validate($this->getParam(), [
-                'idTipoDoc'            => 'required|numeric',
-                'numeroDoc'            => 'required',
-                'nombres'              => 'required|alpha_spaces',
-                'apellidos'            => 'required|alpha_spaces',
-                'fechaNacimiento'      => 'required|date',
-                'telefono'             => 'required|numeric',
-                'fechaNacimiento'      => 'required|date:Y-m-d',
-                'genero'               => 'required',
-                'direccion'            => 'required',
+                'idCliente'            => 'required|numeric',
+                'cantComensales'       => 'required',
+                'fecha'                => 'required|',
+                'hora'                 => 'required|',
+                'nivel'                => 'required|',
+                'comentario'           => '',
+                'mesas'                => 'required',
+
             ]);
 
             if ($validation->fails()) {
@@ -85,10 +85,23 @@ class ReservaController extends Controller
                 $idClient = $data->data->idCliente;
 
                 if (isset($idClient) && !empty($idClient)) { */
-                $cliente = new ColaboradorModel($this->getParam());
+                $reserva = new ReservaModel($this->getParam());
+
+                $arr = $this->getParam()['mesas'];
+
+
+
                 /*   $cliente::setId($idClient); */
-                $res = $cliente::create();
-                if ($res) {
+                $res = $reserva::create();
+          
+
+                if ($res > 0) {
+                    foreach ($arr as $mesa) {
+
+                        $reserva::createMesasReserva($res, $mesa['idMesa']);
+                    }
+
+
                     echo ResponseHttp::status200('Creado satisfactoriamente');
                 } else {
                     echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");

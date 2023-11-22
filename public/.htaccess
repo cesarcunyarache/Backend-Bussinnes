@@ -1,3 +1,4 @@
 RewriteEngine On
 #Options +Indexes
+RewriteRule ^(public/.+)$ - [L]
 Options All -Indexes
