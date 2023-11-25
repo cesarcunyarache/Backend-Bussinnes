@@ -171,6 +171,29 @@ class ClienteUsuarioModel extends  Connection
         }
     }
 
+    final public static function read()
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosClientes u INNER JOIN Clientes c ON c.idUsuario = u.id;");
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
 
 
 

@@ -10,6 +10,10 @@ $app = new ClienteController();
 
 $app->putUpdate("cliente/");
 
+$app->getRead("cliente/");
+
+
+
 
 echo ResponseHttp::status404();
 

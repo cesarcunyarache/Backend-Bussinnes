@@ -203,30 +203,66 @@ class Security
     }
 
 
-    final public static function uploadImage($file,$name)
+    final public static function uploadImage($file, $name)
     {
         $file = new Image($file);
- 
-        $file->setMime(array('png','jpg','jpeg'));//formatos admitidos
-        $file->setSize(10000,500000);//Tamaño admitidos es Bytes
-        $file->setDimension(2000,2000);//Dimensiones admitidas en Pixeles
-        $file->setStorage('public/Images/');//Ubicación de la carpeta
+
+        $file->setMime(array('png', 'jpg', 'jpeg')); //formatos admitidos
+        $file->setSize(10000, 5000000); //Tamaño admitidos es Bytes
+        $file->setDimension(4000, 4000); //Dimensiones admitidas en Pixeles
+        $file->setStorage('public/Images/'); //Ubicación de la carpeta
 
        
+
         if ($file[$name]) {
-            $upload = $file->upload();            
+
+            if ($file->getMime() !== 'png' && $file->getMime() !== 'jpg' && $file->getMime() !== 'jpeg'){
+
+                echo $file->getMime();
+                echo ResponseHttp::status400("¡Archivo inválido! Sólo se permiten tipos de imágenes (png, jpg, jpeg)");
+                exit;
+            } 
+
+            if ($file->getSize() > 5000000 ) {
+                echo ResponseHttp::status400("El tamaño de la imagen debe ser mínimo de 10000 bytes (10 kb), hasta un máximo de 500000 bytes (500 kb).");
+                exit;
+            }
+
+            if ($file->getWidth() > 4000 && $file->getHeight() > 4000) {
+                echo ResponseHttp::status400("La imagen debe tener menos de 1000 px de alto y menos de 1000 px de ancho.");
+                exit;
+            }
+
+             
+
+      
+
+            $upload = $file->upload();
             if ($upload) {
-                $imgUrl = UrlBase::urlBase .'/public/Images/'. $upload->getName().'.'.$upload->getMime();
+                $imgUrl = UrlBase::urlBase . '/public/Images/' . $upload->getName() . '.' . $upload->getMime();
                 $data = [
                     'path' => $imgUrl,
-                    'name' => $upload->getName() .'.'. $upload->getMime()
+                    'name' => $upload->getName() . '.' . $upload->getMime()
                 ];
-                return $data;               
+                return $data;
             } else {
-                die(ResponseHttp::status400($file->getError()));               
+                die(ResponseHttp::status400($file->getError()));
             }
         }
     }
+
+    final public static function deleteImage($url)
+    {
+
+        /*   echo UrlBase::urlBase .'/public/Images/'. $url; */
+        if (!unlink('../../public/Images/' . $url)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
 
     /***********************Subir fotos en base64***************************/
     final public static function uploadImageBase64(array $data, string $name)

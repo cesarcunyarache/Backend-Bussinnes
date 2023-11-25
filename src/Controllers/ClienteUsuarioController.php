@@ -498,7 +498,21 @@ class ClienteUsuarioController extends Controller
         }
 
 
-
+    final public function getRead(string $endPoint)
+        {
+            if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+    
+                try {
+    
+                    Security::validateTokenJwt(Security::secretKey());
+                    $data = ClienteUsuarioModel::read();
+                    echo ResponseHttp::status200($data);
+                } catch (\Exception $e) {
+                    echo ResponseHttp::status500($e->getMessage());
+                }
+                exit();
+            }
+        }
 
 
 

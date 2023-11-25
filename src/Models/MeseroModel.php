@@ -7,6 +7,7 @@ use App\Config\Security;
 use App\Database\Connection;
 use App\Database\Query;
 use App\Database\Sql;
+use Random\Engine\Secure;
 
 class MeseroModel extends  Connection
 {
@@ -18,56 +19,121 @@ class MeseroModel extends  Connection
     private static $file;
     private static string $url;
     private static string $imagen;
-    private static string $IDtoken; 
+    private static string $IDtoken;
 
     public function __construct(array $data, $file)
     {
-        self::$idColaborador = $data['idColaborador'];
         self::$estado = $data['estado'];
         self::$file = $file;
     }
 
 
 
-    final public static function postSave() 
+    final public static function postSave()
     {
-   
-        if ( false/* Sql::exists("SELECT name FROM productos WHERE name = :name",":name",self::getName()) */) {  
-            return ResponseHttp::status400('El Producto ya esta registrado');
-        } else {
-            try { 
-    
-                
-                $resImg = Security::uploadImage(self::getFile(),'product'); 
-                
-                echo $resImg['name'];
-                self::setUrl($resImg['path']);
-                self::setImagen($resImg['name']);
-                self::setIDtoken(hash('md5', 'upload' . self::getUrl()));
-                
-              
-             /*    $con = self::getConnection();
-                $query = $con->prepare('INSERT INTO productos(name,description,stock,url,imageName,IDtoken) VALUES (:name,:description,:stock,:url,:imageName,:IDtoken)');
-                $query->execute([
-                    ':name'        => self::getName(),
-                    ':description' => self::getDescription(),
-                    ':stock'       => self::getStock(),
-                    ':url'         => self::getUrl(),
-                    ':imageName'   => self::getImageName(),
-                    ':IDtoken'     => self::getIDtoken()
-                ]); 
-                
-                if ($query->rowCount() > 0) {
-                    return ResponseHttp::status200('Producto registrado');
-                } else {
-                    return ResponseHttp::status500('No se puede registrar el producto');
-                } */
-            } catch (\PDOException $e) {
-                error_log('ProductModel::postSave-> ' . $e);
-                die(json_encode(ResponseHttp::status500('No se puede registrar el producto')));
-            }  
-        }    
+        try {
+
+            $resImg = Security::uploadImage(self::getFile(), 'imagen');
+            self::setUrl($resImg['path']);
+            self::setImagen($resImg['name']);
+            self::setIDtoken(hash('md5', 'upload' . self::getUrl()));
+
+            $con = self::getConnection();
+            $query = $con->prepare('INSERT INTO Meseros (idColaborador,imagen, estado) VALUES (:idColaborador,:imagen,:estado)');
+
+            $query->execute([
+                ':idColaborador'    => (int) self::getIdColaborador(),
+                ':imagen'           => self::getUrl(),
+                ':estado'           => (int) self::getEstado()
+            ]);
+
+            if ($query->rowCount() > 0) {
+                return $con->lastInsertId();
+            } else {
+               return 0;
+            }
+        } catch (\PDOException $e) {
+            error_log('MeseroModel::postSave-> ' . $e);
+            die((ResponseHttp::status500('No se puede registrar el mesero')));
+        }
     }
+
+    final public static function putUpdate($id)
+    {
+        try {
+            $resImg = Security::uploadImage(self::getFile(), 'imagen');
+            self::setUrl($resImg['path']);
+            self::setImagen($resImg['name']);
+            self::setIDtoken(hash('md5', 'upload' . self::getUrl()));
+
+            $con = self::getConnection();
+            $query = $con->prepare('UPDATE Meseros SET imagen=:imagen, estado=:estado WHERE idMesero=:id');
+
+         
+            $query->execute([
+                ':imagen'           => self::getUrl(),
+                ':estado'           => (int) self::getEstado(),
+                ':id'               => (int) $id
+            ]);
+
+            if ($query->rowCount() > 0) {
+                return true;
+            } else {
+               return false;
+            }
+        } catch (\PDOException $e) {
+            error_log('MeseroModel::postSave-> ' . $e);
+            die((ResponseHttp::status500('No se puede Actualizar el mesero')));
+        }
+    }
+
+    final public static function read()
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM Meseros m INNER JOIN Colaboradores c ON m.idColaborador = c.id;");
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+    final public static function getColaborador($id)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM Colaboradores c INNER JOIN Meseros m ON c.id = m.idColaborador WHERE idColaborador=:id;");
+            $con->execute([':id' => $id]);
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetch();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+
 
     final public static function getClientByIdUser($idUser)
     {
@@ -122,7 +188,7 @@ class MeseroModel extends  Connection
         exit;
     }
 
-   /*  final public static function Update()
+    /*  final public static function Update()
 
     {
         try {
@@ -185,24 +251,45 @@ class MeseroModel extends  Connection
     }
 
 
-    final public static function setUrl($url){
+    final public static function setUrl($url)
+    {
         self::$url = $url;
     }
 
-    final public static function getUrl(){
+    final public static function setIdColaborador($idColaborador)
+    {
+        self::$idColaborador = $idColaborador;
+    }
+
+    final public static function getUrl()
+    {
         return self::$url;
     }
 
+    final public static function getImagen()
+    {
+        return self::$imagen;
+    }
 
-    final public static function setImagen($imagen){
+    final public static function getEstado()
+    {
+        return self::$estado;
+    }
+
+
+    final public static function getIdColaborador()
+    {
+        return self::$idColaborador;
+    }
+
+
+    final public static function setImagen($imagen)
+    {
         self::$imagen = $imagen;
     }
 
-    final public static function setIDToken($idToken){
+    final public static function setIDToken($idToken)
+    {
         self::$IDtoken = $idToken;
     }
-
-
-
-  
 }

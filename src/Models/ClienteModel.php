@@ -165,6 +165,30 @@ class ClienteModel extends  Connection
         exit;
     }
 
+
+    final public static function read()
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM Clientes;");
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
     final public static function getId()
     {
         return self::$id;

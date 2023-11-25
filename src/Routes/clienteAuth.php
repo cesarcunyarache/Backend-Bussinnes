@@ -32,5 +32,6 @@ $app->postSendOtpUpdateEmail("clienteAuth/sendOtpUpdateEmail");
 
 $app->putUpdatePassword("clienteAuth/updatePassword");
 
+$app->getRead("clienteAuth/");
 
 echo ResponseHttp::status404();

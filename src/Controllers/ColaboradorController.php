@@ -122,6 +122,24 @@ class ColaboradorController extends Controller
         }
     }
 
+    final public function getReadNoMesero(string $endPoint)
+    {
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+
+            try {
+
+                /*   Security::validateTokenJwt(Security::secretKey()); */
+
+                $data = ColaboradorModel::readNoMesero();
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+
+
     final public function getReadById(string $endPoint)
     {
         if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {

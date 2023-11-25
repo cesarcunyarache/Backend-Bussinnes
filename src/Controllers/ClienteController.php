@@ -51,11 +51,21 @@ class ClienteController extends Controller
         }
     }
 
-    final public function pUpdate(string $endPoint)
+    
+    final public function getRead(string $endPoint)
     {
-        if ($this->getMethod() == 'put' && $endPoint == $this->getRoute()) {
-            
-            exit;
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+
+            try {
+
+                /*   Security::validateTokenJwt(Security::secretKey()); */
+
+                $data = ClienteModel::read();
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
         }
     }
 }

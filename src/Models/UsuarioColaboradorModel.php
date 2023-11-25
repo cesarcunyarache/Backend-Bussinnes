@@ -58,7 +58,7 @@ class UsuarioColaboradorModel extends Connection
     final public static function read()
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM UsuariosColaboradores");
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosColaboradores u INNER JOIN Colaboradores c ON c.idUsuario = u.id;");
             $con->execute();
 
             if ($con->rowCount() === 0) {

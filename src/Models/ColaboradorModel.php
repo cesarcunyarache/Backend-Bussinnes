@@ -161,6 +161,33 @@ class ColaboradorModel extends  Connection
         exit;
     }
 
+    final public static function readNoMesero()
+    {
+        try {
+            $con = self::getConnection()->prepare(
+                "SELECT c.id, c.idTipoDoc, c.numeroDoc, c.nombres, c.apellidos, c.genero, c.direccion, c.idUsuario
+                 FROM Colaboradores c
+                LEFT JOIN Meseros m ON c.id = m.idColaborador
+                WHERE m.idColaborador IS NULL;");
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
     final public static function getColaborador($id)
     {
         try {

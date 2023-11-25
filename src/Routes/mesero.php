@@ -9,8 +9,13 @@ $params  = explode('/', $_GET['route']);
 
 $app = new MeseroController();
 
-$app->putUpdate("mesero/");
+$app->getRead("mesero/");
 
+$app->postCreate("mesero/");
+
+$app->postUpdate("mesero/update");
+
+$app->getReadById("mesero/{$params[1]}");
 
 echo ResponseHttp::status404();
 
