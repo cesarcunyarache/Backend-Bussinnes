@@ -50,7 +50,7 @@ class MeseroModel extends  Connection
             if ($query->rowCount() > 0) {
                 return $con->lastInsertId();
             } else {
-               return 0;
+                return 0;
             }
         } catch (\PDOException $e) {
             error_log('MeseroModel::postSave-> ' . $e);
@@ -69,7 +69,7 @@ class MeseroModel extends  Connection
             $con = self::getConnection();
             $query = $con->prepare('UPDATE Meseros SET imagen=:imagen, estado=:estado WHERE idMesero=:id');
 
-         
+
             $query->execute([
                 ':imagen'           => self::getUrl(),
                 ':estado'           => (int) self::getEstado(),
@@ -79,7 +79,7 @@ class MeseroModel extends  Connection
             if ($query->rowCount() > 0) {
                 return true;
             } else {
-               return false;
+                return false;
             }
         } catch (\PDOException $e) {
             error_log('MeseroModel::postSave-> ' . $e);
@@ -105,6 +105,39 @@ class MeseroModel extends  Connection
             }
         } catch (\PDOException $e) {
             error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+    final public static function getReadMeseroForReserva($fecha, $hora)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT *, COUNT(r.idReserva) as cantidadReservas
+            FROM Meseros m
+            INNER JOIN Reservas r ON r.idMesero = m.idMesero
+            WHERE 
+                r.fecha = :fecha AND
+                r.hora  = :hora
+            GROUP BY m.idMesero;");
+
+            $con->execute([
+                ':fecha' => $fecha,
+                ':hora' => $hora
+            ]);
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("ReservaModel::getIdReservabyFecha -> " . $e);
             die(ResponseHttp::status500());
         }
         exit;

@@ -88,6 +88,49 @@ class MeseroController extends Controller
         }
     }
 
+    final public function postReadMeseroForReserva(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+            $validator = new Validator;
+            $validator->setMessages(Message::getMessages());
+            $validation = $validator->validate($this->getParam(), [
+                'fecha'      => 'required|date:Y-m-d',
+                'hora'       => 'required'
+            ]);
+
+            if ($validation->fails()) {
+                $errors = $validation->errors();
+                echo ResponseHttp::status400($errors->all()[0]);
+            } else {
+
+                $fecha = $this->getParam()['fecha'];
+                $horaIngresada = $this->getParam()['hora'];
+
+                if (preg_match(/* '/^(?:[01]\d|2[0-3]):[0-5]\d$/' */
+                    '/^(0?[1-9]|1[0-2]):[0-5][0-9]$/',
+                    $horaIngresada
+                )) {
+                    $data = MeseroModel::read();
+                    $reservas = MeseroModel::getReadMeseroForReserva($fecha, $horaIngresada);
+
+                    if (!empty($reservas)) {
+                        foreach ($reservas as $reserva) {
+                            if ($reserva['cantidadReservas'] == 3) {
+                                $index = array_search($reserva['idMesa'], array_column($data, 'idMesero'));
+                                $data[$index]['estado'] = 2;
+                            }
+                        }
+                    }
+                    echo ResponseHttp::status200($data);
+                } else {
+                    echo ResponseHttp::status400('Formato de hora inválido');
+                }
+            }
+            exit;
+        }
+    }
+
+
 
     final public function getReadById(string $endPoint)
     {

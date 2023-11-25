@@ -11,6 +11,8 @@ $app = new MeseroController();
 
 $app->getRead("mesero/");
 
+$app->postReadMeseroForReserva("mesero/reserva");
+
 $app->postCreate("mesero/");
 
 $app->postUpdate("mesero/update");
