@@ -11,4 +11,10 @@ $app->postStatusMesas("reserva/mesas");
 
 $app->postCreate("reserva/");
 
+$app->getRead("reserva/");
+
+$app->getRead("reserva/");
+
+$app->getReadById("reserva/{$params[1]}");
+
 echo ResponseHttp::status404();

@@ -16,46 +16,45 @@ class ReservaModel extends Connection
     private static string $cantComensales;
     private static string $fecha;
     private static string $hora;
-    private static int $idMesero;
+    private static        $idMesero;
     private static string $estado;
-    private static string $cometario;
+    private static string $comentario;
 
 
     public function __construct(array $data)
     {
-
-        self::$idCliente = $data['idCliente'];
         self::$cantComensales = $data['cantComensales'];
         self::$fecha = $data['fecha'];
         self::$hora = $data['hora'];
-        self::$idMesero = 1;
-        self::$estado = 'pendiente';
+        self::$estado = 1;
+        self::$idMesero = null;
+        self::$comentario = $data['comentario'];
     }
 
     final public static function getIdReservabyFecha($dia)
     {
-    try {
-        $con = self::getConnection()->prepare("SELECT mesasreserva.idMesa, mesas.codigo, mesas.capacidad, reservas.fecha, reservas.hora FROM mesasreserva INNER JOIN reservas ON mesasreserva.idReserva = reservas.idReserva INNER JOIN mesas ON mesas.idMesa = mesasreserva.idMesa WHERE reservas.fecha = :dia");
+        try {
+            $con = self::getConnection()->prepare("SELECT mesasreserva.idMesa, mesas.codigo, mesas.capacidad, reservas.fecha, reservas.hora FROM mesasreserva INNER JOIN reservas ON mesasreserva.idReserva = reservas.idReserva INNER JOIN mesas ON mesas.idMesa = mesasreserva.idMesa WHERE reservas.fecha = :dia");
 
-        $con->execute([
-            ':dia' => $dia
-        ]);
+            $con->execute([
+                ':dia' => $dia
+            ]);
 
-        if ($con->rowCount() === 0) {
-          return [];
-        } else {
-            $data = $con->fetchAll();
-            if (count($data) > 0){
-                return $data;
+            if ($con->rowCount() === 0) {
+                return [];
             } else {
-               return[];
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
             }
+        } catch (\PDOException $e) {
+            error_log("ReservaModel::getIdReservabyFecha -> " . $e);
+            die(ResponseHttp::status500());
         }
-    } catch (\PDOException $e) {
-        error_log("ReservaModel::getIdReservabyFecha -> " . $e);
-        die(ResponseHttp::status500());
-    }
-    exit;
+        exit;
     }
 
 
@@ -63,14 +62,15 @@ class ReservaModel extends Connection
     {
         try {
             $con = self::getConnection();
-            $sql = "INSERT INTO Reservas (idCliente, cantComensales, fecha,  idMesero, hora, estado) VALUES (:idCliente,:cantComensales, :fecha,:idMesero,:hora,:estado)";
+            $sql = "INSERT INTO Reservas (idCliente, cantComensales, fecha,  idMesero, hora, comentario, estado) VALUES (:idCliente,:cantComensales, :fecha,:idMesero,:hora,:comentario, :estado)";
             $query = $con->prepare($sql);
             $query->execute([
                 ':idCliente' => (int) self::getIdCliente(),
-                ':cantComensales' =>(int) self::getcantComensales(),
+                ':cantComensales' => (int) self::getcantComensales(),
                 ':fecha'  => self::getfecha(),
                 ':hora' => self::gethora(),
                 ':idMesero' => self::getidMesero(),
+                ':comentario' => self::getcomentario(),
                 ':estado' => self::getestado(),
             ]);
             if ($query->rowCount() > 0) {
@@ -92,8 +92,8 @@ class ReservaModel extends Connection
             $query = $con->prepare($sql);
             $query->execute([
                 ':idReserva' => (int) $idReserva,
-                ':idMesa' =>(int) $idMesa,
-             
+                ':idMesa' => (int) $idMesa,
+
             ]);
             if ($query->rowCount() > 0) {
                 return $con->lastInsertId();
@@ -105,6 +105,88 @@ class ReservaModel extends Connection
             die(ResponseHttp::status500());
         }
     }
+
+    final public static function read()
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM Reservas r INNER JOIN Clientes c  ON c.id = r.idCliente;");
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+    final public static function getReadById($id)
+    {
+        try {
+            $con = self::getConnection()->prepare(
+            "SELECT c.numeroDoc, c.nombres, c.apellidos,  r.idReserva,
+            r.fecha, r.hora , r.cantComensales, r.comentario, r.idMesero
+            FROM Reservas r 
+            INNER JOIN Clientes c ON c.id = r.idCliente
+            WHERE idReserva =:id");
+
+            $con->execute([':id' => $id]);
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetch();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("ReservaModel -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+    final public static function getReadMesasReserva($id)
+    {
+        try {
+            $con = self::getConnection()->prepare(
+            "SELECT m.idMesa, m.codigo, m.nivel, m.capacidad FROM Reservas r
+            INNER JOIN mesasreserva mr ON mr.idReserva = r.idReserva
+            INNER JOIN mesas m on m.idMesa = mr.idMesa
+            WHERE r.idReserva =:id");
+
+            $con->execute([':id' => $id]);
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("ReservaModel -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+
 
 
     final public static function getIdReserva()
@@ -181,5 +263,15 @@ class ReservaModel extends Connection
     final public static function setestado($estado)
     {
         self::$estado = $estado;
+    }
+
+    final public static function setComentario($comentario)
+    {
+        self::$comentario = $comentario;
+    }
+
+    final public static function getComentario()
+    {
+        return self::$comentario;
     }
 }

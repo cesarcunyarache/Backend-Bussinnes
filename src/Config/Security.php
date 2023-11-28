@@ -49,6 +49,15 @@ class Security
         $jwt = JWT::encode($payload, $key, 'HS256');
         return $jwt;
     }
+    final public static function createTokenReserva(string $key, array $data)
+    {
+        $payload = array(
+            "iat" => time(),
+            "data" => $data
+        );
+        $jwt = JWT::encode($payload, $key, 'HS256');
+        return $jwt;
+    }
 
     final public static function validateTokenJwt(string $key)
     {
@@ -212,18 +221,18 @@ class Security
         $file->setDimension(4000, 4000); //Dimensiones admitidas en Pixeles
         $file->setStorage('public/Images/'); //Ubicación de la carpeta
 
-       
+
 
         if ($file[$name]) {
 
-            if ($file->getMime() !== 'png' && $file->getMime() !== 'jpg' && $file->getMime() !== 'jpeg'){
+            if ($file->getMime() !== 'png' && $file->getMime() !== 'jpg' && $file->getMime() !== 'jpeg') {
 
                 echo $file->getMime();
                 echo ResponseHttp::status400("¡Archivo inválido! Sólo se permiten tipos de imágenes (png, jpg, jpeg)");
                 exit;
-            } 
+            }
 
-            if ($file->getSize() > 5000000 ) {
+            if ($file->getSize() > 5000000) {
                 echo ResponseHttp::status400("El tamaño de la imagen debe ser mínimo de 10000 bytes (10 kb), hasta un máximo de 500000 bytes (500 kb).");
                 exit;
             }
@@ -233,9 +242,9 @@ class Security
                 exit;
             }
 
-             
 
-      
+
+
 
             $upload = $file->upload();
             if ($upload) {

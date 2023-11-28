@@ -11,7 +11,7 @@ use App\Models\ColaboradorModel;
 use App\Models\ClienteModel;
 use App\Models\ReservaModel;
 use App\Models\MesaModel;
-
+use App\Models\MeseroModel;
 class ReservaController extends Controller
 {
 
@@ -66,7 +66,6 @@ class ReservaController extends Controller
             $validator = new Validator;
             $validator->setMessages(Message::getMessages());
             $validation = $validator->validate($this->getParam(), [
-                'idCliente'            => 'required|numeric',
                 'cantComensales'       => 'required',
                 'fecha'                => 'required|',
                 'hora'                 => 'required|',
@@ -81,32 +80,36 @@ class ReservaController extends Controller
                 echo ResponseHttp::status400($errors->all()[0]);
             } else {
 
-                /*   $data  = Security::validateTokenJwt(Security::secretKey());
+                $data  = Security::validateTokenJwt(Security::secretKey());
                 $idClient = $data->data->idCliente;
+                $idMesero = $this->getParam()['idMesero'];
 
-                if (isset($idClient) && !empty($idClient)) { */
-                $reserva = new ReservaModel($this->getParam());
+                if (isset($idClient) && !empty($idClient)) {
 
-                $arr = $this->getParam()['mesas'];
+                    $reserva = new ReservaModel($this->getParam());
+                    $arr = $this->getParam()['mesas'];
 
-
-
-                /*   $cliente::setId($idClient); */
-                $res = $reserva::create();
-          
-
-                if ($res > 0) {
-                    foreach ($arr as $mesa) {
-
-                        $reserva::createMesasReserva($res, $mesa['idMesa']);
+                    if (isset($idMesero) && !empty($idMesero)) {
+                        $reserva::setidMesero($idMesero);
                     }
 
+                    $reserva::setIdCliente((int)$idClient);
+                    $res = $reserva::create();
 
-                    echo ResponseHttp::status200('Creado satisfactoriamente');
+                    if ($res > 0) {
+                        foreach ($arr as $mesa) {
+                            $reserva::createMesasReserva($res, $mesa['idMesa']);
+                        }
+
+                        $payload = ['tokenReserva' => $res];
+                        $token = Security::createTokenReserva(Security::secretKey(), $payload);
+                        echo ResponseHttp::status200($token);
+                    } else {
+                        echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                    }
                 } else {
                     echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
                 }
-                /*  } */
             }
             exit;
         }
@@ -157,8 +160,44 @@ class ReservaController extends Controller
             try {
                 Security::validateTokenJwt(Security::secretKey());
 
-                $data = ColaboradorModel::read();
+                $data = ReservaModel::read();
                 echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+
+
+    final public function getReadById(string $endPoint)
+    {
+        if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
+
+            try {
+                /*  Security::validateTokenJwt(Security::secretKey()); */
+                $token = $this->getAttribute()[1];
+                $data = Security::validateToken($token, Security::secretKey());
+                $idReserva = $data->data->tokenReserva;
+
+                $reserva = ReservaModel::getReadById($idReserva);
+
+                if (count($reserva) > 0){
+                    if ($reserva['idMesero'] !== null) {
+                        $mesero = MeseroModel::getMeseroById($reserva['idMesero']);
+                        if (count($mesero) > 0) {
+                            $reserva['mesero'] = $mesero ;
+                        }
+                    }
+                    $mesas = ReservaModel::getReadMesasReserva($idReserva);
+                    if (count($mesas) > 0){
+                       
+                        $reserva['mesas'] = $mesas ;
+                    }
+
+                    echo ResponseHttp::status200($reserva);   
+                }     
+               
             } catch (\Exception $e) {
                 echo ResponseHttp::status500($e->getMessage());
             }
