@@ -13,8 +13,10 @@ $app->postCreate("reserva/");
 
 $app->getRead("reserva/");
 
-$app->getRead("reserva/");
+$app->getReadMesas("reserva/mesas");
 
-$app->getReadById("reserva/{$params[1]}");
+$app->getReadById("reserva/id/{$params[2]}");
+
+$app->putUpdate("reserva/update");
 
 echo ResponseHttp::status404();

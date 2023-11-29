@@ -121,33 +121,27 @@ class ReservaController extends Controller
             $validator = new Validator;
             $validator->setMessages(Message::getMessages());
             $validation = $validator->validate($this->getParam(), [
-                'idTipoDoc'            => 'required|numeric',
-                'numeroDoc'            => 'required',
-                'nombres'              => 'required|alpha_spaces',
-                'apellidos'            => 'required|alpha_spaces',
-                'telefono'             => 'required',
-                'fechaNacimiento'      => 'required|date:Y-m-d',
-                'genero'               => 'required',
+                'idReserva'                   => 'required|numeric',
+                'estado'                      => 'required',
             ]);
 
             if ($validation->fails()) {
                 $errors = $validation->errors();
                 echo ResponseHttp::status400($errors->all()[0]);
             } else {
+                    /* Security::validateTokenJwt(Security::secretKey()); */
 
-                $data  = Security::validateTokenJwt(Security::secretKey());
-                $idClient = $data->data->idCliente;
+                    $idReserva = $this->getParam()['idReserva'];
+                    $estado = $this->getParam()['estado'];
+                    
+                    $res = ReservaModel::updateEstadoReserva($idReserva, $estado);
 
-                if (isset($idClient) && !empty($idClient)) {
-                    $cliente = new ClienteModel($this->getParam());
-                    $cliente::setId($idClient);
-                    $res = $cliente::Update();
                     if ($res) {
                         echo ResponseHttp::status200('Datos actualizados correctamente');
                     } else {
                         echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
                     }
-                }
+                
             }
             exit;
         }
@@ -169,6 +163,23 @@ class ReservaController extends Controller
         }
     }
 
+    final public function getReadMesas(string $endPoint)
+    {
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+
+            try {
+                Security::validateTokenJwt(Security::secretKey());
+
+                $data = ReservaModel::readMesas();
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+
+
 
     final public function getReadById(string $endPoint)
     {
@@ -176,7 +187,7 @@ class ReservaController extends Controller
 
             try {
                 /*  Security::validateTokenJwt(Security::secretKey()); */
-                $token = $this->getAttribute()[1];
+                $token = $this->getAttribute()[2];
                 $data = Security::validateToken($token, Security::secretKey());
                 $idReserva = $data->data->tokenReserva;
 
@@ -204,4 +215,6 @@ class ReservaController extends Controller
             exit();
         }
     }
+
+    
 }

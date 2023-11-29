@@ -10,11 +10,9 @@ use App\Database\Sql;
 
 class MesaModel extends Connection
 {
-    
-
-
     public function __construct(array $data)
     {
+        
     }
 
     final public static function read()

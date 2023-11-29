@@ -34,7 +34,7 @@ class ReservaModel extends Connection
     final public static function getIdReservabyFecha($dia)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT mesasreserva.idMesa, mesas.codigo, mesas.capacidad, reservas.fecha, reservas.hora FROM mesasreserva INNER JOIN reservas ON mesasreserva.idReserva = reservas.idReserva INNER JOIN mesas ON mesas.idMesa = mesasreserva.idMesa WHERE reservas.fecha = :dia");
+            $con = self::getConnection()->prepare("SELECT mesasreserva.idMesa, mesas.codigo, mesas.capacidad, reservas.fecha, reservas.hora FROM mesasreserva INNER JOIN reservas ON mesasreserva.idReserva = reservas.idReserva INNER JOIN mesas ON mesas.idMesa = mesasreserva.idMesa WHERE reservas.fecha = :dia AND (reservas.estado = 1 OR reservas.estado = 2 ) ");
 
             $con->execute([
                 ':dia' => $dia
@@ -129,15 +129,39 @@ class ReservaModel extends Connection
         exit;
     }
 
+    final public static function readMesas()
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM Mesas");
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
     final public static function getReadById($id)
     {
         try {
             $con = self::getConnection()->prepare(
-            "SELECT c.numeroDoc, c.nombres, c.apellidos,  r.idReserva,
-            r.fecha, r.hora , r.cantComensales, r.comentario, r.idMesero
+                "SELECT c.numeroDoc, c.nombres, c.apellidos,  r.idReserva,
+            r.fecha, r.hora , r.cantComensales, r.comentario, r.idMesero, r.estado
             FROM Reservas r 
             INNER JOIN Clientes c ON c.id = r.idCliente
-            WHERE idReserva =:id");
+            WHERE idReserva =:id"
+            );
 
             $con->execute([':id' => $id]);
 
@@ -162,10 +186,11 @@ class ReservaModel extends Connection
     {
         try {
             $con = self::getConnection()->prepare(
-            "SELECT m.idMesa, m.codigo, m.nivel, m.capacidad FROM Reservas r
+                "SELECT m.idMesa, m.codigo, m.nivel, m.capacidad FROM Reservas r
             INNER JOIN mesasreserva mr ON mr.idReserva = r.idReserva
             INNER JOIN mesas m on m.idMesa = mr.idMesa
-            WHERE r.idReserva =:id");
+            WHERE r.idReserva =:id"
+            );
 
             $con->execute([':id' => $id]);
 
@@ -184,6 +209,31 @@ class ReservaModel extends Connection
             die(ResponseHttp::status500());
         }
         exit;
+    }
+
+
+    final public static function updateEstadoReserva($idReserva, $estado)
+    {
+        try {
+            $con = self::getConnection();
+            $sql = "UPDATE Reservas SET estado=:estado WHERE idReserva=:idReserva";
+
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':estado' => $estado,
+                ':idReserva' => (int) $idReserva,
+                
+            ]);
+
+            if ($query->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\PDOException $e) {
+            error_log('ColaboradorModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
     }
 
 
