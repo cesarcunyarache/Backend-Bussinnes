@@ -129,6 +129,97 @@ class ReservaModel extends Connection
         exit;
     }
 
+    final public static function readReservaTotal()
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT
+            fecha,
+            CAST(COUNT(*) AS SIGNED) as reservasTotales,
+            CAST(SUM(CASE WHEN estado = '4' THEN 1 ELSE 0 END) AS SIGNED) as reservasConfirmadas,
+            CAST(SUM(CASE WHEN estado = '0' THEN 1 ELSE 0 END) AS SIGNED) as reservasCanceladas
+        FROM Reservas
+        WHERE fecha >= CURDATE() - INTERVAL 10 DAY
+        GROUP BY fecha
+        ORDER BY fecha ASC;;");
+              
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+    final public static function totales()
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT
+            (SELECT COUNT(*) FROM Reservas) as Reservas,
+            (SELECT COUNT(*) FROM Colaboradores) as Colaboradores,
+            (SELECT COUNT(*) FROM Clientes) as Clientes;");
+              
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+
+    final public static function MesasOcupadas()
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT
+            fecha,
+            COUNT(DISTINCT idMesa) as mesasOcupadas
+        FROM MesasReserva
+        JOIN Reservas ON MesasReserva.idReserva = Reservas.idReserva
+        WHERE Reservas.estado = '4'
+        GROUP BY fecha
+        ORDER BY fecha;");
+              
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
     final public static function readMesas()
     {
         try {
@@ -222,7 +313,7 @@ class ReservaModel extends Connection
             $query->execute([
                 ':estado' => $estado,
                 ':idReserva' => (int) $idReserva,
-                
+
             ]);
 
             if ($query->rowCount() > 0) {

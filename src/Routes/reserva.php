@@ -19,4 +19,10 @@ $app->getReadById("reserva/id/{$params[2]}");
 
 $app->putUpdate("reserva/update");
 
+$app->getReservasTotal("reserva/total");
+
+$app->getTotales("reserva/totalRCC");
+
+$app->getMesasOcupadas("reserva/mesasOcupadas");
+
 echo ResponseHttp::status404();

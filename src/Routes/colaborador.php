@@ -17,4 +17,6 @@ $app->getReadNoMesero("colaborador/NoMesero");
 
 $app->getReadById("colaborador/{$params[1]}");
 
+
+
 echo ResponseHttp::status404();

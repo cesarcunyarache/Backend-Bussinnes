@@ -12,6 +12,7 @@ use App\Models\ClienteModel;
 use App\Models\ReservaModel;
 use App\Models\MesaModel;
 use App\Models\MeseroModel;
+
 class ReservaController extends Controller
 {
 
@@ -129,19 +130,18 @@ class ReservaController extends Controller
                 $errors = $validation->errors();
                 echo ResponseHttp::status400($errors->all()[0]);
             } else {
-                    /* Security::validateTokenJwt(Security::secretKey()); */
+                /* Security::validateTokenJwt(Security::secretKey()); */
 
-                    $idReserva = $this->getParam()['idReserva'];
-                    $estado = $this->getParam()['estado'];
-                    
-                    $res = ReservaModel::updateEstadoReserva($idReserva, $estado);
+                $idReserva = $this->getParam()['idReserva'];
+                $estado = $this->getParam()['estado'];
 
-                    if ($res) {
-                        echo ResponseHttp::status200('Datos actualizados correctamente');
-                    } else {
-                        echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
-                    }
-                
+                $res = ReservaModel::updateEstadoReserva($idReserva, $estado);
+
+                if ($res) {
+                    echo ResponseHttp::status200('Datos actualizados correctamente');
+                } else {
+                    echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                }
             }
             exit;
         }
@@ -155,6 +155,55 @@ class ReservaController extends Controller
                 Security::validateTokenJwt(Security::secretKey());
 
                 $data = ReservaModel::read();
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+
+    final public function getReservasTotal(string $endPoint)
+    {
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+
+            try {
+                /*    Security::validateTokenJwt(Security::secretKey()); */
+
+                $data = ReservaModel::readReservaTotal();
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+
+
+    final public function getTotales(string $endPoint)
+    {
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+
+            try {
+                /*    Security::validateTokenJwt(Security::secretKey()); */
+
+                $data = ReservaModel::totales();
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+
+    final public function getMesasOcupadas(string $endPoint)
+    {
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+
+            try {
+                /*    Security::validateTokenJwt(Security::secretKey()); */
+
+                $data = ReservaModel::MesasOcupadas();
                 echo ResponseHttp::status200($data);
             } catch (\Exception $e) {
                 echo ResponseHttp::status500($e->getMessage());
@@ -188,33 +237,35 @@ class ReservaController extends Controller
             try {
                 /*  Security::validateTokenJwt(Security::secretKey()); */
                 $token = $this->getAttribute()[2];
-                $data = Security::validateToken($token, Security::secretKey());
-                $idReserva = $data->data->tokenReserva;
+
+                if (is_numeric($token)) {
+                    $idReserva = $token;
+                } else {
+                    $data = Security::validateToken($token, Security::secretKey());
+                    $idReserva = $data->data->tokenReserva;
+                }
 
                 $reserva = ReservaModel::getReadById($idReserva);
 
-                if (count($reserva) > 0){
+                if (count($reserva) > 0) {
                     if ($reserva['idMesero'] !== null) {
                         $mesero = MeseroModel::getMeseroById($reserva['idMesero']);
                         if (count($mesero) > 0) {
-                            $reserva['mesero'] = $mesero ;
+                            $reserva['mesero'] = $mesero;
                         }
                     }
                     $mesas = ReservaModel::getReadMesasReserva($idReserva);
-                    if (count($mesas) > 0){
-                       
-                        $reserva['mesas'] = $mesas ;
+                    if (count($mesas) > 0) {
+
+                        $reserva['mesas'] = $mesas;
                     }
 
-                    echo ResponseHttp::status200($reserva);   
-                }     
-               
+                    echo ResponseHttp::status200($reserva);
+                }
             } catch (\Exception $e) {
                 echo ResponseHttp::status500($e->getMessage());
             }
             exit();
         }
     }
-
-    
 }

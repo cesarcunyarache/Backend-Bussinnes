@@ -375,11 +375,12 @@ class UsuarioColaboradorController extends Controller
 
             try {
                 $data  = Security::validateTokenJwt(Security::secretKey());
-
                 if (isset($data) && !empty($data)) {
-                    $idClient = $data->data->idCliente;
-                    $cliente = ClienteModel::getClientById($idClient);
-                    echo ResponseHttp::status200($cliente);
+                    $idCola = $data->data->idColaborador;
+
+                  
+                    $colaborador = UsuarioColaboradorModel::getColaboradorById($idCola);
+                    echo ResponseHttp::status200($colaborador);
                 }
             } catch (\Exception $e) {
                 echo ResponseHttp::status500($e->getMessage());

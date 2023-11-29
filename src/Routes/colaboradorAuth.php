@@ -5,6 +5,7 @@ use App\Controllers\UsuarioColaboradorController;
 
 $params  = explode('/', $_GET['route']);
 
+
 $app = new UsuarioColaboradorController();
 
 $app->postLogin("colaboradorAuth/login");
@@ -27,13 +28,13 @@ $app->putUpdateEmail("colaboradorAuth/updateEmail");
 
 $app->putUpdatePassword("colaboradorAuth/updatePassword"); 
 
+$app->getProfile("colaboradorAuth/profile/");
+
 /*
-$app->getProfile("clienteAuth/profile");
 $app->postLogout("clienteAuth/logout");
 $app->getVerify("clienteAuth/verify");
 $app->postReSendOTP("clienteAuth/resendOtp");
 
 */
-
 
 echo ResponseHttp::status404();

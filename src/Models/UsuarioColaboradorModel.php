@@ -79,6 +79,35 @@ class UsuarioColaboradorModel extends Connection
     }
 
 
+    final public static function getColaboradorById($idColaborador)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT *
+            FROM Colaboradores c
+            INNER JOIN UsuariosColaboradores u ON c.idUsuario = u.id
+            WHERE c.id =:id;");
+            $con->execute([
+                ':id' => (int) $idColaborador
+            ]);
+
+            if ($con->rowCount() === 0) {
+                echo ResponseHttp::status400('Colaborador no encontrado');
+            } else {
+                $data = $con->fetch();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    echo ResponseHttp::status400('Colaborador no encontrado');
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("UserModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+
 
     final public static function createUser()
     {
