@@ -302,8 +302,101 @@ class ReservaModel extends Connection
         exit;
     }
 
+    //
+    final public static function getReservaByIdUser($id)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT reservas.idReserva, reservas.estado, reservas.hora, reservas.fecha, reservas.cantComensales, GROUP_CONCAT(mesas.codigo) AS codigos_mesas
+            FROM mesas
+            INNER JOIN mesasreserva ON mesas.idMesa = mesasreserva.idMesa
+            INNER JOIN reservas ON reservas.idReserva = mesasreserva.idReserva
+            INNER JOIN clientes ON clientes.id = reservas.idCliente
+            WHERE clientes.idUsuario = :id
+            GROUP BY reservas.idReserva;
+            ");
+            $con->execute([
+                ':id' => (int) $id
+            ]);
 
-    final public static function updateEstadoReserva($idReserva, $estado)
+            if ($con->rowCount() === 0) {
+                echo ResponseHttp::status400('Cliente no encontrado');
+            } else {
+                $data = $con->fetchAll();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    echo ResponseHttp::status400('Cliente no encontrado');
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("ColaboradorModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+    //
+
+    final public static function getPuntosByIdUser($id)
+    {   
+        try {
+            $con = self::getConnection()->prepare(
+                "SELECT puntos.cantidad, puntos.fechaVencimiento
+                FROM puntos
+                INNER JOIN clientes ON clientes.id = puntos.idCliente
+                WHERE clientes.idUsuario = :id"
+            );
+    
+            $con->execute([':id' => $id]);
+    
+            if ($con->rowCount() === 0) {
+                return null; // Cambié esto a null para indicar que no se encontró un cliente
+            } else {
+                $data = $con->fetch(); // Usé fetch en lugar de fetchAll, ya que se espera solo una fila
+                if ($data) {
+                    return
+                        $data; // Devolver el valor específico de idCliente
+                } else {
+                    return null; // Cambié esto a null para indicar que no se encontró un cliente
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("ReservaModel -> " . $e);
+            die(ResponseHttp::status500());
+        }
+
+    }
+    //
+
+    final public static function getIdClienteFromReserva($idReserva)
+{
+    try {
+        $con = self::getConnection()->prepare(
+            "SELECT idCliente FROM `reservas` WHERE idReserva = :id"
+        );
+
+        $con->execute([':id' => $idReserva]);
+
+        if ($con->rowCount() === 0) {
+            return null; // Cambié esto a null para indicar que no se encontró un cliente
+        } else {
+            $data = $con->fetch(); // Usé fetch en lugar de fetchAll, ya que se espera solo una fila
+            if ($data) {
+                return $data['idCliente']; // Devolver el valor específico de idCliente
+            } else {
+                return null; // Cambié esto a null para indicar que no se encontró un cliente
+            }
+        }
+    } catch (\PDOException $e) {
+        error_log("ReservaModel -> " . $e);
+        die(ResponseHttp::status500());
+    }
+
+    // No es necesario tener estas líneas
+    // return $idCliente; 
+    // exit;
+}  
+//
+final public static function updateEstadoReserva($idReserva, $estado)
     {
         try {
             $con = self::getConnection();
@@ -313,10 +406,18 @@ class ReservaModel extends Connection
             $query->execute([
                 ':estado' => $estado,
                 ':idReserva' => (int) $idReserva,
-
+                
             ]);
 
             if ($query->rowCount() > 0) {
+
+                // Actualización exitosa
+                if ($estado == 4) { // Cambia 3 al número específico que deseas
+                // Estado específico alcanzado, ahora inserta en la tabla de puntos
+                $idCliente = self::getIdClienteFromReserva($idReserva);
+                self::insertPuntos($idCliente);
+                }
+
                 return true;
             } else {
                 return false;
@@ -326,8 +427,65 @@ class ReservaModel extends Connection
             die(ResponseHttp::status500());
         }
     }
+    //
+    final public static function insertPuntos($idCliente)
+    {
+        try {
+            $con = self::getConnection();
+        
+            // Verificar si ya existe un registro de puntos para el idCliente
+            $existingPuntos = self::getPuntosByIdCliente($idCliente);
 
+            if ($existingPuntos !== null) {
+                // Ya existe un registro, actualiza la cantidad sumándole 3
+                $newCantidad = $existingPuntos + 3;
+                $sql = "UPDATE Puntos SET cantidad = :cantidad WHERE idCliente = :idCliente";
+            } else {
+                // No existe un registro, inserta uno nuevo
+                $newCantidad = 3;
+                $sql = "INSERT INTO Puntos (idCliente, cantidad, fechaVencimiento) VALUES (:idCliente, :cantidad, DATE_ADD(CURDATE(), INTERVAL 1 MONTH))";
+            }
 
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':idCliente' => (int) $idCliente,
+                ':cantidad' => $newCantidad,
+                //':fechaVencimiento' => ""
+            ]);
+
+            if ($query->rowCount() > 0) {
+                // Inserción o actualización exitosa en la tabla de puntos
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\PDOException $e) {
+            error_log('ColaboradorModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
+    }
+    //
+    // Función para obtener la cantidad de puntos actual por idCliente
+    final public static function getPuntosByIdCliente($idCliente)
+    {
+        try {
+            $con = self::getConnection()->prepare(
+                "SELECT cantidad, fechaVencimiento FROM puntos WHERE idCliente = :idCliente"
+            );
+
+            $con->execute([':idCliente' => $idCliente]);
+
+            if ($con->rowCount() === 0) {
+                return null; // No existe un registro de puntos para el idCliente
+            } else {
+                $data = $con->fetch();
+                return $data['cantidad']; // Devolver la cantidad actual de puntos
+            }
+        } catch (\PDOException $e) {
+            error_log("ReservaModel -> " . $e);
+            die(ResponseHttp::status500());
+        }
+    }
 
 
     final public static function getIdReserva()

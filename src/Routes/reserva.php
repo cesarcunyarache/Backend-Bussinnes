@@ -25,4 +25,8 @@ $app->getTotales("reserva/totalRCC");
 
 $app->getMesasOcupadas("reserva/mesasOcupadas");
 
+$app->getReadByIdUser("reserva/{$params[1]}");
+
+$app->getReadPuntosByIdUser("reserva/puntos/{$params[2]}");
+
 echo ResponseHttp::status404();

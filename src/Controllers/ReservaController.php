@@ -61,6 +61,21 @@ class ReservaController extends Controller
         }
     }
 
+    final public function getReservasByCliente(string $endPoint)
+    {
+        if ($this->getMethod() == 'get' /*  && $endPoint == $this->getRoute() */) {
+
+            try {
+                $id = $this->getAttribute()[1];
+                $data = ResevaModel::getReservabyId($id);
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+
     final public function postCreate(string $endPoint)
     {
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
@@ -152,7 +167,7 @@ class ReservaController extends Controller
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
 
             try {
-                Security::validateTokenJwt(Security::secretKey());
+                //Security::validateTokenJwt(Security::secretKey());
 
                 $data = ReservaModel::read();
                 echo ResponseHttp::status200($data);
@@ -179,7 +194,39 @@ class ReservaController extends Controller
         }
     }
 
+//
+final public function getReadByIdUser(string $endPoint)
+    {
+        if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
 
+            try {
+                //Security::validateTokenJwt(Security::secretKey());
+                $id = $this->getAttribute()[1];
+                $data = ReservaModel::getReservaByIdUser($id);
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+    //
+    final public function getReadPuntosByIdUser(string $endPoint)
+    {
+        if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
+
+            try {
+                Security::validateTokenJwt(Security::secretKey());
+                $id = $this->getAttribute()[2];
+                $data = ReservaModel::getPuntosByIdUser($id);
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+    //
     final public function getTotales(string $endPoint)
     {
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
@@ -217,7 +264,7 @@ class ReservaController extends Controller
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
 
             try {
-                Security::validateTokenJwt(Security::secretKey());
+                //Security::validateTokenJwt(Security::secretKey());
 
                 $data = ReservaModel::readMesas();
                 echo ResponseHttp::status200($data);
