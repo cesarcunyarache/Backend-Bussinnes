@@ -13,6 +13,12 @@ use App\Models\ReservaModel;
 use App\Models\MesaModel;
 use App\Models\MeseroModel;
 
+use MercadoPago\Client\Payment\PaymentClient;
+
+use MercadoPago\Exceptions\MPApiException;
+use MercadoPago\MercadoPagoConfig;
+use MercadoPago\MPRequestOptions;
+use MercadoPago\Preference;
 class ReservaController extends Controller
 {
 
@@ -194,8 +200,7 @@ class ReservaController extends Controller
         }
     }
 
-//
-final public function getReadByIdUser(string $endPoint)
+    final public function getReadByIdUser(string $endPoint)
     {
         if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
 
@@ -210,7 +215,7 @@ final public function getReadByIdUser(string $endPoint)
             exit();
         }
     }
-    //
+
     final public function getReadPuntosByIdUser(string $endPoint)
     {
         if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
@@ -226,7 +231,7 @@ final public function getReadByIdUser(string $endPoint)
             exit();
         }
     }
-    //
+
     final public function getTotales(string $endPoint)
     {
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
@@ -275,8 +280,6 @@ final public function getReadByIdUser(string $endPoint)
         }
     }
 
-
-
     final public function getReadById(string $endPoint)
     {
         if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
@@ -313,6 +316,84 @@ final public function getReadByIdUser(string $endPoint)
                 echo ResponseHttp::status500($e->getMessage());
             }
             exit();
+        }
+    }
+
+    final public function postPago(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+            $validator = new Validator;
+            $validator->setMessages(Message::getMessages());
+            $validation = $validator->validate($this->getParam(), []);
+
+            if ($validation->fails()) {
+                $errors = $validation->errors();
+                echo ResponseHttp::status400($errors->all()[0]);
+            } else {
+                /*   $data  = Security::validateTokenJwt(Security::secretKey()); */
+                MercadoPagoConfig::setAccessToken("TEST-7932145193669245-120613-6b72863bfdf9d271d596aad97c87019b-1579625307");
+
+                
+
+                try {
+
+                 /*    $request = [
+                        "transaction_amount" => 100,
+                        "token" => "4009 1753 3280 6176", 
+                        "description" => "description",
+                        "installments" => 1,
+                        "payment_method_id" => "visa",
+                        "payer" => [
+                            "email" => "user@test.com",
+                        ]
+                    ]; */
+
+
+                  /*   $payment = $client->create($request); */
+
+        /* 
+                  $client = new PreferenceClient();
+
+                  $preference = $client->create([
+                    "external_reference" => "teste",
+                    "items"=> array(
+                      array(
+                        "id" => "4567",
+                        "title" => "Dummy Title",
+                        "description" => "Dummy description",
+                        "picture_url" => "http://www.myapp.com/myimage.jpg",
+                        "category_id" => "eletronico",
+                        "quantity" => 1,
+                        "currency_id" => "BRL",
+                        "unit_price" => 100
+                      )
+                    ),
+                    "payment_methods" => [
+                    "default_payment_method_id" => "master",
+                    "excluded_payment_types" => array(
+                      array(
+                        "id" => "ticket"
+                      )
+                    ),
+                    "installments"  => 12,
+                    "default_installments" => 1
+                  ]]);
+
+
+                  echo ResponseHttp::status200($preference); 
+                 
+                     */
+                 
+
+ 
+                } catch (MPApiException $e) {
+                   
+                    print_r("Status code: " . $e->getApiResponse()->getStatusCode() . "\n");
+                  echo ResponseHttp::status200($e->getApiResponse()->getContent()); 
+                    echo ResponseHttp::status400($e->getMessage());
+                }
+            }
+            exit;
         }
     }
 }

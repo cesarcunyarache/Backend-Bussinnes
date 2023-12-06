@@ -11,6 +11,8 @@ $app->postStatusMesas("reserva/mesas");
 
 $app->postCreate("reserva/");
 
+$app->postPago("reserva/pago");
+
 $app->getRead("reserva/");
 
 $app->getReadMesas("reserva/mesas");
