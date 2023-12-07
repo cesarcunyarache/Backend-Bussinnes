@@ -100,30 +100,36 @@ class ProductoController extends Controller
     final public function postUpdateProducto(string $endPoint)
     {
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
-
             if (
-                empty($this->getParam()['idProducto'])
+                empty($this->getParam()['idProducto']) ||
+                !isset($this->getParam()['nombre']) ||
+                !isset($this->getParam()['estado']) || !isset($this->getParam()['precio']) || !isset($this->getParam()['costoPuntos'])
             ) {
-
                 echo ResponseHttp::status400('Uno o más campos vacios');
             } else {
-
                 if (empty($_FILES)) {
                     echo ResponseHttp::status400('Archivo vacio o nombre incorrecto');
                 } else {
-                    $obj = new ProductoModel($this->getParam(), $_FILES);
-                    $res = $obj::putUpdateProductos($this->getParam()['idProducto']);
 
-           
-                    if ($res) {
-                        echo ResponseHttp::status200("Actualizado satisfactoriamente");
-                    } else {
-                        echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                    try {
+
+                        $obj = new ProductoModel($this->getParam(), $_FILES);
+
+                        $res = $obj::putUpdateProductos($this->getParam()['idProducto']);
+
+                        if ($res > 0) {
+                            echo ResponseHttp::status200("Creado satisfactoriamente");
+                        } else {
+                            echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                        }
+                    } catch (\Exception $e) {
+                        echo ResponseHttp::status500($e->getMessage());
                     }
                 }
             }
             exit;
         }
+        //
     }
 
     final public function postReadMeseroForReserva(string $endPoint)

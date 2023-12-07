@@ -126,7 +126,7 @@ class ProductoModel extends  Connection
             self::setIDtoken(hash('md5', 'upload' . self::getUrl()));
 
             $con = self::getConnection();
-            $query = $con->prepare('UPDATE productos SET nombre=:nombre, imagen=:imagen, precio=:precio, costoPuntos=:puntos WHERE idProducto=:id');
+            $query = $con->prepare('UPDATE productos SET nombre=:nombre, imagen=:imagen, precio=:precio, costoPuntos=:costoPuntos WHERE idProducto=:id');
 
 
             $query->execute([
@@ -144,7 +144,7 @@ class ProductoModel extends  Connection
             }
         } catch (\PDOException $e) {
             error_log('MeseroModel::postSave-> ' . $e);
-            die((ResponseHttp::status500('No se puede Actualizar el mesero')));
+            die((ResponseHttp::status500('No se puede Actualizar el producto')));
         }
     }
 
