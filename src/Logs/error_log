@@ -795,3 +795,1100 @@ Stack trace:
 [02-Dec-2023 23:24:29 America/Bogota] conexion exitosa
 [02-Dec-2023 23:24:35 America/Bogota] conexion exitosa
 [02-Dec-2023 23:24:35 America/Bogota] conexion exitosa
+[07-Dec-2023 02:32:29 America/Bogota] conexion exitosa
+[07-Dec-2023 02:32:29 America/Bogota] La contraseña es incorrecta
+[07-Dec-2023 02:32:31 America/Bogota] conexion exitosa
+[07-Dec-2023 02:32:31 America/Bogota] conexion exitosa
+[07-Dec-2023 02:32:32 America/Bogota] conexion exitosa
+[07-Dec-2023 02:32:39 America/Bogota] conexion exitosa
+[07-Dec-2023 02:32:55 America/Bogota] conexion exitosa
+[07-Dec-2023 02:35:02 America/Bogota] conexion exitosa
+[07-Dec-2023 02:35:32 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:02 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:44 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:44 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:44 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:44 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:44 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:44 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:44 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:44 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:48 America/Bogota] conexion exitosa
+[07-Dec-2023 02:36:51 America/Bogota] conexion exitosa
+[07-Dec-2023 02:37:12 America/Bogota] conexion exitosa
+[07-Dec-2023 02:37:52 America/Bogota] conexion exitosa
+[07-Dec-2023 02:38:48 America/Bogota] conexion exitosa
+[07-Dec-2023 02:39:34 America/Bogota] conexion exitosa
+[07-Dec-2023 02:40:17 America/Bogota] conexion exitosa
+[07-Dec-2023 02:40:34 America/Bogota] conexion exitosa
+[07-Dec-2023 02:41:13 America/Bogota] conexion exitosa
+[07-Dec-2023 02:42:56 America/Bogota] conexion exitosa
+[07-Dec-2023 02:44:06 America/Bogota] conexion exitosa
+[07-Dec-2023 02:44:34 America/Bogota] conexion exitosa
+[07-Dec-2023 02:44:36 America/Bogota] conexion exitosa
+[07-Dec-2023 02:44:42 America/Bogota] conexion exitosa
+[07-Dec-2023 02:44:57 America/Bogota] conexion exitosa
+[07-Dec-2023 02:45:09 America/Bogota] conexion exitosa
+[07-Dec-2023 02:47:16 America/Bogota] conexion exitosa
+[07-Dec-2023 02:47:16 America/Bogota] La contraseña es incorrecta
+[07-Dec-2023 02:47:19 America/Bogota] conexion exitosa
+[07-Dec-2023 02:47:19 America/Bogota] conexion exitosa
+[07-Dec-2023 02:47:20 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:01 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:01 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:02 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:17 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:17 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:17 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:17 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:17 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:17 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:17 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:17 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:35 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:35 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:35 America/Bogota] conexion exitosa
+[07-Dec-2023 02:51:35 America/Bogota] conexion exitosa
+[07-Dec-2023 02:52:05 America/Bogota] conexion exitosa
+[07-Dec-2023 02:52:23 America/Bogota] conexion exitosa
+[07-Dec-2023 02:52:28 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:15 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:17 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:20 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:20 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:20 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:20 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:20 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:20 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:20 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:20 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:20 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:44 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:44 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:52 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 02:53:52 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:52 America/Bogota] conexion exitosa
+[07-Dec-2023 02:53:52 America/Bogota] conexion exitosa
+[07-Dec-2023 02:54:46 America/Bogota] conexion exitosa
+[07-Dec-2023 02:54:47 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 02:54:47 America/Bogota] conexion exitosa
+[07-Dec-2023 02:54:47 America/Bogota] conexion exitosa
+[07-Dec-2023 02:54:47 America/Bogota] conexion exitosa
+[07-Dec-2023 02:54:56 America/Bogota] conexion exitosa
+[07-Dec-2023 02:54:59 America/Bogota] conexion exitosa
+[07-Dec-2023 02:54:59 America/Bogota] conexion exitosa
+[07-Dec-2023 02:54:59 America/Bogota] conexion exitosa
+[07-Dec-2023 02:54:59 America/Bogota] conexion exitosa
+[07-Dec-2023 02:55:13 America/Bogota] conexion exitosa
+[07-Dec-2023 02:55:59 America/Bogota] conexion exitosa
+[07-Dec-2023 02:57:36 America/Bogota] conexion exitosa
+[07-Dec-2023 02:57:36 America/Bogota] conexion exitosa
+[07-Dec-2023 02:57:38 America/Bogota] conexion exitosa
+[07-Dec-2023 02:59:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:00:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:00:20 America/Bogota] conexion exitosa
+[07-Dec-2023 03:00:58 America/Bogota] conexion exitosa
+[07-Dec-2023 03:02:18 America/Bogota] conexion exitosa
+[07-Dec-2023 03:02:20 America/Bogota] conexion exitosa
+[07-Dec-2023 03:02:21 America/Bogota] conexion exitosa
+[07-Dec-2023 03:03:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:03:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:05:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:04 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:39 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:39 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:48 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:06:48 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:06:48 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:48 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:48 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:48 America/Bogota] conexion exitosa
+[07-Dec-2023 03:06:48 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:07:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:07:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:08:13 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:08:13 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:08:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:08:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:08:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:08:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:08:13 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:08:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:09:33 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:09:33 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:09:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:09:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:09:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:09:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:09:33 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:09:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:29 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:15:29 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:15:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:30 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:30 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:15:30 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:30 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:15:30 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:30 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:30 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:38 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:15:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:15:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:38 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:15:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:39 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:15:39 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:39 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:39 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:53 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:15:53 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:15:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:53 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:15:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:53 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:15:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:15:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:16:12 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:16:12 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:16:12 America/Bogota] conexion exitosa
+[07-Dec-2023 03:16:12 America/Bogota] conexion exitosa
+[07-Dec-2023 03:16:12 America/Bogota] conexion exitosa
+[07-Dec-2023 03:16:12 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:16:12 America/Bogota] conexion exitosa
+[07-Dec-2023 03:16:12 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:03 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:17:03 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:17:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:03 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:17:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:06 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:17:06 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:17:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:06 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:17:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:07 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:17:07 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:17:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:07 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:17:07 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:17:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:17:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:31 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:18:31 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:18:31 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:31 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:31 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:31 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:18:31 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:31 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:31 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:18:31 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:31 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:31 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:46 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:18:46 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:18:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:18:46 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:18:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:52 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:19:52 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:19:52 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:52 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:19:52 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:52 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:52 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:52 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:56 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:19:56 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:19:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:56 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:19:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:56 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:19:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:19:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:03 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:20:03 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:20:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:03 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:20:06 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:20:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:06 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:20:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:06 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:20:06 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:20:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:06 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:57 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:20:57 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:20:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:57 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:20:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:57 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:20:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:20:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:07 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:21:07 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:21:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:07 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:21:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:10 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:21:10 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:21:10 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:10 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:10 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:10 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:10 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:10 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:21:10 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:21:10 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:10 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:10 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:13 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:21:13 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:21:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:13 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:21:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:15 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:21:15 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:21:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:15 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:21:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:15 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:21:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:40 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:21:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:18 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:21 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:22:21 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:21 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:22:21 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:21 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:21 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:22:21 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:30 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:30 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:44 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:22:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:45 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:22:45 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:22:45 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:45 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:45 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:45 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:22:45 America/Bogota] conexion exitosa
+[07-Dec-2023 03:22:45 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:02 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:23:02 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:23:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:02 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:23:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:07 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:23:07 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:23:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:07 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:23:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:07 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:23:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:55 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:55 America/Bogota] conexion exitosa
+[07-Dec-2023 03:23:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:02 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:02 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:24:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:02 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:24:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:18 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:18 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:20 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:22 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:22 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:22 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:27 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:27 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:27 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:27 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:27 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:29 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:29 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:24:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:29 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:24:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:34 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:34 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 30
+[07-Dec-2023 03:24:34 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:34 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:34 America/Bogota] ColaboradorModel::post -> PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fecha' in 'field list' in C:\xampp\htdocs\API\src\Models\ReservaModel.php:542
+Stack trace:
+#0 C:\xampp\htdocs\API\src\Models\ReservaModel.php(542): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API\src\Controllers\ReservaController.php(370): App\Models\ReservaModel::updatePuntosCanje(6, 17, 29, 6, 6, '2024-01-07')
+#2 C:\xampp\htdocs\API\src\Routes\reserva.php(34): App\Controllers\ReservaController->putUpdatePuntos('reserva/updateP...')
+#3 C:\xampp\htdocs\API\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[07-Dec-2023 03:24:34 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:34 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:37 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:37 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 30
+[07-Dec-2023 03:24:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:37 America/Bogota] ColaboradorModel::post -> PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fecha' in 'field list' in C:\xampp\htdocs\API\src\Models\ReservaModel.php:542
+Stack trace:
+#0 C:\xampp\htdocs\API\src\Models\ReservaModel.php(542): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API\src\Controllers\ReservaController.php(370): App\Models\ReservaModel::updatePuntosCanje(6, 17, 29, 6, 6, '2024-01-07')
+#2 C:\xampp\htdocs\API\src\Routes\reserva.php(34): App\Controllers\ReservaController->putUpdatePuntos('reserva/updateP...')
+#3 C:\xampp\htdocs\API\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[07-Dec-2023 03:24:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 30
+[07-Dec-2023 03:24:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:38 America/Bogota] ColaboradorModel::post -> PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fecha' in 'field list' in C:\xampp\htdocs\API\src\Models\ReservaModel.php:542
+Stack trace:
+#0 C:\xampp\htdocs\API\src\Models\ReservaModel.php(542): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API\src\Controllers\ReservaController.php(370): App\Models\ReservaModel::updatePuntosCanje(6, 17, 29, 6, 6, '2024-01-07')
+#2 C:\xampp\htdocs\API\src\Routes\reserva.php(34): App\Controllers\ReservaController->putUpdatePuntos('reserva/updateP...')
+#3 C:\xampp\htdocs\API\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[07-Dec-2023 03:24:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 30
+[07-Dec-2023 03:24:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:38 America/Bogota] ColaboradorModel::post -> PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fecha' in 'field list' in C:\xampp\htdocs\API\src\Models\ReservaModel.php:542
+Stack trace:
+#0 C:\xampp\htdocs\API\src\Models\ReservaModel.php(542): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API\src\Controllers\ReservaController.php(370): App\Models\ReservaModel::updatePuntosCanje(6, 17, 29, 6, 6, '2024-01-07')
+#2 C:\xampp\htdocs\API\src\Routes\reserva.php(34): App\Controllers\ReservaController->putUpdatePuntos('reserva/updateP...')
+#3 C:\xampp\htdocs\API\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[07-Dec-2023 03:24:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 30
+[07-Dec-2023 03:24:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:38 America/Bogota] ColaboradorModel::post -> PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fecha' in 'field list' in C:\xampp\htdocs\API\src\Models\ReservaModel.php:542
+Stack trace:
+#0 C:\xampp\htdocs\API\src\Models\ReservaModel.php(542): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API\src\Controllers\ReservaController.php(370): App\Models\ReservaModel::updatePuntosCanje(6, 17, 29, 6, 6, '2024-01-07')
+#2 C:\xampp\htdocs\API\src\Routes\reserva.php(34): App\Controllers\ReservaController->putUpdatePuntos('reserva/updateP...')
+#3 C:\xampp\htdocs\API\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[07-Dec-2023 03:24:38 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:39 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:39 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:39 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 30
+[07-Dec-2023 03:24:39 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:39 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:39 America/Bogota] ColaboradorModel::post -> PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'fecha' in 'field list' in C:\xampp\htdocs\API\src\Models\ReservaModel.php:542
+Stack trace:
+#0 C:\xampp\htdocs\API\src\Models\ReservaModel.php(542): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API\src\Controllers\ReservaController.php(370): App\Models\ReservaModel::updatePuntosCanje(6, 17, 29, 6, 6, '2024-01-07')
+#2 C:\xampp\htdocs\API\src\Routes\reserva.php(34): App\Controllers\ReservaController->putUpdatePuntos('reserva/updateP...')
+#3 C:\xampp\htdocs\API\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[07-Dec-2023 03:24:39 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:39 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:42 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:42 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:24:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:42 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:24:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:43 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:24:43 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:43 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:43 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:43 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:24:43 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:43 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:43 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:44 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:24:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:24:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:00 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:00 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:25:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:00 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:02 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:25:02 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:02 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:03 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:03 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:25:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:03 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:16 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:25:16 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:16 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:16 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:16 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:16 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:16 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:16 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:28 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:28 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:25:28 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:28 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:28 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:28 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:28 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:28 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:42 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:25:42 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:25:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:25:42 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:26:05 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:26:05 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:26:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:05 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:26:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:51 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:26:51 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:26:51 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:51 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:51 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:26:51 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:51 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:51 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:54 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:26:54 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:26:54 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:54 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:26:54 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:54 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:54 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:54 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:55 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:26:55 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:26:55 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:55 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:55 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:55 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:55 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:26:55 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:55 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:26:55 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:55 America/Bogota] conexion exitosa
+[07-Dec-2023 03:26:55 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:15 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:26 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:58 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:58 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:58 America/Bogota] conexion exitosa
+[07-Dec-2023 03:27:58 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:03 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:28:03 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:28:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:03 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:28:09 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:28:09 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:28:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:09 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:28:12 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:12 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:14 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:21 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:21 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:21 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:24 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:28:25 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:25 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:25 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:25 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:26 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:28 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:28 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:28 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:33 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:28:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:35 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:37 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:28:37 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:28:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:28:37 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:28:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:00 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:00 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:29:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:00 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:02 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:29:02 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:02 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:05 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:29:05 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 30
+[07-Dec-2023 03:29:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:05 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:29:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:29:09 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:29:09 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:37 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:37 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:29:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:37 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:50 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:50 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:29:50 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:50 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:29:50 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:50 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:50 America/Bogota] conexion exitosa
+[07-Dec-2023 03:29:50 America/Bogota] conexion exitosa
+[07-Dec-2023 03:30:05 America/Bogota] Antes de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:30:05 America/Bogota] PHP Warning:  Undefined array key 2 in C:\xampp\htdocs\API\src\Routes\reserva.php on line 18
+[07-Dec-2023 03:30:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:30:05 America/Bogota] Después de llamar a ReservaModel::readProductos
+[07-Dec-2023 03:30:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:30:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:30:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:30:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:30:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:31:02 America/Bogota] conexion exitosa
+[07-Dec-2023 03:36:05 America/Bogota] conexion exitosa
+[07-Dec-2023 03:37:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:37:08 America/Bogota] conexion exitosa
+[07-Dec-2023 03:37:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:37:19 America/Bogota] conexion exitosa
+[07-Dec-2023 03:37:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:37:53 America/Bogota] conexion exitosa
+[07-Dec-2023 03:37:58 America/Bogota] conexion exitosa
+[07-Dec-2023 03:37:58 America/Bogota] conexion exitosa
+[07-Dec-2023 03:38:59 America/Bogota] conexion exitosa
+[07-Dec-2023 03:39:25 America/Bogota] conexion exitosa
+[07-Dec-2023 03:39:31 America/Bogota] conexion exitosa
+[07-Dec-2023 03:39:51 America/Bogota] conexion exitosa
+[07-Dec-2023 03:39:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:40:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:40:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:40:27 America/Bogota] conexion exitosa
+[07-Dec-2023 03:40:27 America/Bogota] conexion exitosa
+[07-Dec-2023 03:40:27 America/Bogota] conexion exitosa
+[07-Dec-2023 03:40:27 America/Bogota] conexion exitosa
+[07-Dec-2023 03:40:35 America/Bogota] conexion exitosa
+[07-Dec-2023 03:40:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:40:48 America/Bogota] conexion exitosa
+[07-Dec-2023 03:41:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:41:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:41:20 America/Bogota] conexion exitosa
+[07-Dec-2023 03:41:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:41:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:41:46 America/Bogota] conexion exitosa
+[07-Dec-2023 03:42:18 America/Bogota] conexion exitosa
+[07-Dec-2023 03:42:22 America/Bogota] conexion exitosa
+[07-Dec-2023 03:42:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:42:34 America/Bogota] conexion exitosa
+[07-Dec-2023 03:42:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:42:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:42:48 America/Bogota] conexion exitosa
+[07-Dec-2023 03:42:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:43:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:43:10 America/Bogota] conexion exitosa
+[07-Dec-2023 03:43:26 America/Bogota] conexion exitosa
+[07-Dec-2023 03:43:30 America/Bogota] conexion exitosa
+[07-Dec-2023 03:43:42 America/Bogota] conexion exitosa
+[07-Dec-2023 03:43:47 America/Bogota] conexion exitosa
+[07-Dec-2023 03:43:58 America/Bogota] conexion exitosa
+[07-Dec-2023 03:44:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:44:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:44:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:44:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:44:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:44:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:44:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:44:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:44:00 America/Bogota] conexion exitosa
+[07-Dec-2023 03:44:47 America/Bogota] conexion exitosa
+[07-Dec-2023 03:45:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:45:22 America/Bogota] conexion exitosa
+[07-Dec-2023 03:46:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:46:18 America/Bogota] conexion exitosa
+[07-Dec-2023 03:46:24 America/Bogota] conexion exitosa
+[07-Dec-2023 03:46:44 America/Bogota] conexion exitosa
+[07-Dec-2023 03:47:21 America/Bogota] conexion exitosa
+[07-Dec-2023 03:50:30 America/Bogota] conexion exitosa
+[07-Dec-2023 03:50:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:50:41 America/Bogota] conexion exitosa
+[07-Dec-2023 03:50:47 America/Bogota] conexion exitosa
+[07-Dec-2023 03:51:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:51:08 America/Bogota] conexion exitosa
+[07-Dec-2023 03:51:47 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:51 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:54 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:52:56 America/Bogota] conexion exitosa
+[07-Dec-2023 03:53:33 America/Bogota] conexion exitosa
+[07-Dec-2023 03:53:45 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:24 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:26 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:28 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:29 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:57 America/Bogota] conexion exitosa
+[07-Dec-2023 03:54:59 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:01 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:32 America/Bogota] conexion exitosa
+[07-Dec-2023 03:55:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:16 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:32 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:35 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:56:37 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:12 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:12 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:13 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:57:38 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:07 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:17 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:21 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:58:23 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:03 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:09 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:11 America/Bogota] conexion exitosa
+[07-Dec-2023 03:59:42 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:00 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:05 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:41 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:48 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:53 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:55 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:55 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:55 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:55 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:55 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:55 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:55 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:55 America/Bogota] conexion exitosa
+[07-Dec-2023 04:00:55 America/Bogota] conexion exitosa
+[07-Dec-2023 04:01:10 America/Bogota] conexion exitosa
+[07-Dec-2023 04:01:14 America/Bogota] conexion exitosa
+[07-Dec-2023 04:01:25 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:44 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:45 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:47 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:47 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:47 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:47 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:47 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:47 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:47 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:47 America/Bogota] conexion exitosa
+[07-Dec-2023 04:02:47 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:11 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:13 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:17 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:21 America/Bogota] conexion exitosa
+[07-Dec-2023 04:04:23 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:38 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:41 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:43 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:43 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:43 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:44 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:44 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:44 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:44 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:44 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:44 America/Bogota] conexion exitosa
+[07-Dec-2023 04:05:59 America/Bogota] conexion exitosa
+[07-Dec-2023 04:06:00 America/Bogota] conexion exitosa
+[07-Dec-2023 04:06:01 America/Bogota] conexion exitosa
+[07-Dec-2023 04:06:01 America/Bogota] conexion exitosa
+[07-Dec-2023 04:06:01 America/Bogota] conexion exitosa
+[07-Dec-2023 04:06:01 America/Bogota] conexion exitosa
+[07-Dec-2023 04:06:01 America/Bogota] conexion exitosa
+[07-Dec-2023 04:06:01 America/Bogota] conexion exitosa
+[07-Dec-2023 04:06:01 America/Bogota] conexion exitosa
+[07-Dec-2023 04:06:01 America/Bogota] conexion exitosa
+[07-Dec-2023 04:10:42 America/Bogota] conexion exitosa
+[07-Dec-2023 04:10:42 America/Bogota] conexion exitosa
+[07-Dec-2023 04:10:42 America/Bogota] conexion exitosa
+[07-Dec-2023 04:10:42 America/Bogota] conexion exitosa
+[07-Dec-2023 04:10:42 America/Bogota] conexion exitosa
+[07-Dec-2023 04:10:42 America/Bogota] conexion exitosa
+[07-Dec-2023 04:10:42 America/Bogota] conexion exitosa
+[07-Dec-2023 04:10:42 America/Bogota] conexion exitosa
+[07-Dec-2023 04:10:42 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:15 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:21 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:12:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:25 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:28 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:29 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:15:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:16:06 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:04 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:31 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:33 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:41 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:43 America/Bogota] conexion exitosa
+[07-Dec-2023 04:17:48 America/Bogota] conexion exitosa
+[07-Dec-2023 04:18:12 America/Bogota] conexion exitosa
+[07-Dec-2023 04:18:27 America/Bogota] conexion exitosa
+[07-Dec-2023 04:18:30 America/Bogota] conexion exitosa
+[07-Dec-2023 04:18:30 America/Bogota] conexion exitosa
+[07-Dec-2023 04:18:30 America/Bogota] conexion exitosa
+[07-Dec-2023 04:18:30 America/Bogota] conexion exitosa
+[07-Dec-2023 04:18:30 America/Bogota] conexion exitosa
+[07-Dec-2023 04:18:30 America/Bogota] conexion exitosa
+[07-Dec-2023 04:18:30 America/Bogota] conexion exitosa
+[07-Dec-2023 04:18:30 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:04 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:11 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:15 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:15 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:15 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:15 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:15 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:15 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:15 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:15 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:24 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:48 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:51 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:51 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:51 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:51 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:51 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:51 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:51 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:51 America/Bogota] conexion exitosa
+[07-Dec-2023 04:19:56 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:00 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:00 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:00 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:00 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:00 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:00 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:00 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:00 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:19 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:31 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:31 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:31 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:31 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:31 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:31 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:31 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:31 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:37 America/Bogota] conexion exitosa
+[07-Dec-2023 04:20:53 America/Bogota] conexion exitosa
+[07-Dec-2023 04:21:06 America/Bogota] conexion exitosa
+[07-Dec-2023 04:21:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:21:07 America/Bogota] conexion exitosa
+[07-Dec-2023 04:21:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:21:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:21:09 America/Bogota] conexion exitosa
+[07-Dec-2023 04:21:20 America/Bogota] conexion exitosa

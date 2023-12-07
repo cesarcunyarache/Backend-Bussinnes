@@ -515,6 +515,58 @@ class ClienteUsuarioController extends Controller
         }
 
 
+        final public function postContact(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+            try {
+                $validator = new Validator;
+                $validator->setMessages(Message::getMessages());
+                $validation = $validator->validate($this->getParam(), [
+                    'cabecera'               => 'required',
+                    'info'               => 'required',
+                    'nombres'               => 'required',
+                    'apellidos'               => 'required',
+                    'tipoDoc'               => 'required',
+                    'documento'             => 'required',
+                    'telefono'               => 'required|numeric',
+                    'correo'               => 'required|email',
+                    'fecha'             => 'required',
+                    'motivo'             => 'required',
+                    'mensaje'               => 'required',
+                ]);
+                if ($validation->fails()) {
+                    $errors = $validation->errors();
+                    echo ResponseHttp::status400($errors->all()[0]);
+                } else {
+                    $correoOrigen = "webbravazo@gmail.com";
+
+                    $cabecera = $this->getParam()['cabecera'];
+                    $info = $this->getParam()['info'];
+                    $nombres = $this->getParam()['nombres'];
+                    $apellidos = $this->getParam()['apellidos'];
+                    $tipoDoc = $this->getParam()['tipoDoc'];
+                    $documento = $this->getParam()['documento'];
+                    $telefono = $this->getParam()['telefono'];
+                    $correo = $this->getParam()['correo'];
+                    $fecha = $this->getParam()['fecha'];
+                    $motivo = $this->getParam()['motivo'];
+                    $mensaje = $this->getParam()['mensaje'];
+
+                    if($cabecera == "Formulario Libro de Reclamaciones"){
+                        Mail::sendEmail($correoOrigen, "Formulario Libro de Reclamaciones", Mail::getBodyBook($cabecera, $info, $nombres, $apellidos, $tipoDoc, $documento, $telefono, $correo, $fecha, $motivo, $mensaje));
+                        echo ResponseHttp::status200("Tu mensaje ha sido enviado correctamente. Pronto nos pondremos en contacto contigo.");
+                    } else {
+                        Mail::sendEmail($correoOrigen, "Formulario Contáctanos", Mail::getBodyContact($cabecera, $info, $nombres, $apellidos, $tipoDoc, $documento, $telefono, $correo, $motivo, $mensaje));
+                        echo ResponseHttp::status200("Tu mensaje ha sido enviado correctamente. Pronto nos pondremos en contacto contigo.");
+                    }
+                        
+                    }
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500('Error: ' . $e->getMessage());
+            }
+            exit();
+        }
+    }
 
     /* final public function getAll(string $endPoint)
     {

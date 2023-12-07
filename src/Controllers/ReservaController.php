@@ -13,12 +13,6 @@ use App\Models\ReservaModel;
 use App\Models\MesaModel;
 use App\Models\MeseroModel;
 
-use MercadoPago\Client\Payment\PaymentClient;
-
-use MercadoPago\Exceptions\MPApiException;
-use MercadoPago\MercadoPagoConfig;
-use MercadoPago\MPRequestOptions;
-use MercadoPago\Preference;
 class ReservaController extends Controller
 {
 
@@ -105,6 +99,7 @@ class ReservaController extends Controller
                 $data  = Security::validateTokenJwt(Security::secretKey());
                 $idClient = $data->data->idCliente;
                 $idMesero = $this->getParam()['idMesero'];
+
 
                 if (isset($idClient) && !empty($idClient)) {
 
@@ -200,7 +195,8 @@ class ReservaController extends Controller
         }
     }
 
-    final public function getReadByIdUser(string $endPoint)
+//
+final public function getReadByIdUser(string $endPoint)
     {
         if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
 
@@ -215,7 +211,7 @@ class ReservaController extends Controller
             exit();
         }
     }
-
+    //
     final public function getReadPuntosByIdUser(string $endPoint)
     {
         if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
@@ -231,7 +227,7 @@ class ReservaController extends Controller
             exit();
         }
     }
-
+    //
     final public function getTotales(string $endPoint)
     {
         if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
@@ -319,81 +315,83 @@ class ReservaController extends Controller
         }
     }
 
-    final public function postPago(string $endPoint)
+    final public function getReadProductos(string $endPoint)
     {
-        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+
+            try {
+                //Security::validateTokenJwt(Security::secretKey());  // Habilitar la validación del token
+
+                // Log o impresiones para debugging
+                error_log("Antes de llamar a ReservaModel::readProductos");
+
+                $data = ReservaModel::readProductos();
+
+                // Log o impresiones para debugging
+                error_log("Después de llamar a ReservaModel::readProductos");
+
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                // Log o impresiones para debugging
+                error_log("Error en getReadProductos: " . $e->getMessage());
+
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+
+    final public function putUpdatePuntos(string $endPoint)
+    {
+        if ($this->getMethod() == 'put' && $endPoint == $this->getRoute()) {
             $validator = new Validator;
             $validator->setMessages(Message::getMessages());
-            $validation = $validator->validate($this->getParam(), []);
+            $validation = $validator->validate($this->getParam(), [
+                'idProducto'                   => 'required|numeric',
+                'idCliente'                   => 'required|numeric',
+                'idUsuario'                   => 'required|numeric',
+                'puntosCliente'                      => 'required',
+                'puntosProducto'                      => 'required',
+                'fecha'                             => 'required',
+            ]);
 
             if ($validation->fails()) {
                 $errors = $validation->errors();
                 echo ResponseHttp::status400($errors->all()[0]);
             } else {
-                /*   $data  = Security::validateTokenJwt(Security::secretKey()); */
-                MercadoPagoConfig::setAccessToken("TEST-7932145193669245-120613-6b72863bfdf9d271d596aad97c87019b-1579625307");
+                /* Security::validateTokenJwt(Security::secretKey()); */
+                $idProducto = $this->getParam()['idProducto'];
+                $idCliente = $this->getParam()['idCliente'];
+                $idUsuario = $this->getParam()['idUsuario'];
+                $puntosCliente = $this->getParam()['puntosCliente'];
+                $puntosProducto = $this->getParam()['puntosProducto'];
+                $fecha = $this->getParam()['fecha'];
 
-                
+                $res = ReservaModel::updatePuntosCanje($idProducto, $idCliente, $idUsuario, $puntosCliente, $puntosProducto, $fecha);
 
-                try {
-
-                 /*    $request = [
-                        "transaction_amount" => 100,
-                        "token" => "4009 1753 3280 6176", 
-                        "description" => "description",
-                        "installments" => 1,
-                        "payment_method_id" => "visa",
-                        "payer" => [
-                            "email" => "user@test.com",
-                        ]
-                    ]; */
-
-
-                  /*   $payment = $client->create($request); */
-
-        /* 
-                  $client = new PreferenceClient();
-
-                  $preference = $client->create([
-                    "external_reference" => "teste",
-                    "items"=> array(
-                      array(
-                        "id" => "4567",
-                        "title" => "Dummy Title",
-                        "description" => "Dummy description",
-                        "picture_url" => "http://www.myapp.com/myimage.jpg",
-                        "category_id" => "eletronico",
-                        "quantity" => 1,
-                        "currency_id" => "BRL",
-                        "unit_price" => 100
-                      )
-                    ),
-                    "payment_methods" => [
-                    "default_payment_method_id" => "master",
-                    "excluded_payment_types" => array(
-                      array(
-                        "id" => "ticket"
-                      )
-                    ),
-                    "installments"  => 12,
-                    "default_installments" => 1
-                  ]]);
-
-
-                  echo ResponseHttp::status200($preference); 
-                 
-                     */
-                 
-
- 
-                } catch (MPApiException $e) {
-                   
-                    print_r("Status code: " . $e->getApiResponse()->getStatusCode() . "\n");
-                  echo ResponseHttp::status200($e->getApiResponse()->getContent()); 
-                    echo ResponseHttp::status400($e->getMessage());
+                if ($res) {
+                    echo ResponseHttp::status200('Puntos actualizados correctamente');
+                } else {
+                    echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
                 }
             }
             exit;
+        }
+    }
+    //
+    final public function getReadProductosByIdUser(string $endPoint)
+    {
+        if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
+
+            try {
+                //Security::validateTokenJwt(Security::secretKey());
+                $id = $this->getAttribute()[2];
+                $data = ReservaModel::getProductosByIdCliente($id);
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
         }
     }
 }

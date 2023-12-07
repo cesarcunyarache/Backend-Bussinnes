@@ -34,4 +34,6 @@ $app->putUpdatePassword("clienteAuth/updatePassword");
 
 $app->getRead("clienteAuth/");
 
+$app->postContact("clienteAuth/contact");
+
 echo ResponseHttp::status404();

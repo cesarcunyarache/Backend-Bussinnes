@@ -15,7 +15,7 @@ class Mail
     private const USERNAME = 'webbravazo@gmail.com';
     private const PASSWORD = 'grhbwnxmqyehcfhh';
     private const ENCRYPTION = PHPMailer::ENCRYPTION_SMTPS;
-    private const FROM_NAME = 'Mailer';
+    private const FROM_NAME = 'Terraza Bravazo';
     private const FROM_EMAIL = 'webbravazo@gmail.com';
 
   
@@ -186,5 +186,84 @@ class Mail
                         
                     </body>
                 </html>';
+    }
+
+    final public static function getBodyContact(string $cabecera, string $info, string $nombres, string $apellidos, string $tipoDoc, string $documento, string $telefono, string $correo, string $motivo, string $mensaje)
+    {
+        return
+        '<html>
+        <body>
+        <div
+            style="width:400px; background-color: #ffff; border-radius: 10px; padding: 3rem; border: 1px solid #ccc; color: black; margin:auto;">
+            <h1 style="text-align: left;">'.$cabecera.'</h1>
+            <p style="margin-bottom: 5px; font-weight:bold;">'.$info.'</p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Nombres:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'. $nombres .'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Apellidos:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$apellidos.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Tipo de documento:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$tipoDoc.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Numero de documento:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$documento.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Telefono:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$telefono.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Correo:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$correo.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Motivo:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$motivo.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Mensaje:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$mensaje.'</span>
+            </p>
+        </div>
+    </body>
+        </html>';
+    }
+
+    final public static function getBodyBook(string $cabecera, string $info, string $nombres, string $apellidos, string $tipoDoc, string $documento, string $telefono, string $correo, string $fecha, string $motivo, string $mensaje)
+    {
+        return
+        '<html>
+        <body>
+        <div
+            style="width:400px; background-color: #ffff; border-radius: 10px; padding: 3rem; border: 1px solid #ccc; color: black; margin:auto;">
+            <h1 style="text-align: left;">'.$cabecera.'</h1>
+            <p style="margin-bottom: 5px; font-weight:bold;">'.$info.'</p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Nombres:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'. $nombres .'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Apellidos:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$apellidos.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Tipo de documento:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$tipoDoc.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Numero de documento:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$documento.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Telefono:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$telefono.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Correo:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$correo.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Fecha del suceso:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$fecha.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Motivo:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$motivo.'</span>
+            </p>
+            <p style="margin-bottom: 5px; font-weight:bold;">Mensaje:
+                <span style="font-size: 1rem; margin-top: 0; font-weight:normal;">'.$mensaje.'</span>
+            </p>
+        </div>
+    </body>
+        </html>';
     }
 }

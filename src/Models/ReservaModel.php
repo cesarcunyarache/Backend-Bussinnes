@@ -80,7 +80,7 @@ class ReservaModel extends Connection
             }
         } catch (\PDOException $e) {
             error_log('MeseroModel::post -> ' . $e);
-            die(ResponseHttp::status500());
+            die(ResponseHttp::status500($e->getMessage()));
         }
     }
 
@@ -340,7 +340,7 @@ class ReservaModel extends Connection
     {   
         try {
             $con = self::getConnection()->prepare(
-                "SELECT puntos.cantidad, puntos.fechaVencimiento
+                "SELECT puntos.idCliente, puntos.cantidad, puntos.fechaVencimiento
                 FROM puntos
                 INNER JOIN clientes ON clientes.id = puntos.idCliente
                 WHERE clientes.idUsuario = :id"
@@ -370,9 +370,7 @@ class ReservaModel extends Connection
     final public static function getIdClienteFromReserva($idReserva)
 {
     try {
-        $con = self::getConnection()->prepare(
-            "SELECT idCliente FROM `reservas` WHERE idReserva = :id"
-        );
+        $con = self::getConnection()->prepare("SELECT idCliente FROM `reservas` WHERE idReserva = :id");
 
         $con->execute([':id' => $idReserva]);
 
@@ -487,6 +485,101 @@ final public static function updateEstadoReserva($idReserva, $estado)
         }
     }
 
+    final public static function readProductos()
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM productos");
+            $con->execute();
+
+            if ($con->rowCount() === 0) {
+                return null;
+            } else {
+                $data = $con->fetchAll();
+                if ($data) {
+                    return $data;
+                } else {
+                    return null;
+                }
+            }
+        } catch (\PDOException $e) {
+            throw new \Exception("Error al leer productos", 500);
+        }        
+        exit;
+    }
+
+    final public static function updatePuntosCanje($idProducto ,$idCliente, $idUsuario, $puntosCliente, $puntosProducto, $fecha)
+    {
+        $puntosRestantes = $puntosCliente - $puntosProducto;
+        try {
+            $con = self::getConnection();
+        
+            $sql = "UPDATE Puntos SET cantidad = :cantidad WHERE idCliente = :idCliente";
+
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':idCliente' => (int) $idCliente,
+                ':cantidad' => $puntosRestantes,
+                //':fechaVencimiento' => ""
+            ]);
+            // Verificar si ya existe un registro de puntos para el idCliente
+            $existingPuntos = self::getPuntosByIdCliente($idCliente);
+
+            if ($existingPuntos === null || $existingPuntos === 0) {
+                
+                // Si tienes 0 puntos se elimina el registro
+                $sql = "DELETE FROM Puntos WHERE idCliente = :idCliente";
+                $query = $con->prepare($sql);
+                $query->execute([
+                ':idCliente' => (int) $idCliente,
+                //':fechaVencimiento' => ""
+            ]);
+            } else {
+
+            }
+
+            $sql = "INSERT INTO usuariosproductos (idUsuario, idProducto, fecha) VALUES (:idUsuario,:idProducto,:fecha)";
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':idUsuario' => (int) $idUsuario,
+                ':idProducto' => (int) $idProducto,
+                ':fecha' => $fecha,
+
+            ]);
+
+            //createClienteProducto($idCliente, $idProducto);
+
+            if ($query->rowCount() > 0) {
+                // Inserción o actualización exitosa en la tabla de puntos
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\PDOException $e) {
+            error_log('ColaboradorModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
+    }
+
+    final public static function getProductosByIdCliente($idCliente)
+    {
+        try {
+            $con = self::getConnection()->prepare(
+                "SELECT * FROM productos INNER JOIN usuariosproductos ON productos.idProducto = usuariosproductos.idProducto WHERE idUsuario = :idCliente"
+            );
+
+            $con->execute([':idCliente' => $idCliente]);
+
+            if ($con->rowCount() === 0) {
+                return null; // No existe un registro de puntos para el idCliente
+            } else {
+                $data = $con->fetchAll();
+                return $data; // Devolver la cantidad actual de puntos
+            }
+        } catch (\PDOException $e) {
+            error_log("ReservaModel -> " . $e);
+            die(ResponseHttp::status500());
+        }
+    }
 
     final public static function getIdReserva()
     {

@@ -11,8 +11,6 @@ $app->postStatusMesas("reserva/mesas");
 
 $app->postCreate("reserva/");
 
-$app->postPago("reserva/pago");
-
 $app->getRead("reserva/");
 
 $app->getReadMesas("reserva/mesas");
@@ -30,5 +28,11 @@ $app->getMesasOcupadas("reserva/mesasOcupadas");
 $app->getReadByIdUser("reserva/{$params[1]}");
 
 $app->getReadPuntosByIdUser("reserva/puntos/{$params[2]}");
+
+$app->getReadProductos("reserva/productos/");
+
+$app->putUpdatePuntos("reserva/updatePuntos");
+
+$app->getReadProductosByIdUser("reserva/productosCanjeados/{$params[2]}");
 
 echo ResponseHttp::status404();
