@@ -9,4 +9,8 @@ $app = new ProductoController();
 
 $app->postCreate("producto/");
 
+$app->getRead("producto/read");
+
+$app->postUpdateProducto("producto/update");
+
 echo ResponseHttp::status404();

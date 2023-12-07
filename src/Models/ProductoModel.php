@@ -96,7 +96,7 @@ class ProductoModel extends  Connection
     final public static function read()
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM Meseros m INNER JOIN Colaboradores c ON m.idColaborador = c.id;");
+            $con = self::getConnection()->prepare("SELECT * FROM productos");
             $con->execute();
 
             if ($con->rowCount() === 0) {
@@ -110,10 +110,42 @@ class ProductoModel extends  Connection
                 }
             }
         } catch (\PDOException $e) {
-            error_log("UserColaboradorModel::Login -> " . $e);
+            error_log("ProductoModel::read -> " . $e);
             die(ResponseHttp::status500());
         }
         exit;
+    }
+    //
+
+    final public static function putUpdateProductos($id)
+    {
+        try {
+            $resImg = Security::uploadImage(self::getFile(), 'imagen');
+            self::setUrl($resImg['path']);
+            self::setImagen($resImg['name']);
+            self::setIDtoken(hash('md5', 'upload' . self::getUrl()));
+
+            $con = self::getConnection();
+            $query = $con->prepare('UPDATE productos SET nombre=:nombre, imagen=:imagen, precio=:precio, costoPuntos=:puntos WHERE idProducto=:id');
+
+
+            $query->execute([
+                ':nombre'           => (int) self::getNombre(),
+                ':imagen'           => self::getUrl(),
+                ':precio'           => (float) self::getPrecio(),
+                ':costoPuntos'      => (int) self::getCostoPuntos(),
+                ':idProducto'               => (int) $id
+            ]);
+
+            if ($query->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\PDOException $e) {
+            error_log('MeseroModel::postSave-> ' . $e);
+            die((ResponseHttp::status500('No se puede Actualizar el mesero')));
+        }
     }
 
     final public static function getReadMeseroForReserva($fecha, $hora)

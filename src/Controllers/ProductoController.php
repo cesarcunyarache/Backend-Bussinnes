@@ -87,12 +87,42 @@ class ProductoController extends Controller
 
                 /*   Security::validateTokenJwt(Security::secretKey()); */
 
-                $data = MeseroModel::read();
+                $data = ProductoModel::read();
                 echo ResponseHttp::status200($data);
             } catch (\Exception $e) {
                 echo ResponseHttp::status500($e->getMessage());
             }
             exit();
+        }
+    }
+    //
+
+    final public function postUpdateProducto(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+
+            if (
+                empty($this->getParam()['idProducto'])
+            ) {
+
+                echo ResponseHttp::status400('Uno o más campos vacios');
+            } else {
+
+                if (empty($_FILES)) {
+                    echo ResponseHttp::status400('Archivo vacio o nombre incorrecto');
+                } else {
+                    $obj = new ProductoModel($this->getParam(), $_FILES);
+                    $res = $obj::putUpdateProductos($this->getParam()['idProducto']);
+
+           
+                    if ($res) {
+                        echo ResponseHttp::status200("Actualizado satisfactoriamente");
+                    } else {
+                        echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                    }
+                }
+            }
+            exit;
         }
     }
 
