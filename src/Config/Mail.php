@@ -69,80 +69,34 @@ class Mail
 
     final public static function getBodyOTP(string $otp): string
     {
-        return '<style>
-                    body {
-                        background-color: white;
-                    }
-                    
-                    * {
-                        color: black;
-                        font-family: Arial, Helvetica, sans-serif;
-                    }
-
-                    .title {
-                        text-align: center;
-
-                    }
-                    .card {
-                        background-color: #ffffff;
-                        border-radius: 10px;
-                        padding: 1rem;
-                        border: 1px solid #ccc;
-                    }
-                    .code {
-                        font-weight: bold;
-                        font-size: 5rem
-                    }
-                </style>
-                </head>
+        return '<html>
                     <body>
-                        <div class="card">
-                            <h1 class="title">Verificacion de codigo</h1>
-                            <p>Tu codigo de verificacion es:</p>
-                            <h5 class="code">'. $otp .'</h5>
-
-                        </div>
-                        
+                    <div class="card"
+                    style="width:400px; text-align: center; margin:auto; border-radius: 10px; border: 1px solid #000; background-color: black;">
+                    <h1 class="title" style="color:white; padding: 1rem;">Verificacion
+                        de codigo</h1>
+                    <div style="background-color: white; padding-bottom: 5px; padding-top: 5px;">
+                        <p>Tu codigo de verificacion es:</p>
+                        <h5 class="code" style="font-weight: bold;">'. $otp .'</h5>
+                    </div>
+                </div>
                     </body>
                 </html>';
     }
 
     final public static function getBodyResetPassword(string $token): string
     {
-        return '<style>
-                    body {
-                        background-color: white;
-                    }
-                    
-                    * {
-                        color: black;
-                        font-family: Arial, Helvetica, sans-serif;
-                    }
-
-                    .title {
-                        text-align: center;
-
-                    }
-                    .card {
-                        background-color: #ffffff;
-                        border-radius: 10px;
-                        padding: 1rem;
-                        border: 1px solid #ccc;
-                    }
-                    .code {
-                        font-weight: bold;
-                        font-size: 5rem
-                    }
-                </style>
-                </head>
+        return '<html>
                     <body>
-                        <div class="card">
-                            <h1 class="title">Recuperacion de cuenta</h1>
-                            <p>Clic para restablecer tu contraseña:</p>
-                            <a href="http://localhost:3000/resetPassword/?token='. $token .'">Restablecer</a>
-
-                        </div>
-                        
+                    <div class="card"
+                    style="width:400px; text-align: center; margin:auto; border-radius: 10px; border: 1px solid #000; background-color: black;">
+                    <h1 class="title" style=" color:white; padding: 1   rem;">Recuperacion de cuenta</h1>
+                    <div style="background-color: white; padding-bottom: 5px; padding-top: 5px;">
+                        <p>Clic para restablecer tu contraseña:</p>
+                        <a style="font-weight: bold; color: red;"
+                            href="http://localhost:3000/resetPassword/?token='. $token .'">Restablecer</a>
+                    </div>
+                </div>
                     </body>
                 </html>';
     }
@@ -150,40 +104,17 @@ class Mail
 
     final public static function getBodyResetPasswordAdmin(string $token): string
     {
-        return '<style>
-                    body {
-                        background-color: white;
-                    }
-                    
-                    * {
-                        color: black;
-                        font-family: Arial, Helvetica, sans-serif;
-                    }
-
-                    .title {
-                        text-align: center;
-
-                    }
-                    .card {
-                        background-color: #ffffff;
-                        border-radius: 10px;
-                        padding: 1rem;
-                        border: 1px solid #ccc;
-                    }
-                    .code {
-                        font-weight: bold;
-                        font-size: 5rem
-                    }
-                </style>
-                </head>
+        return '<html>
                     <body>
-                        <div class="card">
-                            <h1 class="title">Recuperacion de cuenta</h1>
-                            <p>Clic para restablecer tu contraseña:</p>
-                            <a href="http://localhost:3001/resetPassword/?token='. $token .'">Restablecer</a>
-
-                        </div>
-                        
+                    <div class="card"
+            style="width:400px; text-align: center; margin:auto; border-radius: 10px; border: 1px solid #000; background-color: black;">
+            <h1 class="title" style=" color:white; padding: 1   rem;">Recuperacion de cuenta</h1>
+            <div style="background-color: white; padding-bottom: 5px; padding-top: 5px;">
+                <p>Clic para restablecer tu contraseña:</p>
+                <a style="font-weight: bold; color: red;"
+                    href="http://localhost:3001/resetPassword/?token='. $token .'">Restablecer</a>
+            </div>
+        </div>
                     </body>
                 </html>';
     }
