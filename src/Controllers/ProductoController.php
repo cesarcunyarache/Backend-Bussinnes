@@ -118,7 +118,7 @@ class ProductoController extends Controller
                         $res = $obj::putUpdateProductos($this->getParam()['idProducto']);
 
                         if ($res > 0) {
-                            echo ResponseHttp::status200("Creado satisfactoriamente");
+                            echo ResponseHttp::status200("Actualizado satisfactoriamente");
                         } else {
                             echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
                         }
@@ -181,9 +181,9 @@ class ProductoController extends Controller
         if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
 
             try {
-                Security::validateTokenJwt(Security::secretKey());
+              /*   Security::validateTokenJwt(Security::secretKey()); */
                 $id = $this->getAttribute()[1];
-                $data =  MeseroModel::getColaborador($id);
+                $data =  ProductoModel::getProducto($id);
                 echo ResponseHttp::status200($data);
             } catch (\Exception $e) {
                 echo ResponseHttp::status500($e->getMessage());

@@ -13,4 +13,6 @@ $app->getRead("producto/read");
 
 $app->postUpdateProducto("producto/update");
 
+$app->getReadById("producto/{$params[1]}");
+
 echo ResponseHttp::status404();

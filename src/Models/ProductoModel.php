@@ -29,6 +29,8 @@ class ProductoModel extends  Connection
         self::$costoPuntos = $data['costoPuntos'];
         self::$estado = $data['estado'];
         self::$file = $file;
+
+ 
     }
 
 
@@ -126,15 +128,16 @@ class ProductoModel extends  Connection
             self::setIDtoken(hash('md5', 'upload' . self::getUrl()));
 
             $con = self::getConnection();
-            $query = $con->prepare('UPDATE productos SET nombre=:nombre, imagen=:imagen, precio=:precio, costoPuntos=:costoPuntos WHERE idProducto=:id');
+            $query = $con->prepare('UPDATE productos SET nombre=:nombre, imagen=:imagen, precio=:precio, costoPuntos=:costoPuntos, estado=:estado WHERE idProducto=:id');
 
 
             $query->execute([
-                ':nombre'           => (int) self::getNombre(),
+                ':nombre'           => self::getNombre(),
                 ':imagen'           => self::getUrl(),
                 ':precio'           => (float) self::getPrecio(),
                 ':costoPuntos'      => (int) self::getCostoPuntos(),
-                ':idProducto'               => (int) $id
+                ':estado'           => (int) self::getEstado(),
+                ':id'               => (int) $id
             ]);
 
             if ($query->rowCount() > 0) {
@@ -181,10 +184,10 @@ class ProductoModel extends  Connection
         exit;
     }
 
-    final public static function getColaborador($id)
+    final public static function getProducto($id)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM Colaboradores c INNER JOIN Meseros m ON c.id = m.idColaborador WHERE idColaborador=:id;");
+            $con = self::getConnection()->prepare("SELECT * FROM Productos  WHERE idProducto=:id;");
             $con->execute([':id' => $id]);
 
             if ($con->rowCount() === 0) {

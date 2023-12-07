@@ -488,7 +488,7 @@ final public static function updateEstadoReserva($idReserva, $estado)
     final public static function readProductos()
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM productos");
+            $con = self::getConnection()->prepare("SELECT * FROM productos Where estado = 1");
             $con->execute();
 
             if ($con->rowCount() === 0) {
