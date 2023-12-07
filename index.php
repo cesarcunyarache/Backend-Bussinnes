@@ -17,7 +17,7 @@ ErrorLog::activateErrorLog();
 if (isset($_GET['route'])) {
 
     $params = explode('/', $_GET['route']);
-    $list = ['cliente', 'clienteAuth', 'reserva', 'colaboradorAuth', 'colaborador', 'mesero'];
+    $list = ['cliente', 'clienteAuth', 'reserva', 'colaboradorAuth', 'colaborador', 'mesero', 'producto'];
     $file = './src/Routes/' . $params[0] . '.php';
 
     if (!in_array($params[0], $list)) {
