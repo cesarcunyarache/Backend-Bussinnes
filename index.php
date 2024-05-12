@@ -15,7 +15,7 @@ ResponseHttp::headerHttpPro($_SERVER['REQUEST_METHOD'],$_SERVER['HTTP_ORIGIN']);
 ErrorLog::activateErrorLog();
 
 if (isset($_GET['route'])) {
-
+// asde
     $params = explode('/', $_GET['route']);
     $list = ['cliente', 'clienteAuth', 'reserva', 'colaboradorAuth', 'colaborador', 'mesero', 'producto'];
     $file = './src/Routes/' . $params[0] . '.php';
