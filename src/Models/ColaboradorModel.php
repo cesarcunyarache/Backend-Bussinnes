@@ -40,7 +40,7 @@ class ColaboradorModel extends  Connection
     {
         try {
             $con = self::getConnection();
-            $sql = "INSERT INTO Colaboradores (idTipoDoc, numeroDoc, nombres, apellidos, fechaNacimiento,telefono, genero,direccion) VALUES (:idTipoDoc,:numeroDoc, :nombres,:apellidos,:fechaNacimiento, :telefono,:genero, :direccion)";
+            $sql = "INSERT INTO Empleados (idTipoDoc, numeroDoc, nombres, apellidos, fechaNacimiento,telefono, genero,direccion) VALUES (:idTipoDoc,:numeroDoc, :nombres,:apellidos,:fechaNacimiento, :telefono,:genero, :direccion)";
             $query = $con->prepare($sql);
             $query->execute([
                 ':idTipoDoc' => (int) self::getIdTipoDoc(),
@@ -141,7 +141,7 @@ class ColaboradorModel extends  Connection
     final public static function read()
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM Colaboradores");
+            $con = self::getConnection()->prepare("SELECT * FROM Empleados");
             $con->execute();
 
             if ($con->rowCount() === 0) {
