@@ -2494,3 +2494,868 @@ Stack trace:
 [07-Dec-2023 12:11:21 America/Bogota] conexion exitosa
 [07-Dec-2023 12:11:25 America/Bogota] conexion exitosa
 [07-Dec-2023 12:11:27 America/Bogota] conexion exitosa
+[11-May-2024 23:07:01 America/Bogota] conexion exitosa
+[11-May-2024 23:44:33 America/Bogota] conexion exitosa
+[11-May-2024 23:45:01 America/Bogota] conexion exitosa
+[11-May-2024 23:47:09 America/Bogota] conexion exitosa
+[11-May-2024 23:47:29 America/Bogota] conexion exitosa
+[11-May-2024 23:49:18 America/Bogota] conexion exitosa
+[11-May-2024 23:49:54 America/Bogota] conexion exitosa
+[11-May-2024 23:56:17 America/Bogota] conexion exitosa
+[11-May-2024 23:56:54 America/Bogota] conexion exitosa
+[11-May-2024 23:57:04 America/Bogota] conexion exitosa
+[11-May-2024 23:58:12 America/Bogota] conexion exitosa
+[11-May-2024 23:58:17 America/Bogota] conexion exitosa
+[11-May-2024 23:59:31 America/Bogota] conexion exitosa
+[12-May-2024 00:27:41 America/Bogota] conexion exitosa
+[12-May-2024 00:29:36 America/Bogota] conexion exitosa
+[12-May-2024 00:31:13 America/Bogota] conexion exitosa
+[12-May-2024 00:33:46 America/Bogota] conexion exitosa
+[12-May-2024 00:36:22 America/Bogota] conexion exitosa
+[12-May-2024 00:53:42 America/Bogota] conexion exitosa
+[12-May-2024 00:53:51 America/Bogota] conexion exitosa
+[12-May-2024 00:54:01 America/Bogota] conexion exitosa
+[12-May-2024 00:57:48 America/Bogota] conexion exitosa
+[12-May-2024 00:58:38 America/Bogota] conexion exitosa
+[12-May-2024 01:06:19 America/Bogota] conexion exitosa
+[12-May-2024 01:20:31 America/Bogota] conexion exitosa
+[12-May-2024 01:20:40 America/Bogota] conexion exitosa
+[12-May-2024 01:20:48 America/Bogota] conexion exitosa
+[12-May-2024 01:21:00 America/Bogota] conexion exitosa
+[12-May-2024 01:39:15 America/Bogota] conexion exitosa
+[12-May-2024 01:40:35 America/Bogota] conexion exitosa
+[12-May-2024 01:40:35 America/Bogota] UserColaboradorModel::Login -> PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'restaurante.reservas' doesn't exist in C:\xampp\htdocs\API-REST\src\Models\ReservaModel.php:113
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ReservaModel.php(113): PDOStatement->execute()
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ReservaController.php(173): App\Models\ReservaModel::read()
+#2 C:\xampp\htdocs\API-REST\src\Routes\reserva.php(14): App\Controllers\ReservaController->getRead('reserva/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 01:40:39 America/Bogota] conexion exitosa
+[12-May-2024 01:46:51 America/Bogota] conexion exitosa
+[12-May-2024 01:58:20 America/Bogota] PHP Fatal error:  Uncaught Error: Class "App\Controllers\ColaboradorModel" not found in C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php:115
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(14): App\Controllers\CategoriaController->getRead('categoria/')
+#1 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php on line 115
+[12-May-2024 01:58:23 America/Bogota] PHP Fatal error:  Uncaught Error: Class "App\Controllers\ColaboradorModel" not found in C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php:115
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(14): App\Controllers\CategoriaController->getRead('categoria/')
+#1 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php on line 115
+[12-May-2024 01:59:29 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::postCreate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:10
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 10
+[12-May-2024 01:59:33 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::postCreate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:10
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 10
+[12-May-2024 01:59:35 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::postCreate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:10
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 10
+[12-May-2024 02:01:39 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::postCreate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:10
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 10
+[12-May-2024 02:04:00 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::postCreate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:10
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 10
+[12-May-2024 02:04:01 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::postCreate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:10
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 10
+[12-May-2024 02:04:54 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::postCreate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:10
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 10
+[12-May-2024 02:06:09 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::postCreate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:10
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 10
+[12-May-2024 02:06:11 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::postCreate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:10
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 10
+[12-May-2024 02:06:22 America/Bogota] conexion exitosa
+[12-May-2024 02:16:39 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 02:38:39 America/Bogota] conexion exitosa
+[12-May-2024 02:39:22 America/Bogota] conexion exitosa
+[12-May-2024 02:39:26 America/Bogota] conexion exitosa
+[12-May-2024 02:39:59 America/Bogota] conexion exitosa
+[12-May-2024 03:02:12 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:02:14 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:02:18 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:02:21 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:02:42 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:02:42 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:02:57 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:04:17 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:04:20 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:08:36 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:08:37 America/Bogota] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\CategoriaController::putUpdate() in C:\xampp\htdocs\API-REST\src\Routes\categoria.php:12
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\index.php(29): require()
+#1 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Routes\categoria.php on line 12
+[12-May-2024 03:09:04 America/Bogota] conexion exitosa
+[12-May-2024 20:14:36 America/Bogota] conexion exitosa
+[12-May-2024 20:15:08 America/Bogota] conexion exitosa
+[12-May-2024 20:38:50 America/Bogota] conexion exitosa
+[12-May-2024 20:38:50 America/Bogota] PHP Fatal error:  Uncaught Error: Typed static property App\Models\CategoriaModel::$categoria must not be accessed before initialization in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:34
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(101): App\Models\CategoriaModel::getCategoria()
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(59): App\Models\CategoriaModel::create(false)
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 34
+[12-May-2024 20:38:58 America/Bogota] conexion exitosa
+[12-May-2024 20:38:58 America/Bogota] PHP Fatal error:  Uncaught Error: Typed static property App\Models\CategoriaModel::$categoria must not be accessed before initialization in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:34
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(101): App\Models\CategoriaModel::getCategoria()
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(59): App\Models\CategoriaModel::create(false)
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 34
+[12-May-2024 20:39:03 America/Bogota] conexion exitosa
+[12-May-2024 20:39:03 America/Bogota] PHP Fatal error:  Uncaught Error: Typed static property App\Models\CategoriaModel::$categoria must not be accessed before initialization in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:34
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(101): App\Models\CategoriaModel::getCategoria()
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(59): App\Models\CategoriaModel::create(false)
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 34
+[12-May-2024 20:49:00 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, null given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct(NULL)
+#1 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(92): App\Config\Security::uploadImage(NULL, 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(53): App\Models\CategoriaModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 21:01:32 America/Bogota] conexion exitosa
+[12-May-2024 21:01:32 America/Bogota] CategoriaModel::post-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:103
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(103): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:02:40 America/Bogota] conexion exitosa
+[12-May-2024 21:02:40 America/Bogota] CategoriaModel::post-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:103
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(103): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:04:58 America/Bogota] conexion exitosa
+[12-May-2024 21:04:58 America/Bogota] CategoriaModel::post-> PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:106
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(106): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:05:41 America/Bogota] conexion exitosa
+[12-May-2024 21:05:41 America/Bogota] CategoriaModel::post-> PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:106
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(106): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:05:57 America/Bogota] conexion exitosa
+[12-May-2024 21:05:57 America/Bogota] CategoriaModel::post-> PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:106
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(106): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:06:25 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 95
+[12-May-2024 21:06:25 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign null to property App\Models\CategoriaModel::$url of type string in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:49
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(95): App\Models\CategoriaModel::setUrl(NULL)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 49
+[12-May-2024 21:06:30 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 95
+[12-May-2024 21:06:30 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign null to property App\Models\CategoriaModel::$url of type string in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:49
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(95): App\Models\CategoriaModel::setUrl(NULL)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 49
+[12-May-2024 21:06:31 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 95
+[12-May-2024 21:06:31 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign null to property App\Models\CategoriaModel::$url of type string in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:49
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(95): App\Models\CategoriaModel::setUrl(NULL)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 49
+[12-May-2024 21:06:34 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 95
+[12-May-2024 21:06:34 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign null to property App\Models\CategoriaModel::$url of type string in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:49
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(95): App\Models\CategoriaModel::setUrl(NULL)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 49
+[12-May-2024 21:06:39 America/Bogota] conexion exitosa
+[12-May-2024 21:06:51 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 95
+[12-May-2024 21:06:51 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign null to property App\Models\CategoriaModel::$url of type string in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:49
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(95): App\Models\CategoriaModel::setUrl(NULL)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 49
+[12-May-2024 21:07:18 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 95
+[12-May-2024 21:07:18 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign null to property App\Models\CategoriaModel::$url of type string in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:49
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(95): App\Models\CategoriaModel::setUrl(NULL)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 49
+[12-May-2024 21:07:23 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 95
+[12-May-2024 21:07:23 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign null to property App\Models\CategoriaModel::$url of type string in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:49
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(95): App\Models\CategoriaModel::setUrl(NULL)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 49
+[12-May-2024 21:13:14 America/Bogota] conexion exitosa
+[12-May-2024 21:13:14 America/Bogota] PHP Warning:  Array to string conversion in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 94
+[12-May-2024 21:13:18 America/Bogota] conexion exitosa
+[12-May-2024 21:19:17 America/Bogota] conexion exitosa
+[12-May-2024 21:19:21 America/Bogota] conexion exitosa
+[12-May-2024 21:19:21 America/Bogota] PHP Warning:  Array to string conversion in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 94
+[12-May-2024 21:19:24 America/Bogota] conexion exitosa
+[12-May-2024 21:21:32 America/Bogota] conexion exitosa
+[12-May-2024 21:21:35 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 92
+[12-May-2024 21:21:35 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign null to property App\Models\CategoriaModel::$url of type string in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:92
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#1 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 92
+[12-May-2024 21:21:39 America/Bogota] conexion exitosa
+[12-May-2024 21:21:54 America/Bogota] conexion exitosa
+[12-May-2024 21:21:59 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 92
+[12-May-2024 21:21:59 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign null to property App\Models\CategoriaModel::$url of type string in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:92
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(54): App\Models\CategoriaModel::create()
+#1 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 92
+[12-May-2024 21:22:14 America/Bogota] conexion exitosa
+[12-May-2024 21:22:18 America/Bogota] conexion exitosa
+[12-May-2024 21:22:18 America/Bogota] PHP Warning:  Array to string conversion in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 95
+[12-May-2024 21:22:21 America/Bogota] conexion exitosa
+[12-May-2024 21:25:36 America/Bogota] conexion exitosa
+[12-May-2024 21:25:38 America/Bogota] conexion exitosa
+[12-May-2024 21:25:38 America/Bogota] PHP Warning:  Array to string conversion in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 95
+[12-May-2024 21:25:41 America/Bogota] conexion exitosa
+[12-May-2024 21:34:08 America/Bogota] conexion exitosa
+[12-May-2024 21:34:11 America/Bogota] conexion exitosa
+[12-May-2024 21:34:11 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:96
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(96): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(61): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:34:18 America/Bogota] conexion exitosa
+[12-May-2024 21:34:18 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:96
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(96): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(61): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:37:02 America/Bogota] conexion exitosa
+[12-May-2024 21:37:02 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:103
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(103): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(61): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:37:06 America/Bogota] conexion exitosa
+[12-May-2024 21:37:09 America/Bogota] conexion exitosa
+[12-May-2024 21:37:09 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:103
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(103): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(61): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:39:11 America/Bogota] conexion exitosa
+[12-May-2024 21:39:11 America/Bogota] PHP Warning:  Array to string conversion in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php on line 96
+[12-May-2024 21:39:14 America/Bogota] conexion exitosa
+[12-May-2024 21:43:01 America/Bogota] conexion exitosa
+[12-May-2024 21:43:13 America/Bogota] conexion exitosa
+[12-May-2024 21:43:17 America/Bogota] conexion exitosa
+[12-May-2024 21:43:17 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:96
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(96): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(61): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:43:34 America/Bogota] conexion exitosa
+[12-May-2024 21:43:34 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:96
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(96): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(61): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:43:42 America/Bogota] conexion exitosa
+[12-May-2024 21:43:42 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:96
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(96): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(61): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:45:03 America/Bogota] conexion exitosa
+[12-May-2024 21:45:03 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:96
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(96): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(61): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:45:06 America/Bogota] conexion exitosa
+[12-May-2024 21:45:09 America/Bogota] conexion exitosa
+[12-May-2024 21:45:09 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:96
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(96): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(61): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:47:46 America/Bogota] conexion exitosa
+[12-May-2024 21:47:50 America/Bogota] conexion exitosa
+[12-May-2024 21:47:50 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:96
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(96): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(59): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:47:56 America/Bogota] conexion exitosa
+[12-May-2024 21:47:56 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagen' cannot be null in C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php:96
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(96): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(59): App\Models\CategoriaModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(10): App\Controllers\CategoriaController->postCreate('categoria/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 21:47:59 America/Bogota] conexion exitosa
+[12-May-2024 21:48:20 America/Bogota] conexion exitosa
+[12-May-2024 21:48:23 America/Bogota] conexion exitosa
+[12-May-2024 21:48:27 America/Bogota] conexion exitosa
+[12-May-2024 21:48:34 America/Bogota] conexion exitosa
+[12-May-2024 22:06:04 America/Bogota] conexion exitosa
+[12-May-2024 22:06:35 America/Bogota] conexion exitosa
+[12-May-2024 22:07:03 America/Bogota] conexion exitosa
+[12-May-2024 22:08:17 America/Bogota] conexion exitosa
+[12-May-2024 22:09:43 America/Bogota] conexion exitosa
+[12-May-2024 22:16:23 America/Bogota] PHP Parse error:  syntax error, unexpected token "public", expecting "abstract" or "final" or "readonly" or "class" in C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php on line 51
+[12-May-2024 22:18:48 America/Bogota] PHP Parse error:  syntax error, unexpected token "public", expecting "abstract" or "final" or "readonly" or "class" in C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php on line 51
+[12-May-2024 22:18:50 America/Bogota] PHP Parse error:  syntax error, unexpected token "public", expecting "abstract" or "final" or "readonly" or "class" in C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php on line 51
+[12-May-2024 22:24:17 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(37): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(34): App\Models\ProductoModel::postSave()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 22:25:27 America/Bogota] conexion exitosa
+[12-May-2024 22:28:01 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(37): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(34): App\Models\ProductoModel::postSave()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 22:29:34 America/Bogota] conexion exitosa
+[12-May-2024 22:29:39 America/Bogota] conexion exitosa
+[12-May-2024 22:29:40 America/Bogota] conexion exitosa
+[12-May-2024 22:29:40 America/Bogota] conexion exitosa
+[12-May-2024 22:36:43 America/Bogota] conexion exitosa
+[12-May-2024 22:42:44 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(46): App\Models\ProductoModel::postSave()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 22:48:07 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(60): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(46): App\Models\ProductoModel::postSave()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 22:48:21 America/Bogota] conexion exitosa
+[12-May-2024 23:05:15 America/Bogota] conexion exitosa
+[12-May-2024 23:14:30 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(46): App\Models\ProductoModel::postSave()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:15:44 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(46): App\Models\ProductoModel::postSave()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:26:53 America/Bogota] conexion exitosa
+[12-May-2024 23:26:53 America/Bogota] PHP Warning:  Array to string conversion in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 61
+[12-May-2024 23:26:53 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:61
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(61): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(50): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(11): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 23:27:56 America/Bogota] conexion exitosa
+[12-May-2024 23:27:56 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:61
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(61): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(11): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 23:27:57 America/Bogota] conexion exitosa
+[12-May-2024 23:27:57 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:61
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(61): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(11): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 23:29:29 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(11): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:29:39 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(11): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:36:54 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:40:13 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:42:16 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:42:17 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:42:26 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:42:55 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:43:03 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(59): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(47): App\Models\ProductoModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[12-May-2024 23:48:06 America/Bogota] conexion exitosa
+[12-May-2024 23:48:40 America/Bogota] conexion exitosa
+[12-May-2024 23:54:08 America/Bogota] conexion exitosa
+[12-May-2024 23:54:08 America/Bogota] ProductoModel::postSave-> PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:63
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(63): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 23:54:58 America/Bogota] conexion exitosa
+[12-May-2024 23:55:03 America/Bogota] conexion exitosa
+[12-May-2024 23:55:03 America/Bogota] ProductoModel::postSave-> PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:63
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(63): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 23:55:23 America/Bogota] conexion exitosa
+[12-May-2024 23:55:23 America/Bogota] ProductoModel::post-> PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:63
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(63): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 23:55:45 America/Bogota] conexion exitosa
+[12-May-2024 23:55:45 America/Bogota] ProductoModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:63
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(63): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[12-May-2024 23:57:24 America/Bogota] conexion exitosa
+[12-May-2024 23:57:24 America/Bogota] ProductoModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:63
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(63): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:02:04 America/Bogota] conexion exitosa
+[13-May-2024 00:02:04 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:02:10 America/Bogota] conexion exitosa
+[13-May-2024 00:02:10 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:13:42 America/Bogota] conexion exitosa
+[13-May-2024 00:13:42 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:18:17 America/Bogota] conexion exitosa
+[13-May-2024 00:18:17 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:18:22 America/Bogota] conexion exitosa
+[13-May-2024 00:20:38 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$nombre as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 26
+[13-May-2024 00:20:38 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$nombre is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 26
+[13-May-2024 00:20:38 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$descripcion as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 27
+[13-May-2024 00:20:38 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$descripcion is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 27
+[13-May-2024 00:20:38 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$precio as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 28
+[13-May-2024 00:20:38 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$precio is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 28
+[13-May-2024 00:20:38 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$estado as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 29
+[13-May-2024 00:20:38 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$estado is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 29
+[13-May-2024 00:20:38 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$file as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 30
+[13-May-2024 00:20:38 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$file is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 30
+[13-May-2024 00:20:38 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$idCategoria as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 31
+[13-May-2024 00:20:38 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$idCategoria is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 31
+[13-May-2024 00:20:38 America/Bogota] conexion exitosa
+[13-May-2024 00:20:38 America/Bogota] PHP Fatal error:  Uncaught Error: Typed static property App\Models\ProductoModel::$nombre must not be accessed before initialization in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:63
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#1 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 63
+[13-May-2024 00:20:42 America/Bogota] conexion exitosa
+[13-May-2024 00:20:46 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$nombre as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 26
+[13-May-2024 00:20:46 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$nombre is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 26
+[13-May-2024 00:20:46 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$descripcion as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 27
+[13-May-2024 00:20:46 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$descripcion is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 27
+[13-May-2024 00:20:46 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$precio as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 28
+[13-May-2024 00:20:46 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$precio is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 28
+[13-May-2024 00:20:46 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$estado as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 29
+[13-May-2024 00:20:46 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$estado is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 29
+[13-May-2024 00:20:46 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$file as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 30
+[13-May-2024 00:20:46 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$file is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 30
+[13-May-2024 00:20:46 America/Bogota] PHP Notice:  Accessing static property App\Models\ProductoModel::$idCategoria as non static in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 31
+[13-May-2024 00:20:46 America/Bogota] PHP Deprecated:  Creation of dynamic property App\Models\ProductoModel::$idCategoria is deprecated in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 31
+[13-May-2024 00:20:46 America/Bogota] conexion exitosa
+[13-May-2024 00:20:46 America/Bogota] PHP Fatal error:  Uncaught Error: Typed static property App\Models\ProductoModel::$nombre must not be accessed before initialization in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:63
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#1 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 63
+[13-May-2024 00:21:36 America/Bogota] conexion exitosa
+[13-May-2024 00:21:36 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:21:53 America/Bogota] conexion exitosa
+[13-May-2024 00:21:53 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:24:39 America/Bogota] conexion exitosa
+[13-May-2024 00:24:39 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:26:45 America/Bogota] conexion exitosa
+[13-May-2024 00:26:45 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:36:45 America/Bogota] conexion exitosa
+[13-May-2024 00:37:18 America/Bogota] conexion exitosa
+[13-May-2024 00:37:20 America/Bogota] conexion exitosa
+[13-May-2024 00:37:20 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:37:26 America/Bogota] conexion exitosa
+[13-May-2024 00:37:26 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:38:41 America/Bogota] conexion exitosa
+[13-May-2024 00:38:41 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:40:13 America/Bogota] conexion exitosa
+[13-May-2024 00:40:13 America/Bogota] ProductoModel::create -> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:62
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(62): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:40:45 America/Bogota] PHP Fatal error:  Uncaught TypeError: Bulletproof\Image::__construct(): Argument #1 ($_files) must be of type array, string given, called in C:\xampp\htdocs\API-REST\src\Config\Security.php on line 217 and defined in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php:99
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Config\Security.php(217): Bulletproof\Image->__construct('')
+#1 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(84): App\Config\Security::uploadImage('', 'imagen')
+#2 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#3 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\API-REST\vendor\samayo\bulletproof\src\bulletproof.php on line 99
+[13-May-2024 00:41:38 America/Bogota] conexion exitosa
+[13-May-2024 00:41:38 America/Bogota] CategoriaModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:88
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(88): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:42:37 America/Bogota] conexion exitosa
+[13-May-2024 00:42:37 America/Bogota] ProductoModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:88
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(88): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:43:39 America/Bogota] conexion exitosa
+[13-May-2024 00:43:39 America/Bogota] ProductoModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:88
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(88): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:45:23 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\ProductoModel::$idCategoria of type int in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:31
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(75): App\Models\ProductoModel->__construct(Array, '')
+#1 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 31
+[13-May-2024 00:45:27 America/Bogota] conexion exitosa
+[13-May-2024 00:45:27 America/Bogota] ProductoModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:88
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(88): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 00:55:00 America/Bogota] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 26
+[13-May-2024 00:55:00 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign null to property App\Models\ProductoModel::$nombre of type string in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(75): App\Models\ProductoModel->__construct(Array, '')
+#1 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php on line 26
+[13-May-2024 00:55:35 America/Bogota] conexion exitosa
+[13-May-2024 00:55:35 America/Bogota] ProductoModel::postSave-> PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`productos`, CONSTRAINT `productos_idcategoria_foreign` FOREIGN KEY (`idCategoria`) REFERENCES `categoria` (`idCategoria`)) in C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php:88
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Models\ProductoModel.php(88): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\API-REST\src\Controllers\ProductoController.php(77): App\Models\ProductoModel::create()
+#2 C:\xampp\htdocs\API-REST\src\Routes\producto.php(10): App\Controllers\ProductoController->postCreate('producto/')
+#3 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#4 {main}
+[13-May-2024 01:01:44 America/Bogota] conexion exitosa
+[13-May-2024 01:01:48 America/Bogota] conexion exitosa

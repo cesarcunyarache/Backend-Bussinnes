@@ -9,7 +9,7 @@ $app = new ProductoController();
 
 $app->postCreate("producto/");
 
-$app->getRead("producto/read");
+$app->getRead("producto/");
 
 $app->postUpdateProducto("producto/update");
 

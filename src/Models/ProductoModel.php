@@ -11,88 +11,24 @@ use Random\Engine\Secure;
 
 class ProductoModel extends  Connection
 {
-
-    private static int    $idProducto;
-    private static string    $nombre;
-    private static int    $estado;
-    private static float  $precio;
-    private static int  $costoPuntos;
+    private static int $idProducto;
+    private static string $nombre;
+    private static string $descripcion;
+    private static float $precio;
     private static $file;
     private static string $url;
     private static string $imagen;
-    private static string $IDtoken;
+    private static string $estado;
+    private static int $idCategoria;
 
     public function __construct(array $data, $file)
     {
         self::$nombre = $data['nombre'];
+        self::$descripcion = $data['descripcion'];
         self::$precio = $data['precio'];
-        self::$costoPuntos = $data['costoPuntos'];
-        self::$estado = $data['estado'];
         self::$file = $file;
-
- 
-    }
-
-
-
-    final public static function postSave()
-    {
-        try {
-
-            $resImg = Security::uploadImage(self::getFile(), 'imagen');
-            self::setUrl($resImg['path']);
-            self::setImagen($resImg['name']);
-            self::setIDtoken(hash('md5', 'upload' . self::getUrl()));
-
-            $con = self::getConnection();
-            $query = $con->prepare('INSERT INTO Productos (nombre,imagen, precio, costoPuntos, estado) VALUES (:nombre,:imagen, :precio, :costoPuntos, :estado)');
-
-            $query->execute([
-                ':nombre'    => self::getNombre(),
-                ':imagen'    => self::getUrl(),
-                ':precio'    => (float) self::getPrecio(),
-                ':costoPuntos' => (int) self::getCostoPuntos(),
-                ':estado' => (int) self::getEstado(),
-            ]);
-
-            if ($query->rowCount() > 0) {
-                return $con->lastInsertId();
-            } else {
-                return 0;
-            }
-        } catch (\PDOException $e) {
-            error_log('ProductosModel::postSave-> ' . $e);
-            die((ResponseHttp::status500('No se puede registrar el mesero')));
-        }
-    }
-
-    final public static function putUpdate($id)
-    {
-        try {
-            $resImg = Security::uploadImage(self::getFile(), 'imagen');
-            self::setUrl($resImg['path']);
-            self::setImagen($resImg['name']);
-            self::setIDtoken(hash('md5', 'upload' . self::getUrl()));
-
-            $con = self::getConnection();
-            $query = $con->prepare('UPDATE Meseros SET imagen=:imagen, estado=:estado WHERE idMesero=:id');
-
-
-            $query->execute([
-                ':imagen'           => self::getUrl(),
-                ':estado'           => (int) self::getEstado(),
-                ':id'               => (int) $id
-            ]);
-
-            if ($query->rowCount() > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (\PDOException $e) {
-            error_log('MeseroModel::postSave-> ' . $e);
-            die((ResponseHttp::status500('No se puede Actualizar el mesero')));
-        }
+        self::$estado = $data['estado'];
+        self::$idCategoria = $data['idCategoria'];
     }
 
     final public static function read()
@@ -115,9 +51,65 @@ class ProductoModel extends  Connection
             error_log("ProductoModel::read -> " . $e);
             die(ResponseHttp::status500());
         }
-        exit;
     }
-    //
+
+    final public static function create()
+    {
+        try {
+
+            $con = self::getConnection();
+            $sql = "INSERT INTO productos (nombre, descripcion, precio, imagen, estado, idCategoria) VALUES (:nombre,:descripcion, :precio, :imagen, :estado, :idCategoria)";
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':nombre' => self::getNombre(),
+                ':descripcion' => self::getDescripcion(),
+                ':precio'    => (float) self::getPrecio(),
+                ':imagen'  => self::getFile(),
+                ':estado' => self::getEstado(),
+                ':idCategoria' => self::getIdCategoria(),
+            ]);
+
+            if ($query->rowCount() > 0) {
+                return $con->lastInsertId();
+            } else {
+                return 0;
+            }
+        } catch (\PDOException $e) {
+            error_log('ProductoModel::postSave-> ' . $e);
+            die((ResponseHttp::status500('No se puede registrar el producto')));
+        }
+    }
+
+    final public static function putUpdate($id)
+    {
+        try {
+            $resImg = Security::uploadImage(self::$file, 'imagen');
+            self::$url = $resImg['path'];
+            self::$imagen = $resImg['name'];
+
+            $con = self::getConnection();
+            $query = $con->prepare('UPDATE productos SET nombre=:nombre, descripcion=:descripcion, precio=:precio, imagen=:imagen, estado=:estado WHERE idProducto=:id');
+
+            $query->execute([
+                ':nombre'           => self::$nombre,
+                ':descripcion'      => self::$descripcion,
+                ':precio'           => self::$precio,
+                ':imagen'           => self::$url,
+                ':estado'           => self::$estado,
+                ':id'               => $id
+            ]);
+
+            if ($query->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\PDOException $e) {
+            error_log('ProductoModel::postSave-> ' . $e);
+            die((ResponseHttp::status500('No se puede Actualizar el producto')));
+        }
+    }
+
 
     final public static function putUpdateProductos($id)
     {
@@ -125,18 +117,18 @@ class ProductoModel extends  Connection
             $resImg = Security::uploadImage(self::getFile(), 'imagen');
             self::setUrl($resImg['path']);
             self::setImagen($resImg['name']);
-            self::setIDtoken(hash('md5', 'upload' . self::getUrl()));
 
             $con = self::getConnection();
-            $query = $con->prepare('UPDATE productos SET nombre=:nombre, imagen=:imagen, precio=:precio, costoPuntos=:costoPuntos, estado=:estado WHERE idProducto=:id');
+            $query = $con->prepare('UPDATE productos SET nombre=:nombre, descripcion=:descripcion, precio=:precio, imagen=:imagen, estado=:estado WHERE idProducto=:id');
 
 
             $query->execute([
                 ':nombre'           => self::getNombre(),
+                ':descripcion'      => self::getDescripcion(),
                 ':imagen'           => self::getUrl(),
                 ':precio'           => (float) self::getPrecio(),
-                ':costoPuntos'      => (int) self::getCostoPuntos(),
-                ':estado'           => (int) self::getEstado(),
+                ':estado'           => self::getEstado(),
+                ':idCategoria'      => (int) self::getIdCategoria(),
                 ':id'               => (int) $id
             ]);
 
@@ -146,48 +138,16 @@ class ProductoModel extends  Connection
                 return false;
             }
         } catch (\PDOException $e) {
-            error_log('MeseroModel::postSave-> ' . $e);
+            error_log('ProductoModel::postSave-> ' . $e);
             die((ResponseHttp::status500('No se puede Actualizar el producto')));
         }
     }
 
-    final public static function getReadMeseroForReserva($fecha, $hora)
-    {
-        try {
-            $con = self::getConnection()->prepare("SELECT *, COUNT(r.idReserva) as cantidadReservas
-            FROM Meseros m
-            INNER JOIN Reservas r ON r.idMesero = m.idMesero
-            WHERE 
-                r.fecha = :fecha AND
-                r.hora  = :hora
-            GROUP BY m.idMesero;");
-
-            $con->execute([
-                ':fecha' => $fecha,
-                ':hora' => $hora
-            ]);
-
-            if ($con->rowCount() === 0) {
-                return [];
-            } else {
-                $data = $con->fetchAll();
-                if (count($data) > 0) {
-                    return $data;
-                } else {
-                    return [];
-                }
-            }
-        } catch (\PDOException $e) {
-            error_log("ReservaModel::getIdReservabyFecha -> " . $e);
-            die(ResponseHttp::status500());
-        }
-        exit;
-    }
 
     final public static function getProducto($id)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM Productos  WHERE idProducto=:id;");
+            $con = self::getConnection()->prepare("SELECT * FROM productos  WHERE idProducto=:id;");
             $con->execute([':id' => $id]);
 
             if ($con->rowCount() === 0) {
@@ -207,31 +167,26 @@ class ProductoModel extends  Connection
         exit;
     }
 
-
-    final public static function getMeseroById($id)
+    final public static function getCategoryIdProd($idCa)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM Colaboradores c INNER JOIN Meseros m ON c.id = m.idColaborador WHERE idMesero=:id;");
-            $con->execute([':id' => $id]);
+            $con = self::getConnection()->prepare("
+                SELECT p.idProducto, p.nombre AS nombre_producto, p.descripcion, p.precio, p.imagen, p.estado, c.idCategoria, c.categoria AS nombre_categoria
+                FROM productos AS p
+                INNER JOIN categoria AS c ON p.idCategoria = c.idCategoria
+                WHERE c.idCategoria = :id
+            ");
+            $con->execute([
+                ':id' => (int) $idCa
+            ]);
 
-            if ($con->rowCount() === 0) {
-                return [];
-            } else {
-                $data = $con->fetch();
-                if (count($data) > 0) {
-                    return $data;
-                } else {
-                    return [];
-                }
-            }
+            $data = $con->fetchAll(\PDO::FETCH_ASSOC);
+            return $data;
         } catch (\PDOException $e) {
             error_log("UserModel::Login -> " . $e);
-            die(ResponseHttp::status500());
+            throw new \Exception("Error al obtener productos", 500);
         }
-        exit;
     }
-
-
 
     final public static function getClientByIdUser($idUser)
     {
@@ -286,35 +241,6 @@ class ProductoModel extends  Connection
         exit;
     }
 
-    /*  final public static function Update()
-
-    {
-        try {
-            $con = self::getConnection();
-            $sql = "UPDATE Clientes SET idTipoDoc=:idTipoDoc, numeroDoc=:numeroDoc, nombres=:nombres,apellidos=:apellidos, telefono=:telefono, fechaNacimiento=:fechaNacimiento, genero=:genero WHERE id=:id";
-
-            $query = $con->prepare($sql);
-            $query->execute([
-                ':idTipoDoc' => (int) self::getIdTipoDoc(),
-                ':numeroDoc' => self::getNumeroDoc(),
-                ':nombres'  => self::getNombres(),
-                ':apellidos' => self::getApellidos(),
-                ':telefono' => self::getTelefono(),
-                ':fechaNacimiento' => self::getFechaNacimiento(),
-                ':genero' => self::getGenero(),
-                ':id' => (int) self::getId(),
-            ]);
-            if ($query->rowCount() > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (\PDOException $e) {
-            error_log('UserModel::post -> ' . $e);
-            die(ResponseHttp::status500());
-        }
-    } */
-
 
 
     final public static function search($fecha)
@@ -347,19 +273,17 @@ class ProductoModel extends  Connection
     {
         return self::$nombre;
     }
+    final public static function getDescripcion()
+    {
+        return self::$descripcion;
+    }
 
     final public static function getPrecio()
     {
         return self::$precio;
     }
 
-    final public static function getCostoPuntos()
-    {
-        return self::$costoPuntos;
-    }
-
-
-
+    
     final public static function getFile()
     {
         return self::$file;
@@ -390,8 +314,10 @@ class ProductoModel extends  Connection
     {
         return self::$estado;
     }
-
-
+    final public static function getIdCategoria()
+    {
+        return self::$idCategoria;
+    }
     final public static function getIdColaborador()
     {
         return self::$idProducto;
@@ -403,8 +329,9 @@ class ProductoModel extends  Connection
         self::$imagen = $imagen;
     }
 
-    final public static function setIDToken($idToken)
+    final public static function setIdCategoria($IDCategoria)
     {
-        self::$IDtoken = $idToken;
+        self::$idCategoria = $IDCategoria;
     }
+    
 }

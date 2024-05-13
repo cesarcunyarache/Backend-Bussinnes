@@ -14,24 +14,37 @@ use function PHPSTORM_META\type;
 
 class ProductoController extends Controller
 {
-    final public function postCreate(string $endPoint)
+    final public function getRead(string $endPoint)
+    {
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+            try {
+                $data = ProductoModel::read();
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
+            }
+            exit();
+        }
+    }
+
+    /*final public function postCreate(string $endPoint)
     {
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
             if (
-                empty($this->getParam()['nombre']) ||
-                !isset($this->getParam()['estado']) || !isset($this->getParam()['precio']) || !isset($this->getParam()['costoPuntos'])
+                empty($this->getParam()['nombre']) || empty($this->getParam()['descripcion']) ||
+                !isset($this->getParam()['precio']) || !isset($this->getParam()['estado']) || !isset($this->getParam()['idCategoria'])
             ) {
                 echo ResponseHttp::status400('Uno o más campos vacios');
             } else {
-                if (empty($_FILES)) {
-                    echo ResponseHttp::status400('Archivo vacio o nombre incorrecto');
-                } else {
-
                     try {
 
-                        $obj = new ProductoModel($this->getParam(), $_FILES);
-
-                        $res = $obj::postSave();
+                        if (!empty($_FILES) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
+                            $imagenUrl = Security::uploadImage($_FILES['imagen'], 'imagen')['path'];
+                            $obj = new ProductoModel($this->getParam(), $imagenUrl);
+                        } else {
+                            $obj = new ProductoModel($this->getParam(), "");
+                        }                        
+                        $res = $obj::create();
 
                         if ($res > 0) {
                             echo ResponseHttp::status200("Creado satisfactoriamente");
@@ -44,9 +57,37 @@ class ProductoController extends Controller
                 }
             }
             exit;
+        }*/
+        final public function postCreate(string $endPoint)
+    {
+        if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
+            if (
+                empty($this->getParam()['nombre']) || empty($this->getParam()['descripcion']) ||
+                !isset($this->getParam()['precio']) || !isset($this->getParam()['estado']) || !isset($this->getParam()['idCategoria'])
+            ) {
+                echo ResponseHttp::status400('Uno o más campos vacíos');
+            } else {
+                try {
+                        if (!empty($_FILES) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
+                            $imagenUrl = Security::uploadImage($_FILES['imagen'], 'imagen')['path'];
+                            $obj = new ProductoModel($this->getParam(), $imagenUrl);
+                        } else {
+                            $obj = new ProductoModel($this->getParam(), "");
+                        }                        
+                        $res = $obj::create();
+    
+                    if ($res > 0) {
+                        echo ResponseHttp::status200("Creado satisfactoriamente");
+                    } else {
+                        echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
+                    }
+                } catch (\Exception $e) {
+                    echo ResponseHttp::status500($e->getMessage());
+                }
+            }
+            exit;
         }
     }
-
 
     final public function postUpdate(string $endPoint)
     {
@@ -78,24 +119,6 @@ class ProductoController extends Controller
         }
     }
 
-
-    final public function getRead(string $endPoint)
-    {
-        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
-
-            try {
-
-                /*   Security::validateTokenJwt(Security::secretKey()); */
-
-                $data = ProductoModel::read();
-                echo ResponseHttp::status200($data);
-            } catch (\Exception $e) {
-                echo ResponseHttp::status500($e->getMessage());
-            }
-            exit();
-        }
-    }
-    //
 
     final public function postUpdateProducto(string $endPoint)
     {
@@ -129,7 +152,6 @@ class ProductoController extends Controller
             }
             exit;
         }
-        //
     }
 
     final public function postReadMeseroForReserva(string $endPoint)
@@ -174,16 +196,14 @@ class ProductoController extends Controller
         }
     }
 
-
-
     final public function getReadById(string $endPoint)
     {
         if ($this->getMethod() == 'get'  && $endPoint == $this->getRoute()) {
 
             try {
-              /*   Security::validateTokenJwt(Security::secretKey()); */
+                Security::validateTokenJwt(Security::secretKey());
                 $id = $this->getAttribute()[1];
-                $data =  ProductoModel::getProducto($id);
+                $data = ProductoModel::getProducto($id);
                 echo ResponseHttp::status200($data);
             } catch (\Exception $e) {
                 echo ResponseHttp::status500($e->getMessage());
