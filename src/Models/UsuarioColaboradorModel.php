@@ -27,7 +27,7 @@ class UsuarioColaboradorModel extends Connection
     final public static function login($correo, $contrasena)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM UsuariosColaboradores WHERE correo = :correo");
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosEmpleados WHERE correo = :correo");
             $con->execute([
                 ':correo' => $correo
             ]);
@@ -58,7 +58,7 @@ class UsuarioColaboradorModel extends Connection
     final public static function read()
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM UsuariosColaboradores u INNER JOIN Colaboradores c ON c.idUsuario = u.id;");
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosEmpleados u INNER JOIN Empleados c ON c.idUsuario = u.idUsuario;");
             $con->execute();
 
             if ($con->rowCount() === 0) {
@@ -83,9 +83,9 @@ class UsuarioColaboradorModel extends Connection
     {
         try {
             $con = self::getConnection()->prepare("SELECT *
-            FROM Colaboradores c
-            INNER JOIN UsuariosColaboradores u ON c.idUsuario = u.id
-            WHERE c.id =:id;");
+            FROM Empleados c
+            INNER JOIN UsuariosEmpleados u ON c.idUsuario = u.idUsuario
+            WHERE c.idEmpleado =:id;");
             $con->execute([
                 ':id' => (int) $idColaborador
             ]);
@@ -111,14 +111,14 @@ class UsuarioColaboradorModel extends Connection
 
     final public static function createUser()
     {
-        if (Sql::exists("SELECT correo FROM  UsuariosColaboradores WHERE correo = :correo", ":correo", self::getCorreo())) {
+        if (Sql::exists("SELECT correo FROM  UsuariosEmpleados WHERE correo = :correo", ":correo", self::getCorreo())) {
             echo (ResponseHttp::status400("El Correo ya esta registrado"));
         } else {
 
             try {
 
                 $con = self::getConnection();
-                $sql = "INSERT INTO  UsuariosColaboradores (correo, contrasena, idRol) VALUES (:correo,:contrasena, :idRol)";
+                $sql = "INSERT INTO  UsuariosEmpleados (correo, contrasena, idRol) VALUES (:correo,:contrasena, :idRol)";
                 $query = $con->prepare($sql);
                 $query->execute([
                     ':correo'  => self::getCorreo(),
@@ -144,7 +144,7 @@ class UsuarioColaboradorModel extends Connection
 
         try {
 
-            if (Sql::exists("SELECT correo FROM UsuariosColaboradores WHERE correo = :correo", ":correo", $correo)) {
+            if (Sql::exists("SELECT correo FROM UsuariosEmpleados WHERE correo = :correo", ":correo", $correo)) {
                 echo (ResponseHttp::status400("El Correo ya esta registrado"));
                 exit();
             } else {
@@ -161,7 +161,7 @@ class UsuarioColaboradorModel extends Connection
     final public static function getUserByCorreo($correo)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM UsuariosColaboradores WHERE correo = :correo");
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosEmpleados WHERE correo = :correo");
             $con->execute([
                 ':correo' => $correo
             ]);
@@ -187,7 +187,7 @@ class UsuarioColaboradorModel extends Connection
     final public static function getUserById($id)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM UsuariosColaboradores WHERE id = :id");
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosEmpleados WHERE idUsuario = :id");
             $con->execute([
                 ':id' => $id
             ]);
@@ -214,7 +214,7 @@ class UsuarioColaboradorModel extends Connection
     {
         try {
             $con = self::getConnection();
-            $sql = "UPDATE UsuariosColaboradores SET contrasena=:contrasena WHERE id=:id";
+            $sql = "UPDATE UsuariosEmpleados SET contrasena=:contrasena WHERE idUsuario=:id";
 
             $query = $con->prepare($sql);
             $query->execute([
@@ -235,7 +235,7 @@ class UsuarioColaboradorModel extends Connection
     final public static function getUserColaborador($id)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM UsuariosColaboradores WHERE id=:id");
+            $con = self::getConnection()->prepare("SELECT * FROM UsuariosEmpleados WHERE idUsuario=:id");
             $con->execute([':id' => $id]);
 
             if ($con->rowCount() === 0) {
@@ -261,7 +261,7 @@ class UsuarioColaboradorModel extends Connection
     {
         try {
             $con = self::getConnection();
-            $sql = "UPDATE UsuariosColaboradores SET correo=:correo WHERE id=:id";
+            $sql = "UPDATE UsuariosEmpleados SET correo=:correo WHERE idUsuario=:id";
 
             $query = $con->prepare($sql);
             $query->execute([

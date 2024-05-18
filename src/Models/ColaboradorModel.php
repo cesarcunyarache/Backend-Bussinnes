@@ -67,7 +67,7 @@ class ColaboradorModel extends  Connection
     {
         try {
             $con = self::getConnection();
-            $sql = "UPDATE Colaboradores SET idTipoDoc=:idTipoDoc, numeroDoc=:numeroDoc, nombres=:nombres, apellidos=:apellidos, fechaNacimiento=:fechaNacimiento,telefono=:telefono, genero=:genero,direccion=:direccion WHERE id=:id";
+            $sql = "UPDATE Empleados SET idTipoDoc=:idTipoDoc, numeroDoc=:numeroDoc, nombres=:nombres, apellidos=:apellidos, fechaNacimiento=:fechaNacimiento,telefono=:telefono, genero=:genero,direccion=:direccion WHERE idEmpleado=:id";
             $query = $con->prepare($sql);
             $query->execute([
                 ':idTipoDoc' => (int) self::getIdTipoDoc(),
@@ -95,7 +95,7 @@ class ColaboradorModel extends  Connection
     {
         try {
             $con = self::getConnection();
-            $sql = "UPDATE Colaboradores SET idUsuario=:idUsuario WHERE id=:id";
+            $sql = "UPDATE Empleados SET idUsuario=:idUsuario WHERE idEmpleado=:id";
 
             $query = $con->prepare($sql);
             $query->execute([
@@ -116,7 +116,7 @@ class ColaboradorModel extends  Connection
     final public static function getClientByIdUser($idUser)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM Colaboradores WHERE idUsuario = :idUsuario");
+            $con = self::getConnection()->prepare("SELECT * FROM Empleados WHERE idUsuario = :idUsuario");
             $con->execute([
                 ':idUsuario' => (int) $idUser
             ]);
@@ -166,7 +166,7 @@ class ColaboradorModel extends  Connection
         try {
             $con = self::getConnection()->prepare(
                 "SELECT c.id, c.idTipoDoc, c.numeroDoc, c.nombres, c.apellidos, c.genero, c.direccion, c.idUsuario
-                 FROM Colaboradores c
+                 FROM Empleados c
                 LEFT JOIN Meseros m ON c.id = m.idColaborador
                 WHERE m.idColaborador IS NULL;");
             $con->execute();
@@ -191,7 +191,7 @@ class ColaboradorModel extends  Connection
     final public static function getColaborador($id)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM Colaboradores WHERE id=:id");
+            $con = self::getConnection()->prepare("SELECT * FROM Empleados WHERE idEmpleado=:id");
             $con->execute([':id' => $id]);
 
             if ($con->rowCount() === 0) {

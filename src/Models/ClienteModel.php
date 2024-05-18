@@ -34,6 +34,33 @@ class ClienteModel extends  Connection
 
 
 
+    final public static function createfullParams()
+    {
+        try {
+            $con = self::getConnection();
+            $sql = "INSERT INTO Clientes (idTipoDoc, numeroDoc, nombres, apellidos, fechaNacimiento,telefono, genero) VALUES (:idTipoDoc,:numeroDoc, :nombres,:apellidos,:fechaNacimiento, :telefono, :genero)";
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':idTipoDoc' => (int) self::getIdTipoDoc(),
+                ':numeroDoc' => self::getNumeroDoc(),
+                ':nombres'  => self::getNombres(),
+                ':apellidos' => self::getApellidos(),
+                ':fechaNacimiento' => self::getFechaNacimiento(),
+                ':telefono' => self::getTelefono(),
+                ':genero' => self::getGenero()
+            ]);
+            if ($query->rowCount() > 0) {
+                return $con->lastInsertId();
+            } else {
+                return 0;
+            }
+        } catch (\PDOException $e) {
+            error_log('ColaboradorModel::post -> ' . $e);
+            die(ResponseHttp::status500());
+        }
+    }
+
+
     final public static function create()
     {
         try {
@@ -113,7 +140,7 @@ class ClienteModel extends  Connection
     {
         try {
             $con = self::getConnection();
-            $sql = "UPDATE Clientes SET idTipoDoc=:idTipoDoc, numeroDoc=:numeroDoc, nombres=:nombres,apellidos=:apellidos, telefono=:telefono, fechaNacimiento=:fechaNacimiento, genero=:genero WHERE id=:id";
+            $sql = "UPDATE Clientes SET idTipoDoc=:idTipoDoc, numeroDoc=:numeroDoc, nombres=:nombres,apellidos=:apellidos, telefono=:telefono, fechaNacimiento=:fechaNacimiento, genero=:genero WHERE idCliente=:id";
 
             $query = $con->prepare($sql);
             $query->execute([
@@ -188,6 +215,31 @@ class ClienteModel extends  Connection
         }
         exit;
     }
+
+
+    final public static function getSearchClienteById($id)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM Clientes WHERE idCliente=:id");
+            $con->execute([':id' => $id]);
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetch();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("ClienteModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
 
     final public static function getId()
     {

@@ -38,10 +38,10 @@ class UsuarioColaboradorController extends Controller
                 $data = UsuarioColaboradorModel::login($correo, $contrasena);
 
                 if (count($data) > 0) {
-                    $res = ColaboradorModel::getClientByIdUser($data['id']);
+                    $res = ColaboradorModel::getClientByIdUser($data['idUsuario']);
 
                     if (count($res) > 0) {
-                        $payload = ['idColaborador' => $res['id'], 'idRol' => $data['idRol']];
+                        $payload = ['idEmpleado' => $res['idEmpleado'], 'idUsuario' => $data['idUsuario'], 'idRol' => $data['idRol']];
                         $token = Security::createTokenJwt(Security::secretKey(), $payload);
                         setcookie("token", $token, time() + (60 * 60 * 6), "/");
                         echo json_encode($res);
@@ -59,7 +59,7 @@ class UsuarioColaboradorController extends Controller
 
             $validator->setMessages(Message::getMessages());
             $validation = $validator->validate($this->getParam(), [
-                'idColaborador'        => 'required|numeric',
+                'idEmpleado'        => 'required|numeric',
                 'correo'               => 'required|email',
                 'contrasena'           => 'required|min:6',
                 'confirmContrasena'    => 'required',
@@ -82,7 +82,9 @@ class UsuarioColaboradorController extends Controller
                         $idUsuario  = $user::createUser();
 
                         if ($idUsuario != 0) {
-                            $idColaborador = $this->getParam()['idColaborador'];
+                            $idColaborador = $this->getParam()['idEmpleado'];
+
+
                             $res = ColaboradorModel::updateIdUser($idColaborador, $idUsuario);
 
                             if ($res) {
@@ -113,7 +115,7 @@ class UsuarioColaboradorController extends Controller
 
                 $validator->setMessages(Message::getMessages());
                 $validation = $validator->validate($this->getParam(), [
-                    'idColaborador'        => 'required|numeric',
+                    'idEmpleado'        => 'required|numeric',
                     'correo'               => 'required|email',
                     'contrasena'           => 'required|min:6',
                     'confirmContrasena'    => 'required',
@@ -167,7 +169,7 @@ class UsuarioColaboradorController extends Controller
                     $data = UsuarioColaboradorModel::getUserByCorreo($correo);
 
                     if (count($data) > 0) {
-                        $payload = ['id' => $data['id'], 'correo' => $data['correo']];
+                        $payload = ['idUsuario' => $data['idUsuario'], 'correo' => $data['correo']];
                         $token = Security::createTokenJwt(Security::secretKey(), $payload, 600);
 
                         Mail::sendEmail($correo, "Restablecer Contraseña", Mail::getBodyResetPasswordAdmin($token));
@@ -202,7 +204,7 @@ class UsuarioColaboradorController extends Controller
 
                         $contrasena = $this->getParam()['contrasena'];
                         $data = Security::validateToken($this->getParam()['token'], Security::secretKey());
-                        $idUser = $data->data->id;
+                        $idUser = $data->data->idUsuario;
 
                         if (isset($idUser) && !empty($idUser)) {
 
@@ -231,7 +233,7 @@ class UsuarioColaboradorController extends Controller
 
             try {
 
-                Security::validateTokenJwt(Security::secretKey());
+                /*  Security::validateTokenJwt(Security::secretKey()); */
                 $data = UsuarioColaboradorModel::read();
                 echo ResponseHttp::status200($data);
             } catch (\Exception $e) {
@@ -266,16 +268,16 @@ class UsuarioColaboradorController extends Controller
 
                 $validator->setMessages(Message::getMessages());
                 $validation = $validator->validate($this->getParam(), [
-                    'id'                   => 'required|',
+                    'idUsuario'                   => 'required|',
                     'correo'               => 'required|email',
                 ]);
                 if ($validation->fails()) {
                     $errors = $validation->errors();
                     echo ResponseHttp::status400($errors->all()[0]);
                 } else {
-                    $id = $this->getParam()['id'];
+                    $id = $this->getParam()['idUsuario'];
                     $correo = $this->getParam()['correo'];
-                   /*  $contrasena = $this->getParam()['contrasena']; */
+                    /*  $contrasena = $this->getParam()['contrasena']; */
 
                     Security::validateTokenJwt(Security::secretKey());
                     Security::validateTokenJwt(Security::secretKey());
@@ -290,15 +292,15 @@ class UsuarioColaboradorController extends Controller
                                 Mail::sendEmail($correo, "OTP", Mail::getBodyOTP($otp));
                                 echo ResponseHttp::status200('Codigo enviado correctamente');
                             }
-                        /* } else {
+                            /* } else {
                             echo ResponseHttp::status400("La contraseña es incorrecta");
                         } */
-                    } else {
-                        echo ResponseHttp::status400("El correo debe ser diferente al ya registrado");
-                    }
+                        } else {
+                            echo ResponseHttp::status400("El correo debe ser diferente al ya registrado");
+                        }
                     } else {
                         echo ResponseHttp::status400("El usuario no existe");
-                    } 
+                    }
                 }
 
                 exit;
@@ -317,18 +319,18 @@ class UsuarioColaboradorController extends Controller
 
                 $validator->setMessages(Message::getMessages());
                 $validation = $validator->validate($this->getParam(), [
-                    'id'                    => 'required',
+                    'idUsuario'                    => 'required',
                     'correo'                => 'required',
-                 /*    'contrasena'            => 'required', */
+                    /*    'contrasena'            => 'required', */
                     'otp'                   => 'required|min:4'
                 ]);
                 if ($validation->fails()) {
                     $errors = $validation->errors();
                     echo ResponseHttp::status400($errors->all()[0]);
                 } else {
-                    $id = $this->getParam()['id'];
+                    $id = $this->getParam()['idUsuario'];
                     $correo = $this->getParam()['correo'];
-                   /*  $contrasena = $this->getParam()['contrasena']; */
+                    /*  $contrasena = $this->getParam()['contrasena']; */
                     $otp = (int) $this->getParam()['otp'];
 
                     Security::validateTokenJwt(Security::secretKey());
@@ -338,18 +340,18 @@ class UsuarioColaboradorController extends Controller
                     if (count($user) > 0) {
                         if ($user['correo'] !== $correo) {
                             UsuarioColaboradorModel::validateCorreo($correo);
-                          /*   if (Security::validatePassword($contrasena, $user['contrasena'])) { */
-                                $isValidateOTP = Security::validateOTP($otp, $correo);
-                                if ($isValidateOTP) {
-                                    $res = UsuarioColaboradorModel::UpdateEmail($user['id'], $correo);
-                                    if ($res) {
-                                        echo ResponseHttp::status200("Actualizado correctamente");
-                                    } else {
-                                        echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
-                                    }
+                            /*   if (Security::validatePassword($contrasena, $user['contrasena'])) { */
+                            $isValidateOTP = Security::validateOTP($otp, $correo);
+                            if ($isValidateOTP) {
+                                $res = UsuarioColaboradorModel::UpdateEmail($user['idUsuario'], $correo);
+                                if ($res) {
+                                    echo ResponseHttp::status200("Actualizado correctamente");
                                 } else {
-                                    echo ResponseHttp::status400("Codigo de verificación o correo erroneos");
+                                    echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
                                 }
+                            } else {
+                                echo ResponseHttp::status400("Codigo de verificación o correo erroneos");
+                            }
                             /* } else {
                                 echo ResponseHttp::status400("La contraseña es incorrecta");
                             } */
@@ -376,9 +378,9 @@ class UsuarioColaboradorController extends Controller
             try {
                 $data  = Security::validateTokenJwt(Security::secretKey());
                 if (isset($data) && !empty($data)) {
-                    $idCola = $data->data->idColaborador;
+                    $idCola = $data->data->idEmpleado;
 
-                  
+
                     $colaborador = UsuarioColaboradorModel::getColaboradorById($idCola);
                     echo ResponseHttp::status200($colaborador);
                 }
@@ -397,7 +399,8 @@ class UsuarioColaboradorController extends Controller
 
                 $validator->setMessages(Message::getMessages());
                 $validation = $validator->validate($this->getParam(), [
-                    'contrasena'            => 'required', 
+                    'idUsuario'             => 'required',
+                    'contrasena'            => 'required',
                     'nuevaContrasena'       => 'required|min:6',
                     'confirmContrasena'     => 'required'
                 ]);
@@ -405,25 +408,26 @@ class UsuarioColaboradorController extends Controller
                     $errors = $validation->errors();
                     echo ResponseHttp::status400($errors->all()[0]);
                 } else {
-                    $contrasena = $this->getParam()['contrasena']; 
+                    $contrasena = $this->getParam()['contrasena'];
                     $nuevaContrasena = $this->getParam()['nuevaContrasena'];
                     $confirmContrasena = $this->getParam()['confirmContrasena'];
+                    $userId = $this->getParam()['idUsuario'];
 
                     if ($nuevaContrasena === $confirmContrasena) {
                         $data  = Security::validateTokenJwt(Security::secretKey());
                         if (isset($data) && !empty($data)) {
-                            $idColaborador = $data->data->idColaborador;
+                            $idColaborador = $data->data->idUsuario;
                             $cliente = UsuarioColaboradorModel::getUserById($idColaborador);
-                             if (Security::validatePassword($contrasena, $cliente['contrasena'])) {
-                                $res = UsuarioColaboradorModel::UpdatePassword($cliente['id'], $nuevaContrasena);
+                            if (Security::validatePassword($contrasena, $cliente['contrasena'])) {
+                                $res = UsuarioColaboradorModel::UpdatePassword($userId, $nuevaContrasena);
                                 if ($res) {
                                     echo ResponseHttp::status200("Actualizado correctamente");
                                 } else {
                                     echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
                                 }
-                             } else {
+                            } else {
                                 echo ResponseHttp::status400("La contraseña es incorrecta");
-                            } 
+                            }
                         }
                     } else {
                         echo ResponseHttp::status400("Las contraseñas no coincien");

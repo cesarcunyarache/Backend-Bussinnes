@@ -33,7 +33,7 @@ class ColaboradorController extends Controller
                 $errors = $validation->errors();
                 echo ResponseHttp::status400($errors->all()[0]);
             } else {
-                Security::validateTokenJwt(Security::secretKey());
+                 Security::validateTokenJwt(Security::secretKey());
                 /* $idClient = $data->data->idCliente; */
 
                 $idTipoDoc = $this->getParam()['idTipoDoc'];
