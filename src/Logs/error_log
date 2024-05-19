@@ -3359,3 +3359,155 @@ Stack trace:
 #4 {main}
 [13-May-2024 01:01:44 America/Bogota] conexion exitosa
 [13-May-2024 01:01:48 America/Bogota] conexion exitosa
+[19-May-2024 01:56:26 America/Bogota] Error de conexion :PDOException: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\API-REST\src\Database\Connection.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Database\Connection.php(26): PDO->__construct('mysql:host=127....', 'root', Object(SensitiveParameterValue), Array)
+#1 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(70): App\Database\Connection::getConnection()
+#2 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(19): App\Models\CategoriaModel::read()
+#3 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(14): App\Controllers\CategoriaController->getRead('categoria/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+[19-May-2024 01:56:48 America/Bogota] Error de conexion :PDOException: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\API-REST\src\Database\Connection.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Database\Connection.php(26): PDO->__construct('mysql:host=127....', 'root', Object(SensitiveParameterValue), Array)
+#1 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(70): App\Database\Connection::getConnection()
+#2 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(19): App\Models\CategoriaModel::read()
+#3 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(14): App\Controllers\CategoriaController->getRead('categoria/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+[19-May-2024 01:57:02 America/Bogota] Error de conexion :PDOException: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\API-REST\src\Database\Connection.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Database\Connection.php(26): PDO->__construct('mysql:host=127....', 'root', Object(SensitiveParameterValue), Array)
+#1 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(70): App\Database\Connection::getConnection()
+#2 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(19): App\Models\CategoriaModel::read()
+#3 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(14): App\Controllers\CategoriaController->getRead('categoria/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+[19-May-2024 01:58:16 America/Bogota] Error de conexion :PDOException: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\API-REST\src\Database\Connection.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Database\Connection.php(26): PDO->__construct('mysql:host=127....', 'root', Object(SensitiveParameterValue), Array)
+#1 C:\xampp\htdocs\API-REST\src\Models\CategoriaModel.php(70): App\Database\Connection::getConnection()
+#2 C:\xampp\htdocs\API-REST\src\Controllers\CategoriaController.php(19): App\Models\CategoriaModel::read()
+#3 C:\xampp\htdocs\API-REST\src\Routes\categoria.php(14): App\Controllers\CategoriaController->getRead('categoria/')
+#4 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#5 {main}
+[19-May-2024 01:59:37 America/Bogota] conexion exitosa
+[19-May-2024 02:06:59 America/Bogota] conexion exitosa
+[19-May-2024 02:25:17 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(67): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 02:26:34 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(63): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 02:37:30 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(92): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 02:37:48 America/Bogota] conexion exitosa
+[19-May-2024 02:38:12 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(92): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 02:38:17 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(92): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 02:38:26 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(95): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 02:40:35 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(63): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 02:42:42 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(63): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 02:49:50 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(63): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 03:11:56 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(87): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 03:13:50 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(87): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 03:18:58 America/Bogota] Error en postCreate: ID Venta, ID Cliente, y ID Empleado deben ser enteros.
+[19-May-2024 03:19:13 America/Bogota] Error en postCreate: ID Venta, ID Cliente, y ID Empleado deben ser enteros.
+[19-May-2024 03:19:22 America/Bogota] Error en postCreate: Total e IGV deben ser números decimales.
+[19-May-2024 03:19:35 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(62): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(10): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 03:23:17 America/Bogota] conexion exitosa
+[19-May-2024 03:23:22 America/Bogota] PHP Fatal error:  Uncaught TypeError: Cannot assign string to property App\Models\VentasModel::$fecha of type Rakit\Validation\Rules\Date in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php:26
+Stack trace:
+#0 C:\xampp\htdocs\API-REST\src\Controllers\VentasController.php(62): App\Models\VentasModel->__construct(Array)
+#1 C:\xampp\htdocs\API-REST\src\Routes\ventas.php(24): App\Controllers\VentasController->postCreate('ventas/')
+#2 C:\xampp\htdocs\API-REST\index.php(29): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\API-REST\src\Models\VentasModel.php on line 26
+[19-May-2024 03:30:34 America/Bogota] conexion exitosa
+[19-May-2024 03:30:34 America/Bogota] VentasModel::create -> SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`ventas`, CONSTRAINT `ventas_idcliente_foreign` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`))
+[19-May-2024 03:30:34 America/Bogota] Error en postCreate: Error al registrar la venta: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`restaurante`.`ventas`, CONSTRAINT `ventas_idcliente_foreign` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`idCliente`))
+[19-May-2024 03:31:08 America/Bogota] conexion exitosa
+[19-May-2024 03:34:44 America/Bogota] conexion exitosa
+[19-May-2024 03:34:44 America/Bogota] VentasModel::create -> SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '892167' for key 'PRIMARY'
+[19-May-2024 03:35:13 America/Bogota] conexion exitosa
+[19-May-2024 03:35:16 America/Bogota] conexion exitosa
+[19-May-2024 03:35:56 America/Bogota] conexion exitosa
+[19-May-2024 03:36:05 America/Bogota] conexion exitosa
+[19-May-2024 03:36:10 America/Bogota] conexion exitosa
+[19-May-2024 03:40:26 America/Bogota] conexion exitosa
+[19-May-2024 03:40:44 America/Bogota] conexion exitosa
+[19-May-2024 03:40:51 America/Bogota] conexion exitosa
+[19-May-2024 03:43:35 America/Bogota] conexion exitosa
+[19-May-2024 03:43:47 America/Bogota] conexion exitosa
+[19-May-2024 03:43:51 America/Bogota] conexion exitosa
+[19-May-2024 03:46:50 America/Bogota] conexion exitosa
+[19-May-2024 03:47:01 America/Bogota] conexion exitosa
+[19-May-2024 03:47:01 America/Bogota] VentasModel::create -> SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '928481' for key 'PRIMARY'
+[19-May-2024 03:47:19 America/Bogota] conexion exitosa
+[19-May-2024 03:47:22 America/Bogota] conexion exitosa
