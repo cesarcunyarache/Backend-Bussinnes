@@ -58,24 +58,25 @@ class ProductoController extends Controller
             }
             exit;
         }*/
-        final public function postCreate(string $endPoint)
+    final public function postCreate(string $endPoint)
     {
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
             if (
-                empty($this->getParam()['nombre']) || empty($this->getParam()['descripcion']) ||
+                !isset($this->getParam()['nombre']) || !isset($this->getParam()['descripcion']) ||
                 !isset($this->getParam()['precio']) || !isset($this->getParam()['estado']) || !isset($this->getParam()['idCategoria'])
             ) {
                 echo ResponseHttp::status400('Uno o más campos vacíos');
             } else {
                 try {
-                        if (!empty($_FILES) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
-                            $imagenUrl = Security::uploadImage($_FILES['imagen'], 'imagen')['path'];
-                            $obj = new ProductoModel($this->getParam(), $imagenUrl);
-                        } else {
-                            $obj = new ProductoModel($this->getParam(), "");
-                        }                        
-                        $res = $obj::create();
-    
+
+                    if (!empty($_FILES)) {
+                        $imagenUrl = Security::uploadImage($_FILES, 'imagen', 'public/Images/productos/')['path'];
+                        $obj = new ProductoModel($this->getParam(), $imagenUrl);
+                    } else {
+                        $obj = new ProductoModel($this->getParam(), null);
+                    }
+                    $res = $obj::create();
+
                     if ($res > 0) {
                         echo ResponseHttp::status200("Creado satisfactoriamente");
                     } else {
@@ -89,35 +90,47 @@ class ProductoController extends Controller
         }
     }
 
+
     final public function postUpdate(string $endPoint)
     {
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
-
             if (
-                empty($this->getParam()['idMesero']) ||
-                !isset($this->getParam()['estado'])
+                !isset($this->getParam()['nombre']) || 
+                !isset($this->getParam()['descripcion']) ||
+                !isset($this->getParam()['precio']) || 
+                !isset($this->getParam()['estado']) || 
+                !isset($this->getParam()['idCategoria']) || 
+                !isset($this->getParam()['nombre'])
             ) {
-
-                echo ResponseHttp::status400('Uno o más campos vacios');
+                echo ResponseHttp::status400('Uno o más campos vacíos');
             } else {
+                try {
+                    $res = false;
+                    if (!empty($_FILES)) {
 
-                if (empty($_FILES)) {
-                    echo ResponseHttp::status400('Archivo vacio o nombre incorrecto');
-                } else {
-                    $obj = new MeseroModel($this->getParam(), $_FILES);
-                    $res = $obj::putUpdate($this->getParam()['idMesero']);
+                        $obj = new ProductoModel($this->getParam(), $_FILES);
+                        $obj::putUpdate($this->getParam()['idCategoria']);
+                        $res = $obj::putUpdateImage($this->getParam()['idProducto']);
 
+                    } else {
+                        $obj = new ProductoModel($this->getParam(), '');
+                        $res = $obj::putUpdate((int) $this->getParam()['idProducto']);
+                    }
 
-                    if ($res) {
+                    if ($res > 0) {
                         echo ResponseHttp::status200("Actualizado satisfactoriamente");
                     } else {
                         echo ResponseHttp::status400("Algo salió mal. Por favor, inténtelo nuevamente más tarde.");
                     }
+                } catch (\Exception $e) {
+                    echo ResponseHttp::status500($e->getMessage());
                 }
             }
             exit;
         }
     }
+
+
 
 
     final public function postUpdateProducto(string $endPoint)

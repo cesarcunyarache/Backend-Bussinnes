@@ -212,19 +212,18 @@ class Security
     }
 
 
-    final public static function uploadImage($file, $name)
+    final public static function uploadImage($fileUpload, $name, $urlStore)
     {
-        $file = new Image($file);
+        $file = new Image($fileUpload);
 
         $file->setMime(array('png', 'jpg', 'jpeg')); //formatos admitidos
         $file->setSize(10000, 5000000); //Tamaño admitidos es Bytes
         $file->setDimension(4000, 4000); //Dimensiones admitidas en Pixeles
-        $file->setStorage('public/Images/'); //Ubicación de la carpeta
+        $file->setStorage($urlStore); //Ubicación de la carpeta
 
-
-
+      
         if ($file[$name]) {
-
+            
             if ($file->getMime() !== 'png' && $file->getMime() !== 'jpg' && $file->getMime() !== 'jpeg') {
 
                 echo $file->getMime();
@@ -242,13 +241,10 @@ class Security
                 exit;
             }
 
-
-
-
-
             $upload = $file->upload();
+            
             if ($upload) {
-                $imgUrl = UrlBase::urlBase . '/public/Images/' . $upload->getName() . '.' . $upload->getMime();
+                $imgUrl = UrlBase::urlBase . $urlStore . $upload->getName() . '.' . $upload->getMime();
                 $data = [
                     'path' => $imgUrl,
                     'name' => $upload->getName() . '.' . $upload->getMime()
@@ -257,6 +253,8 @@ class Security
             } else {
                 die(ResponseHttp::status400($file->getError()));
             }
+        } else {
+            die(ResponseHttp::status400("Imagen no agregada "));
         }
     }
 

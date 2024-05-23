@@ -959,16 +959,16 @@
         },
         {
             "name": "samayo/bulletproof",
-            "version": "v5.0.1",
+            "version": "v5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/samayo/bulletproof.git",
-                "reference": "510d83eb1f71105d3911a9dc02fcd3b7bf84c047"
+                "reference": "d29806700a611c6e0d2649dbbf6e70af839c5dbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/samayo/bulletproof/zipball/510d83eb1f71105d3911a9dc02fcd3b7bf84c047",
-                "reference": "510d83eb1f71105d3911a9dc02fcd3b7bf84c047",
+                "url": "https://api.github.com/repos/samayo/bulletproof/zipball/d29806700a611c6e0d2649dbbf6e70af839c5dbf",
+                "reference": "d29806700a611c6e0d2649dbbf6e70af839c5dbf",
                 "shasum": ""
             },
             "require": {
@@ -1003,9 +1003,9 @@
             ],
             "support": {
                 "issues": "https://github.com/samayo/bulletproof/issues",
-                "source": "https://github.com/samayo/bulletproof/tree/v5.0.1"
+                "source": "https://github.com/samayo/bulletproof/tree/v5.0.2"
             },
-            "time": "2023-10-14T20:37:29+00:00"
+            "time": "2024-05-05T18:26:57+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

@@ -83,18 +83,17 @@ class ProductoModel extends  Connection
     final public static function putUpdate($id)
     {
         try {
-            $resImg = Security::uploadImage(self::$file, 'imagen');
+          /*   $resImg = Security::uploadImage(self::$file, 'imagen', '');
             self::$url = $resImg['path'];
-            self::$imagen = $resImg['name'];
+            self::$imagen = $resImg['name']; */
 
             $con = self::getConnection();
-            $query = $con->prepare('UPDATE productos SET nombre=:nombre, descripcion=:descripcion, precio=:precio, imagen=:imagen, estado=:estado WHERE idProducto=:id');
+            $query = $con->prepare('UPDATE Productos SET nombre=:nombre, descripcion=:descripcion, precio=:precio, estado=:estado WHERE idProducto=:id');
 
             $query->execute([
                 ':nombre'           => self::$nombre,
                 ':descripcion'      => self::$descripcion,
                 ':precio'           => self::$precio,
-                ':imagen'           => self::$url,
                 ':estado'           => self::$estado,
                 ':id'               => $id
             ]);
@@ -111,10 +110,37 @@ class ProductoModel extends  Connection
     }
 
 
+    final public static function putUpdateImage($id)
+    {
+        try {
+            $resImg = Security::uploadImage(self::$file, 'imagen', 'public/Images/productos/');
+            self::$url = $resImg['path'];
+            self::$imagen = $resImg['name'];
+
+            $con = self::getConnection();
+            $query = $con->prepare('UPDATE Productos SET imagen=:imagen WHERE idProducto=:id');
+
+            $query->execute([
+                ':imagen'           => self::$url,
+                ':id'               => $id
+            ]);
+
+            if ($query->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\PDOException $e) {
+            error_log('ProductoModel::putUpdate-> ' . $e);
+            die((ResponseHttp::status500('No se puede Actualizar el producto')));
+        }
+    }
+
+
     final public static function putUpdateProductos($id)
     {
         try {
-            $resImg = Security::uploadImage(self::getFile(), 'imagen');
+            $resImg = Security::uploadImage(self::getFile(), 'imagen', '');
             self::setUrl($resImg['path']);
             self::setImagen($resImg['name']);
 

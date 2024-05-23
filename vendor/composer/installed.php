@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => '57aeceacc943c816738f6467d70c7a4a53c9a629',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '58c16e09243f5db2333512b66e2449f4bed04f41',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '57aeceacc943c816738f6467d70c7a4a53c9a629',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '58c16e09243f5db2333512b66e2449f4bed04f41',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -164,9 +164,9 @@
             'dev_requirement' => false,
         ),
         'samayo/bulletproof' => array(
-            'pretty_version' => 'v5.0.1',
-            'version' => '5.0.1.0',
-            'reference' => '510d83eb1f71105d3911a9dc02fcd3b7bf84c047',
+            'pretty_version' => 'v5.0.2',
+            'version' => '5.0.2.0',
+            'reference' => 'd29806700a611c6e0d2649dbbf6e70af839c5dbf',
             'type' => 'library',
             'install_path' => __DIR__ . '/../samayo/bulletproof',
             'aliases' => array(),

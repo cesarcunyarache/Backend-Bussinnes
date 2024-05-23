@@ -44,15 +44,20 @@ class Controller
 
     protected function getParam()
     {
-      
-        if (!empty($_FILES)){
+
+        if (!empty($_FILES)) {
+
             $param = $_POST;
-         
         } else {
-            $param = json_decode(file_get_contents("php://input"), true);  
+
+            $param = json_decode(file_get_contents("php://input"), true);
+
+            if ($param == null) {
+                $param = $_POST;
+            }
         }
 
-       /*  
+        /*  
         if ($this->getHeader('Content-Type') == 'application/json') {
            $param = json_decode(file_get_contents("php://input"), true); 
         } else {
@@ -62,13 +67,13 @@ class Controller
         return $param;
     }
 
-    protected function getCookie(string $cookie){
+    protected function getCookie(string $cookie)
+    {
         return $_COOKIE[$cookie];
     }
 
-    protected function getSession(string $session){
+    protected function getSession(string $session)
+    {
         return $_SESSION[$session];
     }
-
-
 }

@@ -27,9 +27,9 @@ class ClienteModel extends  Connection
         self::$numeroDoc = $data['numeroDoc'];
         self::$nombres = $data['nombres'];
         self::$apellidos = $data['apellidos'];
-        self::$telefono = $data['telefono'];
-        self::$fechaNacimiento = $data['fechaNacimiento'];
-        self::$genero = $data['genero'];
+        self::$telefono = $data['telefono'] ?? "";
+        self::$fechaNacimiento = $data['fechaNacimiento'] ?? "";
+        self::$genero = $data['genero'] ?? "";
     }
 
 
@@ -45,7 +45,7 @@ class ClienteModel extends  Connection
                 ':numeroDoc' => self::getNumeroDoc(),
                 ':nombres'  => self::getNombres(),
                 ':apellidos' => self::getApellidos(),
-                ':fechaNacimiento' => self::getFechaNacimiento(),
+                ':fechaNacimiento' => self::getFechaNacimiento() ,
                 ':telefono' => self::getTelefono(),
                 ':genero' => self::getGenero()
             ]);
@@ -59,6 +59,32 @@ class ClienteModel extends  Connection
             die(ResponseHttp::status500());
         }
     }
+
+
+    final public static function createPatchParams($idTipoDoc, $numeroDoc, $nombres, $apellidos)
+    {
+        try {
+            $con = self::getConnection();
+            $sql = "INSERT INTO Clientes (idTipoDoc, numeroDoc, nombres, apellidos) 
+            VALUES (:idTipoDoc,:numeroDoc, :nombres,:apellidos)";
+            $query = $con->prepare($sql);
+            $query->execute([
+                ':idTipoDoc' => (int) $idTipoDoc,
+                ':numeroDoc' => $numeroDoc,
+                ':nombres'  => $nombres,
+                ':apellidos' => $apellidos,
+            ]);
+            if ($query->rowCount() > 0) {
+                return $con->lastInsertId();
+            } else {
+                return 0;
+            }
+        } catch (\PDOException $e) {
+            error_log('ClienteModel::createPatchParams -> ' . $e);
+            die(ResponseHttp::status500());
+        }
+    }
+
 
 
     final public static function create()
@@ -235,6 +261,29 @@ class ClienteModel extends  Connection
             }
         } catch (\PDOException $e) {
             error_log("ClienteModel::Login -> " . $e);
+            die(ResponseHttp::status500());
+        }
+        exit;
+    }
+
+    final public static function getSearchClienteByNumeroDoc(string $numeroDoc)
+    {
+        try {
+            $con = self::getConnection()->prepare("SELECT * FROM Clientes WHERE numeroDoc=:numeroDoc");
+            $con->execute([':numeroDoc' => $numeroDoc]);
+
+            if ($con->rowCount() === 0) {
+                return [];
+            } else {
+                $data = $con->fetch();
+                if (count($data) > 0) {
+                    return $data;
+                } else {
+                    return [];
+                }
+            }
+        } catch (\PDOException $e) {
+            error_log("ClienteModel::getSearchClienteByNumeroDoc -> " . $e);
             die(ResponseHttp::status500());
         }
         exit;

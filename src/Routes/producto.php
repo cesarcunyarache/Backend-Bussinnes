@@ -11,7 +11,7 @@ $app->postCreate("producto/");
 
 $app->getRead("producto/");
 
-$app->postUpdateProducto("producto/update");
+$app->postUpdate("producto/update/");
 
 $app->getReadById("producto/{$params[1]}");
 

@@ -9,12 +9,10 @@ $app = new CategoriaController();
 
 $app->postCreate("categoria/");
 
-//$app->putUpdate("categoria/");
+$app->postUpdate("categoria/update/");
 
 $app->getRead("categoria/");
 
 $app->getReadById("categoria/{$params[1]}");
-
-
 
 echo ResponseHttp::status404();
