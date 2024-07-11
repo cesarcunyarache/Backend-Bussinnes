@@ -169,6 +169,7 @@ class ClienteUsuarioController extends Controller
 
                 if (isset($data) && !empty($data)) {
                     $idClient = $data->data->idCliente;
+
                     $cliente = ClienteModel::getClientById($idClient);
                     echo ResponseHttp::status200($cliente);
                 }
@@ -494,28 +495,28 @@ class ClienteUsuarioController extends Controller
             echo ResponseHttp::status200($res);
 
             exit();
-            }
         }
+    }
 
 
     final public function getRead(string $endPoint)
-        {
-            if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
-    
-                try {
-    
-                    Security::validateTokenJwt(Security::secretKey());
-                    $data = ClienteUsuarioModel::read();
-                    echo ResponseHttp::status200($data);
-                } catch (\Exception $e) {
-                    echo ResponseHttp::status500($e->getMessage());
-                }
-                exit();
+    {
+        if ($this->getMethod() == 'get' && $endPoint == $this->getRoute()) {
+
+            try {
+
+                Security::validateTokenJwt(Security::secretKey());
+                $data = ClienteUsuarioModel::read();
+                echo ResponseHttp::status200($data);
+            } catch (\Exception $e) {
+                echo ResponseHttp::status500($e->getMessage());
             }
+            exit();
         }
+    }
 
 
-        final public function postContact(string $endPoint)
+    final public function postContact(string $endPoint)
     {
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
             try {
@@ -552,15 +553,14 @@ class ClienteUsuarioController extends Controller
                     $motivo = $this->getParam()['motivo'];
                     $mensaje = $this->getParam()['mensaje'];
 
-                    if($cabecera == "Formulario Libro de Reclamaciones"){
+                    if ($cabecera == "Formulario Libro de Reclamaciones") {
                         Mail::sendEmail($correoOrigen, "Formulario Libro de Reclamaciones", Mail::getBodyBook($cabecera, $info, $nombres, $apellidos, $tipoDoc, $documento, $telefono, $correo, $fecha, $motivo, $mensaje));
                         echo ResponseHttp::status200("Tu mensaje ha sido enviado correctamente. Pronto nos pondremos en contacto contigo.");
                     } else {
                         Mail::sendEmail($correoOrigen, "Formulario Contáctanos", Mail::getBodyContact($cabecera, $info, $nombres, $apellidos, $tipoDoc, $documento, $telefono, $correo, $motivo, $mensaje));
                         echo ResponseHttp::status200("Tu mensaje ha sido enviado correctamente. Pronto nos pondremos en contacto contigo.");
                     }
-                        
-                    }
+                }
             } catch (\Exception $e) {
                 echo ResponseHttp::status500('Error: ' . $e->getMessage());
             }

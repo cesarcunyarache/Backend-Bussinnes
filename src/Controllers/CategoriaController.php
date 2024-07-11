@@ -97,8 +97,7 @@ class CategoriaController extends Controller
                             $obj = new CategoriaModel($this->getParam(), '');
                       
                             
-                            $res = $obj::putUpdate( (int) $this->getParam()['idCategoria']);
-                           
+                            $res = $obj::putUpdate( (int) $this->getParam()['idCategoria']);    
                             
                         }
                         

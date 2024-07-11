@@ -15,7 +15,7 @@ class Mail
     private const USERNAME = 'webbravazo@gmail.com';
     private const PASSWORD = 'grhbwnxmqyehcfhh';
     private const ENCRYPTION = PHPMailer::ENCRYPTION_SMTPS;
-    private const FROM_NAME = 'Terraza Bravazo';
+    private const FROM_NAME = 'Restaurante';
     private const FROM_EMAIL = 'webbravazo@gmail.com';
 
   

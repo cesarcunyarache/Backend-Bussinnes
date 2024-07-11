@@ -30,7 +30,7 @@ class CategoriaModel extends  Connection
     final public static function read()
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM categoria");
+            $con = self::getConnection()->prepare("SELECT * FROM Categoria");
             $con->execute();
 
             if ($con->rowCount() === 0) {
@@ -54,7 +54,7 @@ class CategoriaModel extends  Connection
         try {
 
             $con = self::getConnection();
-            $sql = "INSERT INTO categoria (categoria, descripcion, imagen, estado) VALUES (:categoria,:descripcion, :imagen,:estado)";
+            $sql = "INSERT INTO Categoria (categoria, descripcion, imagen, estado) VALUES (:categoria,:descripcion, :imagen,:estado)";
             $query = $con->prepare($sql);
             $query->execute([
                 ':categoria' => self::getCategoria(),
@@ -116,13 +116,13 @@ class CategoriaModel extends  Connection
                 ':estado'           => self::$estado,
                 ':id'               => $id
             ]);
-          
-             if ($query->rowCount() > 0) {
-             
+
+            if ($query->rowCount() > 0) {
+
                 return true;
             } else {
                 return false;
-            } 
+            }
         } catch (\PDOException $e) {
             error_log('CategoriaModel::putUpdate-> ' . $e);
             die((ResponseHttp::status500('No se puede Actualizar el producto')));
@@ -136,6 +136,8 @@ class CategoriaModel extends  Connection
             self::$url = $resImg['path'];
             self::$imagen = $resImg['name'];
 
+            $responseCategory = CategoriaModel::getCategoriaById($id);
+
             $con = self::getConnection();
             $query = $con->prepare('UPDATE Categoria SET imagen=:imagen WHERE idCategoria=:id');
 
@@ -145,6 +147,15 @@ class CategoriaModel extends  Connection
             ]);
 
             if ($query->rowCount() > 0) {
+                if (count($responseCategory) > 0) {
+                    $imageURL = $responseCategory['imagen'];
+                    $parsedUrl = parse_url($imageURL);
+                    $imagePath = $_SERVER['DOCUMENT_ROOT'] . $parsedUrl['path'];
+
+                    if (file_exists($imagePath)) {
+                        unlink($imagePath);
+                    } 
+                }
                 return true;
             } else {
                 return false;

@@ -6,7 +6,7 @@ use Dotenv\Dotenv;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Bulletproof\Image;
-
+use Exception;
 
 class Security
 {
@@ -214,47 +214,54 @@ class Security
 
     final public static function uploadImage($fileUpload, $name, $urlStore)
     {
-        $file = new Image($fileUpload);
 
-        $file->setMime(array('png', 'jpg', 'jpeg')); //formatos admitidos
-        $file->setSize(10000, 5000000); //Tamaño admitidos es Bytes
-        $file->setDimension(4000, 4000); //Dimensiones admitidas en Pixeles
-        $file->setStorage($urlStore); //Ubicación de la carpeta
+        try {
+            $file = new Image($fileUpload);
 
-      
-        if ($file[$name]) {
-            
-            if ($file->getMime() !== 'png' && $file->getMime() !== 'jpg' && $file->getMime() !== 'jpeg') {
+            $file->setMime(array('png', 'jpg', 'jpeg')); //formatos admitidos
+            $file->setSize(10000, 50000000); //Tamaño admitidos es Bytes
+            $file->setDimension(8000, 8000); //Dimensiones admitidas en Pixeles
+            $file->setStorage($urlStore); //Ubicación de la carpeta
 
-                echo $file->getMime();
-                echo ResponseHttp::status400("¡Archivo inválido! Sólo se permiten tipos de imágenes (png, jpg, jpeg)");
-                exit;
-            }
+            if ($file[$name]) {
 
-            if ($file->getSize() > 5000000) {
-                echo ResponseHttp::status400("El tamaño de la imagen debe ser mínimo de 10000 bytes (10 kb), hasta un máximo de 500000 bytes (500 kb).");
-                exit;
-            }
+                if ($file->getMime() !== 'png' && $file->getMime() !== 'jpg' && $file->getMime() !== 'jpeg') {
 
-            if ($file->getWidth() > 4000 && $file->getHeight() > 4000) {
-                echo ResponseHttp::status400("La imagen debe tener menos de 1000 px de alto y menos de 1000 px de ancho.");
-                exit;
-            }
+                    /* echo $file->getMime(); */
+                    echo ResponseHttp::status400("¡Archivo inválido! Sólo se permiten tipos de imágenes (png, jpg, jpeg)");
+                    exit;
+                }
 
-            $upload = $file->upload();
-            
-            if ($upload) {
-                $imgUrl = UrlBase::urlBase . $urlStore . $upload->getName() . '.' . $upload->getMime();
-                $data = [
-                    'path' => $imgUrl,
-                    'name' => $upload->getName() . '.' . $upload->getMime()
-                ];
-                return $data;
+                if ($file->getSize() > 50000000) {
+                    echo ResponseHttp::status400("El tamaño de la imagen debe ser mínimo de 10000 bytes (10 kb), hasta un máximo de 5000000 bytes (5000 kb).");
+                    exit;
+                }
+
+                if ($file->getWidth() > 8000 && $file->getHeight() > 84000) {
+                    echo ResponseHttp::status400("La imagen debe tener menos de 8000 px de alto y menos de 8000 px de ancho.");
+                    exit;
+                }
+
+                $upload = $file->upload();
+
+                if ($upload) {
+                    $imgUrl = UrlBase::urlBase . $urlStore . $upload->getName() . '.' . $upload->getMime();
+                    $data = [
+                        'path' => $imgUrl,
+                        'name' => $upload->getName() . '.' . $upload->getMime()
+                    ];
+                    return $data;
+                } else {
+                    // die(ResponseHttp::status400($file->getError()));
+                    echo ResponseHttp::status400("Error al subir el archivo, intentelo de nuevo");
+                    exit;
+                }
             } else {
-                die(ResponseHttp::status400($file->getError()));
+                die(ResponseHttp::status400("Imagen no agregada "));
             }
-        } else {
-            die(ResponseHttp::status400("Imagen no agregada "));
+        } catch (\Exception $err) {
+            echo ResponseHttp::status400("Error al subir el archivo, intentelo de nuevo");
+            exit;
         }
     }
 

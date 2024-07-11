@@ -10,6 +10,8 @@ use App\Config\Message;
 use App\Models\ClienteModel;
 use \Resend;
 
+use function PHPSTORM_META\type;
+
 class ClienteController extends Controller
 {
     final public function postCreate(string $endPoint)
@@ -65,7 +67,7 @@ class ClienteController extends Controller
                 'numeroDoc'            => 'required|',
                 'nombres'              => 'required|alpha_spaces',
                 'apellidos'            => 'required|alpha_spaces',
-               
+
             ]);
 
             if ($validation->fails()) {
@@ -81,7 +83,7 @@ class ClienteController extends Controller
                 $data = Security::SchemaValidation((int) $idTipoDoc, $numeroDoc);
 
                 if ($data['isValidate']) {
-                   
+
                     $res = ClienteModel::createPatchParams($idTipoDoc, $numeroDoc, $nombres, $apellidos);
                     if ($res > 0) {
                         echo ResponseHttp::status200(['idCliente' => $res]);
@@ -221,18 +223,21 @@ class ClienteController extends Controller
                         if ($response === FALSE) {
                             echo ResponseHttp::status400("El cliente no se encuentra registrado Y/O recuperacion de informacion no exitosa");
                         } else {
-
                             $resApi = json_decode($response, true);
 
-                            $result = [
-                                'numeroDoc' => $resApi['dni'],
-                                'nombres' =>  mb_convert_case($resApi['nombres'], MB_CASE_TITLE, "UTF-8"),
-                                'apellidos' =>  mb_convert_case($resApi['apellidoPaterno'] . ' ' . $resApi['apellidoMaterno'],  MB_CASE_TITLE, "UTF-8"),
-                                'idTipoDoc' => $idTipoDoc,
-                                'isNew' => true
-                            ];
+                            if ($resApi['success'] === true) {
+                                $result = [
+                                    'numeroDoc' => $resApi['dni'],
+                                    'nombres' =>  mb_convert_case($resApi['nombres'], MB_CASE_TITLE, "UTF-8"),
+                                    'apellidos' =>  mb_convert_case($resApi['apellidoPaterno'] . ' ' . $resApi['apellidoMaterno'],  MB_CASE_TITLE, "UTF-8"),
+                                    'idTipoDoc' => $idTipoDoc,
+                                    'isNew' => true
+                                ];
 
-                            echo ResponseHttp::status200($result);
+                                echo ResponseHttp::status200($result);
+                            } else {
+                                echo ResponseHttp::status400($resApi['message']);
+                            }
                         }
                     } else {
                         echo ResponseHttp::status400("El cliente no se encuentra registrado Y/O recuperacion de información no exitosa");

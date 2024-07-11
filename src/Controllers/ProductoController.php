@@ -70,7 +70,9 @@ class ProductoController extends Controller
                 try {
 
                     if (!empty($_FILES)) {
+
                         $imagenUrl = Security::uploadImage($_FILES, 'imagen', 'public/Images/productos/')['path'];
+
                         $obj = new ProductoModel($this->getParam(), $imagenUrl);
                     } else {
                         $obj = new ProductoModel($this->getParam(), null);
@@ -95,11 +97,11 @@ class ProductoController extends Controller
     {
         if ($this->getMethod() == 'post' && $endPoint == $this->getRoute()) {
             if (
-                !isset($this->getParam()['nombre']) || 
+                !isset($this->getParam()['nombre']) ||
                 !isset($this->getParam()['descripcion']) ||
-                !isset($this->getParam()['precio']) || 
-                !isset($this->getParam()['estado']) || 
-                !isset($this->getParam()['idCategoria']) || 
+                !isset($this->getParam()['precio']) ||
+                !isset($this->getParam()['estado']) ||
+                !isset($this->getParam()['idCategoria']) ||
                 !isset($this->getParam()['nombre'])
             ) {
                 echo ResponseHttp::status400('Uno o más campos vacíos');
@@ -107,12 +109,11 @@ class ProductoController extends Controller
                 try {
                     $res = false;
                     if (!empty($_FILES)) {
-
                         $obj = new ProductoModel($this->getParam(), $_FILES);
                         $obj::putUpdate($this->getParam()['idCategoria']);
                         $res = $obj::putUpdateImage($this->getParam()['idProducto']);
-
                     } else {
+
                         $obj = new ProductoModel($this->getParam(), '');
                         $res = $obj::putUpdate((int) $this->getParam()['idProducto']);
                     }

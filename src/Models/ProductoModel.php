@@ -34,7 +34,10 @@ class ProductoModel extends  Connection
     final public static function read()
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM productos");
+            $con = self::getConnection()->prepare("SELECT p.*, c.categoria
+                                                FROM Productos p
+                                                INNER JOIN Categoria c ON p.idCategoria = c.idCategoria;
+                                                ");
             $con->execute();
 
             if ($con->rowCount() === 0) {
@@ -58,7 +61,7 @@ class ProductoModel extends  Connection
         try {
 
             $con = self::getConnection();
-            $sql = "INSERT INTO productos (nombre, descripcion, precio, imagen, estado, idCategoria) VALUES (:nombre,:descripcion, :precio, :imagen, :estado, :idCategoria)";
+            $sql = "INSERT INTO Productos (nombre, descripcion, precio, imagen, estado, idCategoria) VALUES (:nombre,:descripcion, :precio, :imagen, :estado, :idCategoria)";
             $query = $con->prepare($sql);
             $query->execute([
                 ':nombre' => self::getNombre(),
@@ -71,6 +74,7 @@ class ProductoModel extends  Connection
 
             if ($query->rowCount() > 0) {
                 return $con->lastInsertId();
+                echo 1;
             } else {
                 return 0;
             }
@@ -83,18 +87,19 @@ class ProductoModel extends  Connection
     final public static function putUpdate($id)
     {
         try {
-          /*   $resImg = Security::uploadImage(self::$file, 'imagen', '');
+            /*   $resImg = Security::uploadImage(self::$file, 'imagen', '');
             self::$url = $resImg['path'];
             self::$imagen = $resImg['name']; */
 
             $con = self::getConnection();
-            $query = $con->prepare('UPDATE Productos SET nombre=:nombre, descripcion=:descripcion, precio=:precio, estado=:estado WHERE idProducto=:id');
+            $query = $con->prepare('UPDATE Productos SET nombre=:nombre, descripcion=:descripcion, precio=:precio, estado=:estado, idCategoria=:idCategoria WHERE idProducto=:id');
 
             $query->execute([
                 ':nombre'           => self::$nombre,
                 ':descripcion'      => self::$descripcion,
                 ':precio'           => self::$precio,
                 ':estado'           => self::$estado,
+                'idCategoria'       => self::$idCategoria,
                 ':id'               => $id
             ]);
 
@@ -117,6 +122,8 @@ class ProductoModel extends  Connection
             self::$url = $resImg['path'];
             self::$imagen = $resImg['name'];
 
+            $responseProduct = ProductoModel::getProducto($id);
+
             $con = self::getConnection();
             $query = $con->prepare('UPDATE Productos SET imagen=:imagen WHERE idProducto=:id');
 
@@ -126,6 +133,16 @@ class ProductoModel extends  Connection
             ]);
 
             if ($query->rowCount() > 0) {
+
+                if (count($responseProduct) > 0) {
+                    $imageURL = $responseProduct['imagen'];
+                    $parsedUrl = parse_url($imageURL);
+                    $imagePath = $_SERVER['DOCUMENT_ROOT'] . $parsedUrl['path'];
+
+                    if (file_exists($imagePath)) {
+                        unlink($imagePath);
+                    } 
+                }
                 return true;
             } else {
                 return false;
@@ -145,7 +162,7 @@ class ProductoModel extends  Connection
             self::setImagen($resImg['name']);
 
             $con = self::getConnection();
-            $query = $con->prepare('UPDATE productos SET nombre=:nombre, descripcion=:descripcion, precio=:precio, imagen=:imagen, estado=:estado WHERE idProducto=:id');
+            $query = $con->prepare('UPDATE Productos SET nombre=:nombre, descripcion=:descripcion, precio=:precio, imagen=:imagen, estado=:estado WHERE idProducto=:id');
 
 
             $query->execute([
@@ -173,7 +190,7 @@ class ProductoModel extends  Connection
     final public static function getProducto($id)
     {
         try {
-            $con = self::getConnection()->prepare("SELECT * FROM productos  WHERE idProducto=:id;");
+            $con = self::getConnection()->prepare("SELECT * FROM Productos  WHERE idProducto=:id;");
             $con->execute([':id' => $id]);
 
             if ($con->rowCount() === 0) {
@@ -198,8 +215,8 @@ class ProductoModel extends  Connection
         try {
             $con = self::getConnection()->prepare("
                 SELECT p.idProducto, p.nombre AS nombre_producto, p.descripcion, p.precio, p.imagen, p.estado, c.idCategoria, c.categoria AS nombre_categoria
-                FROM productos AS p
-                INNER JOIN categoria AS c ON p.idCategoria = c.idCategoria
+                FROM Productos AS p
+                INNER JOIN Categoria AS c ON p.idCategoria = c.idCategoria
                 WHERE c.idCategoria = :id
             ");
             $con->execute([
@@ -309,7 +326,7 @@ class ProductoModel extends  Connection
         return self::$precio;
     }
 
-    
+
     final public static function getFile()
     {
         return self::$file;
@@ -359,5 +376,4 @@ class ProductoModel extends  Connection
     {
         self::$idCategoria = $IDCategoria;
     }
-    
 }

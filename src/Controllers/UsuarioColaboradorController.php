@@ -380,7 +380,6 @@ class UsuarioColaboradorController extends Controller
                 if (isset($data) && !empty($data)) {
                     $idCola = $data->data->idEmpleado;
 
-
                     $colaborador = UsuarioColaboradorModel::getColaboradorById($idCola);
                     echo ResponseHttp::status200($colaborador);
                 }

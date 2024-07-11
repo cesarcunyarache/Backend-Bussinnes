@@ -2,43 +2,43 @@
 
 namespace App\Config;
 
-class ResponseHttp {
+class ResponseHttp
+{
 
     public static $message = array(
         'status' => '',
-        
+
     );
 
-    final public static function headerHttpPro($method,$origin)
+    final public static function headerHttpPro($method, $origin)
     {
         if (!isset($origin)) {
             die((ResponseHttp::status401('No tiene autorizacion para consumir esta API')));
             exit();
         }
 
-        $list = ['https://www.thunderclient.com/', 'http://localhost:3000', 'http://localhost:3001', 'dev'];        
+        $list = ['https://www.thunderclient.com/', 'http://localhost:3000', 'http://localhost:3001', 'dev', 'https://6hg1thbz-3001.brs.devtunnels.ms', 'https://898a-190-239-193-29.ngrok-free.app'];
 
-      
-        if (in_array($origin,$list)){
+
+        if (true) {
 
             if ($method == 'OPTIONS') {
                 header("Access-Control-Allow-Origin: $origin");
                 header('Access-Control-Allow-Methods: GET,PUT,POST,PATCH,DELETE');
-                header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Authorization"); 
+                header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Authorization");
                 header('Access-Control-Allow-Credentials: true');
                 exit(0);
             } else {
                 header("Access-Control-Allow-Origin: $origin");
                 header('Access-Control-Allow-Methods: GET,PUT,POST,PATCH,DELETE');
                 header("Allow: GET, POST, OPTIONS, PUT, PATCH , DELETE");
-                header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Authorization"); 
-                header('Content-Type: application/json'); 
+                header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Authorization");
+                header('Content-Type: application/json');
                 header('Access-Control-Allow-Credentials: true');
-             
             }
         } else {
             die(ResponseHttp::status401('No tiene autorizacion para consumir esta API'));
-        }       
+        }
     }
 
     final public static function headerHttpDev($method)
@@ -50,7 +50,7 @@ class ResponseHttp {
         header("Access-Control-Allow-Origin: *");
         header('Access-Control-Allow-Methods: GET,PUT,POST,PATCH,DELETE');
         header("Allow: GET, POST, OPTIONS, PUT, PATCH , DELETE");
-        header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Authorization"); 
+        header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Authorization");
         //header('Content-Type: application/json'); 
     }
 
@@ -58,7 +58,7 @@ class ResponseHttp {
     {
         http_response_code(200);
         self::$message['status'] = 'ok';
-        self::$message[ gettype($res) == 'string' ? 'message' : 'data'] = $res;
+        self::$message[gettype($res) == 'string' ? 'message' : 'data'] = $res;
         return json_encode(self::$message);
     }
 
@@ -100,5 +100,5 @@ class ResponseHttp {
         self::$message['status'] = 'error';
         self::$message['message'] = $res;
         return json_encode(self::$message);
-    }   
+    }
 }
