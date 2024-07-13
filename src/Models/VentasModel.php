@@ -95,7 +95,7 @@ class VentasModel extends  Connection
                                                     e.numeroDoc as numeroDocEmpleado
                                                 FROM Ventas v
                                                     LEFT JOIN Clientes c ON v.idCliente = c.idCliente
-                                                    INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado;
+                                                    INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado ORDER BY v.fecha DESC;
                                                 ");
             $con->execute();
 

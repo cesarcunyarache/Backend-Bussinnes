@@ -20,7 +20,7 @@ class ResponseHttp
         $list = ['https://www.thunderclient.com/', 'http://localhost:3000', 'http://localhost:3001', 'dev', 'https://6hg1thbz-3001.brs.devtunnels.ms', 'https://898a-190-239-193-29.ngrok-free.app'];
 
 
-        if (true) {
+        if (in_array($origin, $list)) {
 
             if ($method == 'OPTIONS') {
                 header("Access-Control-Allow-Origin: $origin");
